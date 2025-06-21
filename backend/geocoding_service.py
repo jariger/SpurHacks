@@ -47,20 +47,24 @@ class GeocodingService:
             city = city or self.default_city
             full_address = f"{address}, {city}"
             
+            print(f"🔍 Geocoding: {full_address}")
             geocode_result = self.client.geocode(full_address)
             
             if geocode_result:
                 location = geocode_result[0]['geometry']['location']
-                return {
+                coords = {
                     'lat': location['lat'],
                     'lng': location['lng']
                 }
+                formatted_address = geocode_result[0]['formatted_address']
+                print(f"✅ Success: {address} → ({coords['lat']:.6f}, {coords['lng']:.6f}) [{formatted_address}]")
+                return coords
             else:
-                print(f"Could not geocode address: {full_address}")
+                print(f"❌ Failed: Could not geocode address: {full_address}")
                 return None
                 
         except Exception as e:
-            print(f"Error geocoding {address}: {e}")
+            print(f"❌ Error geocoding {address}: {e}")
             return None
     
     def geocode_addresses_batch(self, addresses: List[str], city: str = None) -> Dict[str, Dict[str, float]]:
@@ -75,26 +79,54 @@ class GeocodingService:
             Dictionary mapping addresses to coordinate dictionaries
         """
         if not self.client:
-            print("Google Maps client not available for batch geocoding")
+            print("❌ Google Maps client not available for batch geocoding")
             return {}
         
         geocoded = {}
         city = city or self.default_city
         
-        print(f"Starting batch geocoding of {len(addresses)} addresses...")
+        print(f"\n🚀 Starting batch geocoding of {len(addresses)} addresses...")
+        print("=" * 80)
+        
+        successful_geocodes = 0
+        failed_geocodes = 0
         
         for i, address in enumerate(addresses):
             if address not in geocoded:
                 coords = self.geocode_address(address, city)
                 if coords:
                     geocoded[address] = coords
+                    successful_geocodes += 1
+                else:
+                    failed_geocodes += 1
                 
-                # Rate limiting: pause every 10 requests to avoid hitting limits
+                # Progress update every 10 requests
                 if (i + 1) % 10 == 0:
-                    print(f"Geocoded {i + 1}/{len(addresses)} addresses...")
-                    time.sleep(0.1)  # 100ms pause
+                    print(f"\n📊 Progress: {i + 1}/{len(addresses)} addresses processed")
+                    print(f"   ✅ Successful: {successful_geocodes}")
+                    print(f"   ❌ Failed: {failed_geocodes}")
+                    print(f"   📈 Success rate: {(successful_geocodes/(successful_geocodes + failed_geocodes)*100):.1f}%")
+                    print("-" * 40)
+                    time.sleep(0.1)  # 100ms pause for rate limiting
         
-        print(f"Completed geocoding. Successfully geocoded {len(geocoded)}/{len(addresses)} addresses.")
+        print("\n" + "=" * 80)
+        print(f"🎉 Batch geocoding completed!")
+        print(f"📊 Final Results:")
+        print(f"   📍 Total addresses processed: {len(addresses)}")
+        print(f"   ✅ Successfully geocoded: {successful_geocodes}")
+        print(f"   ❌ Failed to geocode: {failed_geocodes}")
+        print(f"   📈 Overall success rate: {(successful_geocodes/len(addresses)*100):.1f}%")
+        print("=" * 80)
+        
+        # Show sample of successfully geocoded addresses
+        if geocoded:
+            print(f"\n📋 Sample of successfully geocoded addresses:")
+            sample_count = min(10, len(geocoded))
+            for i, (addr, coords) in enumerate(list(geocoded.items())[:sample_count]):
+                print(f"   {i+1:2d}. {addr:<30} → ({coords['lat']:.6f}, {coords['lng']:.6f})")
+            if len(geocoded) > sample_count:
+                print(f"   ... and {len(geocoded) - sample_count} more addresses")
+        
         return geocoded
     
     def is_available(self) -> bool:
@@ -107,9 +139,12 @@ class GeocodingService:
             return False
         
         try:
+            print(f"\n🧪 Testing geocoding service...")
             test_address = "University Ave, Waterloo, ON, Canada"
             result = self.geocode_address(test_address)
-            return result is not None
+            success = result is not None
+            print(f"🧪 Test result: {'✅ PASSED' if success else '❌ FAILED'}")
+            return success
         except Exception as e:
-            print(f"Geocoding test failed: {e}")
+            print(f"🧪 Geocoding test failed: {e}")
             return False 

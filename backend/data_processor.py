@@ -3,6 +3,7 @@ import os
 from typing import Dict, List, Any, Optional, Tuple
 from geocoding_service import GeocodingService
 import json
+from excel_exporter import ExcelExporter
 
 class DataProcessor:
     def __init__(self):
@@ -24,9 +25,12 @@ class DataProcessor:
         try:
             if os.path.exists(self.geocode_cache_file):
                 with open(self.geocode_cache_file, 'r') as f:
-                    return json.load(f)
+                    cache = json.load(f)
+                    print(f"📂 Loaded {len(cache)} cached geocoding results from {self.geocode_cache_file}")
+                    return cache
         except Exception as e:
-            print(f"Error loading geocode cache: {e}")
+            print(f"❌ Error loading geocode cache: {e}")
+        print(f"📂 No existing geocode cache found, starting fresh")
         return {}
     
     def _save_geocode_cache(self):
@@ -34,17 +38,21 @@ class DataProcessor:
         try:
             with open(self.geocode_cache_file, 'w') as f:
                 json.dump(self.geocode_cache, f, indent=2)
+            print(f"💾 Saved {len(self.geocode_cache)} geocoding results to cache")
         except Exception as e:
-            print(f"Error saving geocode cache: {e}")
+            print(f"❌ Error saving geocode cache: {e}")
     
     def load_csv_data(self) -> Dict[str, List[Dict]]:
         """Load and parse all CSV files"""
         data = {}
         
+        print(f"\n📁 Loading CSV files...")
+        print("-" * 50)
+        
         try:
             for data_type, filename in self.files.items():
                 if os.path.exists(filename):
-                    print(f"Loading {filename}...")
+                    print(f"📄 Loading {filename}...")
                     df = pd.read_csv(filename)
                     
                     # Clean the data - handle NaN values
@@ -60,19 +68,24 @@ class DataProcessor:
                                 record[key] = ''
                     
                     data[data_type] = records
-                    print(f"Loaded {len(data[data_type])} records from {data_type}")
+                    print(f"✅ Loaded {len(data[data_type]):,} records from {data_type}")
                     
                     # Show sample of column names for debugging
                     if records:
-                        print(f"  Columns in {data_type}: {list(records[0].keys())[:10]}...")  # Show first 10 columns
+                        columns = list(records[0].keys())
+                        print(f"   📋 Columns ({len(columns)}): {columns[:5]}{'...' if len(columns) > 5 else ''}")
                     
                 else:
-                    print(f"Warning: {filename} not found")
+                    print(f"⚠️  Warning: {filename} not found")
                     data[data_type] = []
                     
         except Exception as e:
-            print(f"Error loading CSV files: {e}")
+            print(f"❌ Error loading CSV files: {e}")
             return {}
+        
+        print("-" * 50)
+        total_records = sum(len(records) for records in data.values())
+        print(f"📊 Total records loaded: {total_records:,}")
         
         return data
     
@@ -80,9 +93,15 @@ class DataProcessor:
         """Extract unique addresses from the data for geocoding"""
         addresses = set()
         
+        print(f"\n🔍 Extracting addresses from CSV data...")
+        print("-" * 50)
+        
         for data_type, records in data.items():
-            print(f"Extracting addresses from {data_type} ({len(records)} records)...")
+            print(f"📋 Processing {data_type} ({len(records):,} records)...")
             extracted_count = 0
+            
+            # Show sample addresses as we extract them
+            sample_addresses = []
             
             for record in records:
                 # Different address field names for different data types
@@ -92,13 +111,22 @@ class DataProcessor:
                     if field in record and record[field]:
                         address = str(record[field]).strip()
                         if address and address.lower() not in ['nan', 'none', '']:
-                            addresses.add(address)
-                            extracted_count += 1
+                            if address not in addresses:
+                                addresses.add(address)
+                                extracted_count += 1
+                                
+                                # Collect sample addresses for display
+                                if len(sample_addresses) < 5:
+                                    sample_addresses.append(address)
                             break
             
-            print(f"  Extracted {extracted_count} addresses from {data_type}")
+            print(f"   ✅ Extracted {extracted_count} unique addresses")
+            if sample_addresses:
+                print(f"   📍 Sample addresses: {', '.join(sample_addresses)}")
         
-        print(f"Total unique addresses found: {len(addresses)}")
+        print("-" * 50)
+        print(f"📊 Total unique addresses found: {len(addresses)}")
+        
         return list(addresses)
     
     def _get_address_fields_for_data_type(self, data_type: str) -> List[str]:
@@ -123,37 +151,51 @@ class DataProcessor:
             Dictionary mapping addresses to coordinates
         """
         if not self.geocoding_service.is_available():
-            print("Google Maps API not available. Cannot geocode addresses.")
+            print("❌ Google Maps API not available. Cannot geocode addresses.")
             return {}
         
         # Load data
         data = self.load_csv_data()
         addresses = self.extract_addresses_from_data(data)
         
-        print(f"Found {len(addresses)} unique addresses to geocode")
-        
-        # Show sample addresses for debugging
-        if addresses:
-            print("Sample addresses:")
-            for addr in addresses[:5]:
-                print(f"  - {addr}")
+        print(f"\n📍 Geocoding Analysis:")
+        print("-" * 50)
+        print(f"Total addresses to process: {len(addresses)}")
+        print(f"Already cached: {len(self.geocode_cache)}")
         
         # Filter out already cached addresses unless force_regeocode is True
         if not force_regeocode:
             uncached_addresses = [addr for addr in addresses if addr not in self.geocode_cache]
-            print(f"Found {len(self.geocode_cache)} cached addresses, {len(uncached_addresses)} new addresses to geocode")
+            print(f"New addresses to geocode: {len(uncached_addresses)}")
+            
+            if len(uncached_addresses) == 0:
+                print("✅ All addresses already geocoded and cached!")
+                return self.geocode_cache
         else:
             uncached_addresses = addresses
             print(f"Force re-geocoding all {len(addresses)} addresses")
         
+        # Show sample of addresses to be geocoded
+        if uncached_addresses:
+            print(f"\n📋 Sample addresses to geocode:")
+            for i, addr in enumerate(uncached_addresses[:10]):
+                print(f"   {i+1:2d}. {addr}")
+            if len(uncached_addresses) > 10:
+                print(f"   ... and {len(uncached_addresses) - 10} more addresses")
+        
         # Geocode new addresses
         if uncached_addresses:
             new_coordinates = self.geocoding_service.geocode_addresses_batch(uncached_addresses)
-            print(f"Successfully geocoded {len(new_coordinates)} new addresses")
             
             # Add to cache
             self.geocode_cache.update(new_coordinates)
             self._save_geocode_cache()
+            
+            print(f"\n📊 Geocoding Summary:")
+            print(f"   📍 Total addresses in dataset: {len(addresses)}")
+            print(f"   ✅ Successfully geocoded: {len(new_coordinates)}")
+            print(f"   💾 Total cached addresses: {len(self.geocode_cache)}")
+            print(f"   📈 Overall coverage: {(len(self.geocode_cache)/len(addresses)*100):.1f}%")
         
         return self.geocode_cache
     
@@ -168,19 +210,25 @@ class DataProcessor:
         Returns:
             Updated data with coordinates added
         """
+        print(f"\n🗺️  Adding coordinates to data records...")
+        print("-" * 50)
+        
         # Get geocoded coordinates
         geocoded_addresses = self.geocode_all_addresses(force_regeocode)
         
         if not geocoded_addresses and not self.geocoding_service.is_available():
-            print("No geocoding available. Adding default coordinates.")
+            print("⚠️  No geocoding available. Adding default coordinates.")
             return self._add_default_coordinates(data)
         
         # Add coordinates to each record
         coords_added = 0
         total_records = 0
+        coords_by_type = {}
         
         for data_type, records in data.items():
-            print(f"Adding coordinates to {data_type}...")
+            print(f"\n📋 Processing {data_type}...")
+            type_coords_added = 0
+            type_total = len(records)
             
             for record in records:
                 total_records += 1
@@ -191,12 +239,30 @@ class DataProcessor:
                     record['latitude'] = coords['lat']
                     record['longitude'] = coords['lng']
                     coords_added += 1
+                    type_coords_added += 1
                 else:
                     # Set default coordinates if geocoding fails
                     record['latitude'] = self.geocoding_service.default_coords[0]
                     record['longitude'] = self.geocoding_service.default_coords[1]
+            
+            coords_by_type[data_type] = {
+                'total': type_total,
+                'with_coords': type_coords_added,
+                'percentage': (type_coords_added/type_total*100) if type_total > 0 else 0
+            }
+            
+            print(f"   ✅ Added coordinates to {type_coords_added:,}/{type_total:,} records ({coords_by_type[data_type]['percentage']:.1f}%)")
         
-        print(f"Added coordinates to {coords_added}/{total_records} records ({coords_added/total_records*100:.1f}%)")
+        print("-" * 50)
+        print(f"📊 Coordinate Addition Summary:")
+        print(f"   📍 Total records processed: {total_records:,}")
+        print(f"   ✅ Records with geocoded coordinates: {coords_added:,}")
+        print(f"   📈 Overall success rate: {(coords_added/total_records*100):.1f}%")
+        
+        # Show breakdown by data type
+        for data_type, stats in coords_by_type.items():
+            print(f"   📋 {data_type}: {stats['with_coords']:,}/{stats['total']:,} ({stats['percentage']:.1f}%)")
+        
         return data
     
     def _find_address_in_record(self, record: Dict, data_type: str) -> Optional[str]:
@@ -245,4 +311,38 @@ class DataProcessor:
             'geocoding_available': self.geocoding_service.is_available(),
             'sample_addresses': addresses[:10] if addresses else [],
             'data_summary': sample_data
-        } 
+        }
+    
+    def export_geocoded_data_to_excel(self, force_regeocode: bool = False) -> str:
+        """
+        Load data, geocode it, and export to Excel files
+        
+        Args:
+            force_regeocode: If True, re-geocode all addresses
+        
+        Returns:
+            Path to the main Excel file created
+        """
+        print(f"\n📊 EXCEL EXPORT PROCESS")
+        print("=" * 60)
+        
+        # Load and geocode data
+        data = self.load_csv_data()
+        data_with_coords = self.add_coordinates_to_data(data, force_regeocode)
+        
+        # Get geocoded addresses for reference
+        geocoded_addresses = self.geocode_cache
+        
+        # Initialize Excel exporter
+        exporter = ExcelExporter()
+        
+        # Export to Excel
+        main_file = exporter.export_geocoded_data_to_excel(data_with_coords, geocoded_addresses)
+        
+        # Also create Google Maps compatible export
+        maps_file = exporter.export_for_google_maps(data_with_coords)
+        
+        print("=" * 60)
+        print("✅ EXCEL EXPORT COMPLETED!")
+        
+        return main_file 
