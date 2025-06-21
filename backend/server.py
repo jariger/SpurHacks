@@ -32,7 +32,6 @@ except Exception as e:
     # You can still run the server, just without geocoding
 # Configure CORS to allow requests from the frontend
 CORS(app, origins=["http://localhost:3000", "http://127.0.0.1:3000"], supports_credentials=True)
-dotenv.load_dotenv()
 
 # Google Maps API Configuration
 GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY')
@@ -341,9 +340,17 @@ def predict_safety():
             data.get('bylaw_infractions', [])
         )
         
-        'timestamp': datetime.now().isoformat(),
-        'maps_api': 'available' if gmaps else 'not_configured'
-    })
+        return jsonify({
+            'success': True,
+            'prediction': prediction,
+            'timestamp': datetime.now().isoformat(),
+            'maps_api': 'available' if gmaps else 'not_configured'
+        })
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        }), 500
 
 @app.route('/api/maps/config')
 def maps_config():
@@ -500,11 +507,7 @@ def test_endpoint():
             'location': location,
             'prediction': prediction
         })
-    except Exception as e:
-        return jsonify({
-            'success': False,
-            'error': str(e)
-        }), 500
+
 
 @app.route('/api/markers-with-safety', methods=['GET'])
 def get_markers_with_safety():
