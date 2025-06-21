@@ -2,7 +2,7 @@
 
 This backend service processes three CSV files containing parking and bylaw data for Waterloo, geocodes addresses to coordinates, and provides safety analysis for Google Maps integration.
 
-## Setup
+## Setup Instructions
 
 ### 1. Get Google Maps API Key
 

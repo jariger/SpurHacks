@@ -1,11 +1,60 @@
 "use client"
 
-import { GoogleMapsEmbed } from "@next/third-parties/google"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { X } from "lucide-react"
+import GoogleMap from "../components/GoogleMap"
+
+interface MapConfig {
+  api_key: string | null
+  enabled: boolean
+  vector_support: boolean
+  default_center: {
+    lat: number
+    lng: number
+  }
+  default_zoom: number
+}
 
 export default function HomePage() {
   const [activeModal, setActiveModal] = useState<"about" | "contact" | null>(null)
+  const [mapConfig, setMapConfig] = useState<MapConfig | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    // Fetch map configuration from backend
+    const fetchMapConfig = async () => {
+      try {
+        console.log('Fetching map configuration from backend...')
+        const response = await fetch('http://localhost:5000/api/maps/config', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+        
+        console.log('Response status:', response.status)
+        console.log('Response headers:', response.headers)
+        
+        if (response.ok) {
+          const config = await response.json()
+          console.log('Map config received:', config)
+          setMapConfig(config)
+        } else {
+          const errorText = await response.text()
+          console.error('Backend error:', response.status, errorText)
+          setError(`Failed to load map configuration: ${response.status}`)
+        }
+      } catch (err) {
+        console.error('Network error:', err)
+        setError('Backend connection failed - check if backend is running on port 5000')
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchMapConfig()
+  }, [])
 
   const openModal = (modal: "about" | "contact") => {
     setActiveModal(modal)
@@ -79,31 +128,57 @@ export default function HomePage() {
           <div className="p-8 border-b border-gray-800">
             <h2 className="text-3xl font-bold text-white mb-4">Explore Our Location</h2>
             <p className="text-gray-400 text-lg">
-              Interactive mapping powered by Google Maps. Find us with precision and ease.
+              Interactive vector mapping powered by Google Maps. Find us with precision and ease.
             </p>
           </div>
 
           <div className="relative">
-            {/* Loading placeholder */}
-            <div className="absolute inset-0 bg-gray-900 flex items-center justify-center z-10">
-              <div className="text-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-2 border-gray-600 border-t-white mx-auto mb-4"></div>
-                <p className="text-gray-400">Loading interactive map...</p>
+            {loading ? (
+              <div className="h-[600px] bg-gray-900 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="animate-spin rounded-full h-12 w-12 border-2 border-gray-600 border-t-white mx-auto mb-4"></div>
+                  <p className="text-gray-400">Loading map configuration...</p>
+                </div>
               </div>
-            </div>
-
-            {/* Google Maps Embed */}
-            <GoogleMapsEmbed
-              apiKey="YOUR_GOOGLE_MAPS_API_KEY"
-              height={600}
-              width="100%"
-              mode="place"
-              q="Times+Square,New+York,NY"
-              zoom="15"
-              maptype="roadmap"
-              loading="lazy"
-              style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
-            />
+            ) : error ? (
+              <div className="h-[600px] bg-gray-900 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="text-red-400 mb-4">
+                    <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Map Error</h3>
+                  <p className="text-gray-400">{error}</p>
+                  <p className="text-gray-500 text-sm mt-2">Make sure your backend is running on port 5000</p>
+                </div>
+              </div>
+            ) : mapConfig && mapConfig.api_key ? (
+              <GoogleMap
+                apiKey={mapConfig.api_key}
+                center={mapConfig.default_center}
+                zoom={mapConfig.default_zoom}
+                height="600px"
+                markers={[
+                  {
+                    position: mapConfig.default_center,
+                    title: "MapSite Headquarters"
+                  }
+                ]}
+              />
+            ) : (
+              <div className="h-[600px] bg-gray-900 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="text-yellow-400 mb-4">
+                    <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Google Maps API Key Required</h3>
+                  <p className="text-gray-400">Please add your Google Maps API key to the backend environment variables.</p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
@@ -199,81 +274,36 @@ export default function HomePage() {
                   onClick={closeModal}
                   className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-lg"
                 >
-                  <X size={20} />
+                  <X className="w-5 h-5" />
                 </button>
               </div>
 
               {/* Modal Body */}
               <div className="p-6">
-                <div className="mb-8">
-                  <p className="text-xl text-gray-400 mb-6">
-                    Building the future of location services with cutting-edge technology and innovative design.
+                <div className="prose prose-invert max-w-none">
+                  <p className="text-gray-300 mb-6">
+                    MapSite is a cutting-edge location services platform that combines the power of Google Maps API 
+                    with modern web technologies to deliver an exceptional user experience.
                   </p>
-                </div>
+                  
+                  <h3 className="text-xl font-semibold text-white mb-4">Features</h3>
+                  <ul className="text-gray-300 space-y-2 mb-6">
+                    <li>• Vector-based map rendering for crisp, scalable graphics</li>
+                    <li>• Real-time geocoding and reverse geocoding</li>
+                    <li>• Advanced place search and discovery</li>
+                    <li>• Interactive directions and routing</li>
+                    <li>• Custom map styling and theming</li>
+                    <li>• Responsive design for all devices</li>
+                  </ul>
 
-                <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 mb-8">
-                  <h3 className="text-xl font-bold text-white mb-4">Our Mission</h3>
-                  <div className="space-y-4 text-gray-300">
-                    <p>
-                      At MapSite, we believe that location services should be fast, accurate, and beautifully designed.
-                      We're building the next generation of mapping technology that puts user experience first.
-                    </p>
-                    <p>
-                      Our platform combines the power of Google Maps with modern web technologies to deliver
-                      lightning-fast performance and pixel-perfect design. Whether you're finding directions, exploring
-                      new places, or integrating location services into your applications, we make it simple.
-                    </p>
-                    <p>
-                      Founded in 2024, we're committed to pushing the boundaries of what's possible with location-based
-                      services while maintaining the highest standards of privacy and security.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
-                    <h4 className="text-lg font-bold text-white mb-4">Our Values</h4>
-                    <ul className="space-y-3 text-gray-300">
-                      <li className="flex items-center">
-                        <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                        Innovation in mapping technology
-                      </li>
-                      <li className="flex items-center">
-                        <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                        User-centered design
-                      </li>
-                      <li className="flex items-center">
-                        <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                        Privacy and security first
-                      </li>
-                      <li className="flex items-center">
-                        <span className="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>
-                        Global accessibility
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
-                    <h4 className="text-lg font-bold text-white mb-4">Technology Stack</h4>
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-300">React & Next.js</span>
-                        <span className="text-blue-400 text-sm">Frontend</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-300">Google Maps API</span>
-                        <span className="text-green-400 text-sm">Mapping</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-300">Tailwind CSS</span>
-                        <span className="text-purple-400 text-sm">Styling</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-300">Vercel</span>
-                        <span className="text-pink-400 text-sm">Deployment</span>
-                      </div>
-                    </div>
-                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-4">Technology Stack</h3>
+                  <ul className="text-gray-300 space-y-2">
+                    <li>• Frontend: Next.js 15, React 18, TypeScript</li>
+                    <li>• Backend: Flask, Python</li>
+                    <li>• Maps: Google Maps JavaScript API</li>
+                    <li>• Styling: Tailwind CSS</li>
+                    <li>• UI Components: Radix UI</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -289,138 +319,66 @@ export default function HomePage() {
             <div className="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity" onClick={closeModal} />
 
             {/* Modal Content */}
-            <div className="relative bg-gray-900 border border-gray-800 rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="relative bg-gray-900 border border-gray-800 rounded-2xl shadow-2xl max-w-2xl w-full">
               {/* Modal Header */}
               <div className="flex items-center justify-between p-6 border-b border-gray-800">
                 <h2 className="text-2xl font-bold bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
-                  Get in Touch
+                  Contact Us
                 </h2>
                 <button
                   onClick={closeModal}
                   className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-lg"
                 >
-                  <X size={20} />
+                  <X className="w-5 h-5" />
                 </button>
               </div>
 
               {/* Modal Body */}
               <div className="p-6">
-                <div className="mb-8">
-                  <p className="text-xl text-gray-400">
-                    Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
-                  </p>
-                </div>
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2">Get in Touch</h3>
+                    <p className="text-gray-300">
+                      Have questions about our mapping services? We'd love to hear from you.
+                    </p>
+                  </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  {/* Contact Info */}
-                  <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
-                    <h3 className="text-xl font-bold text-white mb-6">Contact Information</h3>
-                    <div className="space-y-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <span className="text-white text-sm">📍</span>
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-white mb-1">Address</h4>
-                          <p className="text-gray-400">
-                            123 Main Street
-                            <br />
-                            New York, NY 10001
-                          </p>
-                        </div>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                        <span className="text-white text-sm">📧</span>
                       </div>
-
-                      <div className="flex items-start space-x-4">
-                        <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <span className="text-white text-sm">📞</span>
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-white mb-1">Phone</h4>
-                          <p className="text-gray-400">(555) 123-4567</p>
-                        </div>
+                      <div>
+                        <p className="text-white font-medium">Email</p>
+                        <p className="text-gray-400">contact@mapsite.com</p>
                       </div>
+                    </div>
 
-                      <div className="flex items-start space-x-4">
-                        <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <span className="text-white text-sm">✉️</span>
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-white mb-1">Email</h4>
-                          <p className="text-gray-400">hello@mapsite.com</p>
-                        </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                        <span className="text-white text-sm">📞</span>
                       </div>
+                      <div>
+                        <p className="text-white font-medium">Phone</p>
+                        <p className="text-gray-400">+1 (555) 123-4567</p>
+                      </div>
+                    </div>
 
-                      <div className="flex items-start space-x-4">
-                        <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <span className="text-white text-sm">🕒</span>
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-white mb-1">Business Hours</h4>
-                          <p className="text-gray-400">
-                            Monday - Friday
-                            <br />
-                            9:00 AM - 6:00 PM EST
-                          </p>
-                        </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
+                        <span className="text-white text-sm">📍</span>
+                      </div>
+                      <div>
+                        <p className="text-white font-medium">Address</p>
+                        <p className="text-gray-400">123 Main Street, New York, NY 10001</p>
                       </div>
                     </div>
                   </div>
 
-                  {/* Contact Form */}
-                  <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6">
-                    <h3 className="text-xl font-bold text-white mb-6">Send us a Message</h3>
-                    <form className="space-y-4">
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                          Name
-                        </label>
-                        <input
-                          type="text"
-                          id="name"
-                          className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400"
-                          placeholder="Your name"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                          Email
-                        </label>
-                        <input
-                          type="email"
-                          id="email"
-                          className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400"
-                          placeholder="your@email.com"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
-                          Subject
-                        </label>
-                        <input
-                          type="text"
-                          id="subject"
-                          className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400"
-                          placeholder="How can we help?"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                          Message
-                        </label>
-                        <textarea
-                          id="message"
-                          rows={4}
-                          className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400 resize-none"
-                          placeholder="Tell us more about your inquiry..."
-                        ></textarea>
-                      </div>
-                      <button
-                        type="submit"
-                        className="w-full bg-white text-black py-3 px-6 rounded-lg font-medium hover:bg-gray-200 transition-colors"
-                      >
-                        Send Message
-                      </button>
-                    </form>
+                  <div className="pt-4 border-t border-gray-800">
+                    <p className="text-gray-400 text-sm">
+                      Our support team is available 24/7 to assist you with any questions or concerns.
+                    </p>
                   </div>
                 </div>
               </div>
