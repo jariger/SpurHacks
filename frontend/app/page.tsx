@@ -101,7 +101,6 @@ export default function HomePage() {
     document.body.style.overflow = "unset"
   }
 
-<<<<<<< Updated upstream
   const scrollToMap = () => {
     const mapSection = document.getElementById("map-section")
     if (mapSection) {
@@ -112,8 +111,6 @@ export default function HomePage() {
     }
   }
 
-=======
->>>>>>> Stashed changes
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Navigation Bar */}
