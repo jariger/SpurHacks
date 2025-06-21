@@ -177,6 +177,13 @@ export default function GoogleMap({
     })
   }, [apiKey, center.lat, center.lng, zoom, onMapLoad, markers])
 
+  // Update map center when center prop changes
+  useEffect(() => {
+    if (map && center) {
+      map.setCenter(center)
+    }
+  }, [map, center])
+
   if (error) {
     return (
       <div className={`bg-gray-900 border border-gray-800 rounded-lg p-8 text-center ${className}`}>

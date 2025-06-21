@@ -20,6 +20,37 @@ export default function HomePage() {
   const [mapConfig, setMapConfig] = useState<MapConfig | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null)
+
+  useEffect(() => {
+    // Get user's current location
+    const getUserLocation = () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords
+            setUserLocation({ lat: latitude, lng: longitude })
+            console.log('User location obtained:', { lat: latitude, lng: longitude })
+          },
+          (error) => {
+            console.warn('Geolocation error:', error)
+            // Use default location if geolocation fails
+            setUserLocation({ lat: 40.7589, lng: -73.9851 })
+          },
+          {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 300000 // 5 minutes
+          }
+        )
+      } else {
+        console.warn('Geolocation not supported')
+        setUserLocation({ lat: 40.7589, lng: -73.9851 })
+      }
+    }
+
+    getUserLocation()
+  }, [])
 
   useEffect(() => {
     // Fetch map configuration from backend
@@ -126,9 +157,9 @@ export default function HomePage() {
         {/* Map Section */}
         <div className="bg-gray-900/50 rounded-xl border border-gray-800 overflow-hidden backdrop-blur-sm">
           <div className="p-8 border-b border-gray-800">
-            <h2 className="text-3xl font-bold text-white mb-4">Explore Our Location</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">Explore Your Location</h2>
             <p className="text-gray-400 text-lg">
-              Interactive vector mapping powered by Google Maps. Find us with precision and ease.
+              Interactive vector mapping powered by Google Maps. Find your current location with precision and ease.
             </p>
           </div>
 
@@ -137,7 +168,9 @@ export default function HomePage() {
               <div className="h-[600px] bg-gray-900 flex items-center justify-center">
                 <div className="text-center">
                   <div className="animate-spin rounded-full h-12 w-12 border-2 border-gray-600 border-t-white mx-auto mb-4"></div>
-                  <p className="text-gray-400">Loading map configuration...</p>
+                  <p className="text-gray-400">
+                    {userLocation ? 'Loading map configuration...' : 'Getting your location...'}
+                  </p>
                 </div>
               </div>
             ) : error ? (
@@ -156,13 +189,13 @@ export default function HomePage() {
             ) : mapConfig && mapConfig.api_key ? (
               <GoogleMap
                 apiKey={mapConfig.api_key}
-                center={mapConfig.default_center}
+                center={userLocation || mapConfig.default_center}
                 zoom={mapConfig.default_zoom}
                 height="600px"
                 markers={[
                   {
-                    position: mapConfig.default_center,
-                    title: "MapSite Headquarters"
+                    position: userLocation || mapConfig.default_center,
+                    title: userLocation ? "Your Location" : "MapSite Headquarters"
                   }
                 ]}
               />
