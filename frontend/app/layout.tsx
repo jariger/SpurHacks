@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'TrapMap',
   description: 'Created with v0',
   generator: 'v0.dev',
+  icons: {
+    icon: '/Trap_Man.png',  // Replace with your actual filename
+  }
 }
 
 export default function RootLayout({
