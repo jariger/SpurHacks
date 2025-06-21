@@ -1,0 +1,5223 @@
+{
+  "timestamp": "2025-06-21T18:35:28.258475",
+  "geocoded_addresses": {
+    "LIONS CRT": {
+      "lat": 43.4672236,
+      "lng": -80.5510925
+    },
+    "DIETZ AVE S": {
+      "lat": 43.4586951,
+      "lng": -80.5323949
+    },
+    "BRIDGE ST WEST": {
+      "lat": 43.503025,
+      "lng": -80.508826
+    },
+    "ROSELAWN PL": {
+      "lat": 43.4885333,
+      "lng": -80.565745
+    },
+    "FOUNTAIN ST": {
+      "lat": 43.4689841,
+      "lng": -80.5258408
+    },
+    "PINEMEADOW CRES": {
+      "lat": 43.4496254,
+      "lng": -80.5545702
+    },
+    "KEATS WAY": {
+      "lat": 43.4572274,
+      "lng": -80.5595445
+    },
+    "MOORING POST LANE": {
+      "lat": 43.5085894,
+      "lng": -80.5087016
+    },
+    "MILLENIUM BLVD": {
+      "lat": 43.5216457,
+      "lng": -80.4991045
+    },
+    "PINEWOOD PL": {
+      "lat": 43.4663866,
+      "lng": -80.4996948
+    },
+    "WYECROFT BLVD": {
+      "lat": 43.4602843,
+      "lng": -80.5700036
+    },
+    "RIDGEGATE DR": {
+      "lat": 43.4492521,
+      "lng": -80.5567275
+    },
+    "BRANDENBURG PL.": {
+      "lat": 43.4537692,
+      "lng": -80.5774301
+    },
+    "TEMPORARY PARKING LOT B": {
+      "lat": 43.46800870000001,
+      "lng": -80.5216453
+    },
+    "BALSAM POPLAR BLVD": {
+      "lat": 43.4567756,
+      "lng": -80.5984589
+    },
+    "CENTRAL ST LOT": {
+      "lat": 43.4700905,
+      "lng": -80.5270515
+    },
+    "ASHBERRY PL": {
+      "lat": 43.457514,
+      "lng": -80.559844
+    },
+    "WOOD NETTLE WAY": {
+      "lat": 43.4719588,
+      "lng": -80.6037953
+    },
+    "26": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "STONE PATH CRT": {
+      "lat": 43.4472003,
+      "lng": -80.5640871
+    },
+    "NORTHLAKE DR": {
+      "lat": 43.499721,
+      "lng": -80.5621153
+    },
+    "CAIRNCROFT PL": {
+      "lat": 43.4684092,
+      "lng": -80.5738101
+    },
+    "BOWMAN ST": {
+      "lat": 43.4614325,
+      "lng": -80.5124143
+    },
+    "BATHURST DR": {
+      "lat": 43.5108404,
+      "lng": -80.5321445
+    },
+    "WALKING FERN CRT.": {
+      "lat": 43.4584444,
+      "lng": -80.5963771
+    },
+    "OAK PAPK DR": {
+      "lat": 43.5205364,
+      "lng": -80.4970917
+    },
+    "MILLSTREAM": {
+      "lat": 43.5255652,
+      "lng": -80.4927385
+    },
+    "CARRIAGE WAY": {
+      "lat": 43.4932379,
+      "lng": -80.4821651
+    },
+    "BIRCHLEAF WLK": {
+      "lat": 43.4470188,
+      "lng": -80.5633235
+    },
+    "KNIG ST E": {
+      "lat": 43.4282948,
+      "lng": -80.4316097
+    },
+    "GREY SILO": {
+      "lat": 43.5169803,
+      "lng": -80.4922047
+    },
+    "FALLINGBROOK DR": {
+      "lat": 43.4877566,
+      "lng": -80.559209
+    },
+    "GLEN MANOR BLVD": {
+      "lat": 43.4904353,
+      "lng": -80.5526947
+    },
+    "TWIN OAKS CRES": {
+      "lat": 43.4894668,
+      "lng": -80.5564425
+    },
+    "HILLARD PL": {
+      "lat": 43.4534982,
+      "lng": -80.5322514
+    },
+    "LADYSLIPPER DRIVE": {
+      "lat": 43.4538138,
+      "lng": -80.5907775
+    },
+    "HILLARD AVE": {
+      "lat": 43.4540574,
+      "lng": -80.5306922
+    },
+    "SHALLMAR CT": {
+      "lat": 43.4936981,
+      "lng": -80.5059077
+    },
+    "HIGH6572KX": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "FORWELL CREEK RD": {
+      "lat": 43.4854907,
+      "lng": -80.5241912
+    },
+    "WINDJAMMER WAY": {
+      "lat": 43.5075347,
+      "lng": -80.5034109
+    },
+    "ANNAPOLIS DR": {
+      "lat": 43.5054693,
+      "lng": -80.5095433
+    },
+    "ALBERT ST": {
+      "lat": 43.4782842,
+      "lng": -80.535046
+    },
+    "SOUTH HAVEN DR": {
+      "lat": 43.5119151,
+      "lng": -80.5001269
+    },
+    "EDENVALLEY CRES": {
+      "lat": 43.4461649,
+      "lng": -80.5588402
+    },
+    "WESTPARK CRE": {
+      "lat": 43.4442048,
+      "lng": -80.5660515
+    },
+    "RED OSIER ST": {
+      "lat": 43.467575,
+      "lng": -80.5989128
+    },
+    "COLERIDGE PL": {
+      "lat": 43.4600447,
+      "lng": -80.551331
+    },
+    "BLUENOSE CRES": {
+      "lat": 43.5095193,
+      "lng": -80.5018587
+    },
+    "NORMAN ST": {
+      "lat": 43.4575195,
+      "lng": -80.5246666
+    },
+    "COPPER RIDGE DRIVE": {
+      "lat": 43.5209386,
+      "lng": -80.4938211
+    },
+    "ROYAL ST": {
+      "lat": 43.4703151,
+      "lng": -80.5089589
+    },
+    "JEFFERSON CT": {
+      "lat": 43.4957107,
+      "lng": -80.495638
+    },
+    "SUNDEW ST": {
+      "lat": 43.4552634,
+      "lng": -80.5964963
+    },
+    "PUBLIC LANE": {
+      "lat": 43.4725551,
+      "lng": -80.4984076
+    },
+    "PARIS BLVD": {
+      "lat": 43.4495079,
+      "lng": -80.5747463
+    },
+    "DAYNA CRES": {
+      "lat": 43.4948809,
+      "lng": -80.4975893
+    },
+    "GRANGEWOOD DR": {
+      "lat": 43.4925721,
+      "lng": -80.5002349
+    },
+    "VILLA PL": {
+      "lat": 43.4832979,
+      "lng": -80.5148954
+    },
+    "SOUTHWICK PL": {
+      "lat": 43.4890772,
+      "lng": -80.4981279
+    },
+    "RIM PARK 2001 UNIVERSITY AVE": {
+      "lat": 43.5187842,
+      "lng": -80.5023128
+    },
+    "LILLIAN DR": {
+      "lat": 43.4780512,
+      "lng": -80.4985035
+    },
+    "HUNTERSWOOD CRT": {
+      "lat": 43.4959204,
+      "lng": -80.5188563
+    },
+    "PINERIDGE RD": {
+      "lat": 43.4867389,
+      "lng": -80.5644077
+    },
+    "WHITE CEADER AV": {
+      "lat": 43.4696177,
+      "lng": -80.6011097
+    },
+    "WATERLOO PARK CENTRAL LOT": {
+      "lat": 43.4675513,
+      "lng": -80.52717299999999
+    },
+    "NORTHFIELD DR E": {
+      "lat": 43.5100302,
+      "lng": -80.5224841
+    },
+    "TEABLY PL": {
+      "lat": 43.4916009,
+      "lng": -80.5231968
+    },
+    "COUNTRYSTONE PL": {
+      "lat": 43.4376902,
+      "lng": -80.5582423
+    },
+    "EYARROW": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "PARKING LOT B": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "MARGARET AVE S": {
+      "lat": 43.4684858,
+      "lng": -80.5008732
+    },
+    "SEAGRAM DR-LOT C": {
+      "lat": 43.4696414,
+      "lng": -80.5339996
+    },
+    "BOX GROVE PL": {
+      "lat": 43.4899645,
+      "lng": -80.5510435
+    },
+    "AMBERG LANE": {
+      "lat": 43.4577489,
+      "lng": -80.5780664
+    },
+    "CAROLINE ST S": {
+      "lat": 43.4607404,
+      "lng": -80.5219257
+    },
+    "HOLLY VIEW PL": {
+      "lat": 43.4733002,
+      "lng": -80.5868685
+    },
+    "CREEKSIDE DRIVE": {
+      "lat": 43.473558,
+      "lng": -80.5958996
+    },
+    "WILLOWDALE PL": {
+      "lat": 43.4786313,
+      "lng": -80.5144556
+    },
+    "KLOSTERS DR": {
+      "lat": 43.4563742,
+      "lng": -80.5843067
+    },
+    "ANATOLIN PL": {
+      "lat": 43.4593901,
+      "lng": -80.5506228
+    },
+    "COLUMBIA FOREST CRT": {
+      "lat": 43.4615985,
+      "lng": -80.5920446
+    },
+    "PEPPLER ST": {
+      "lat": 43.4689352,
+      "lng": -80.5199667
+    },
+    "LODGE ST": {
+      "lat": 43.4747519,
+      "lng": -80.521071
+    },
+    "WOOD LILY ST": {
+      "lat": 43.4611593,
+      "lng": -80.5995402
+    },
+    "BROOKMILL CRES": {
+      "lat": 43.4730124,
+      "lng": -80.5848161
+    },
+    "CHANCERY LANE": {
+      "lat": 43.4651896,
+      "lng": -80.5764454
+    },
+    "WOOLNER LINK": {
+      "lat": 43.446003,
+      "lng": -80.403159
+    },
+    "HEATHER HILL PL": {
+      "lat": 43.4489929,
+      "lng": -80.5597615
+    },
+    "KELO": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "SUN DROP CRT": {
+      "lat": 43.4619012,
+      "lng": -80.50550899999999
+    },
+    "LAKE LOUISE BLVD": {
+      "lat": 43.4944023,
+      "lng": -80.5776951
+    },
+    "WATERLOO ST": {
+      "lat": 43.4622829,
+      "lng": -80.5079842
+    },
+    "AINSWORTH CRT": {
+      "lat": 43.4557838,
+      "lng": -80.5604841
+    },
+    "REDFOX RD": {
+      "lat": 43.4967903,
+      "lng": -80.5191708
+    },
+    "PINEROW CRT": {
+      "lat": 43.4488611,
+      "lng": -80.571022
+    },
+    "KELSO PL": {
+      "lat": 43.4900706,
+      "lng": -80.583598
+    },
+    "MAYVIEW CRES": {
+      "lat": 43.4999694,
+      "lng": -80.5552255
+    },
+    "SILVER WOOD PL": {
+      "lat": 43.4741296,
+      "lng": -80.5736478
+    },
+    "IRONWOOD PL": {
+      "lat": 43.4398002,
+      "lng": -80.5601577
+    },
+    "MEADOWVALE RD": {
+      "lat": 43.4998657,
+      "lng": -80.5003085
+    },
+    "RED OISER RD": {
+      "lat": 43.467575,
+      "lng": -80.5989128
+    },
+    "RIVER OAK PL": {
+      "lat": 43.5022756,
+      "lng": -80.4804943
+    },
+    "WOODROW DR": {
+      "lat": 43.469395,
+      "lng": -80.5833001
+    },
+    "SUPERIOR DR": {
+      "lat": 43.510602,
+      "lng": -80.5253577
+    },
+    "ERB ST E": {
+      "lat": 43.4692618,
+      "lng": -80.5088975
+    },
+    "GREY ALDER CRT": {
+      "lat": 43.4634692,
+      "lng": -80.592015
+    },
+    "RED OSIER RD": {
+      "lat": 43.467575,
+      "lng": -80.5989128
+    },
+    "KINGSLEY CRES": {
+      "lat": 43.456585,
+      "lng": -80.5385108
+    },
+    "OLD ABBEY CRT": {
+      "lat": 43.4995436,
+      "lng": -80.5244205
+    },
+    "HOMEVIEW PL": {
+      "lat": 43.449272,
+      "lng": -80.5517536
+    },
+    "NORMANDY AVE": {
+      "lat": 43.4969339,
+      "lng": -80.5112635
+    },
+    "CAROLINE ST N": {
+      "lat": 43.4659778,
+      "lng": -80.5258571
+    },
+    "WERN COURT": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "KING ST S": {
+      "lat": 43.460337,
+      "lng": -80.519055
+    },
+    "2 KING ST. N.": {
+      "lat": 43.4653843,
+      "lng": -80.5222035
+    },
+    "OAK PARK WAY": {
+      "lat": 43.5205364,
+      "lng": -80.4970917
+    },
+    "BEVERLEY ST SOUTH": {
+      "lat": 43.4604565,
+      "lng": -80.5323911
+    },
+    "SPRUCEHURST CRES": {
+      "lat": 43.4976146,
+      "lng": -80.559916
+    },
+    "WATERBURY LANE": {
+      "lat": 43.4982183,
+      "lng": -80.5687754
+    },
+    "HICKORY ST E 10": {
+      "lat": 43.4791554,
+      "lng": -80.5239649
+    },
+    "STATE ST": {
+      "lat": 43.477066,
+      "lng": -80.5282422
+    },
+    "NEW BEDFORD DR": {
+      "lat": 43.5111285,
+      "lng": -80.5016591
+    },
+    "UNIVERSITY DOWNS CRES": {
+      "lat": 43.4934911,
+      "lng": -80.4892829
+    },
+    "ESSON ST": {
+      "lat": 43.4567684,
+      "lng": -80.520461
+    },
+    "LAURELWOOD MEWS PLAZA": {
+      "lat": 43.47164,
+      "lng": -80.5827489
+    },
+    "WASAGA ST": {
+      "lat": 43.4895333,
+      "lng": -80.5892562
+    },
+    "JACOB LANE": {
+      "lat": 43.4981272,
+      "lng": -80.5714149
+    },
+    "WINGROVE CRT": {
+      "lat": 43.4609815,
+      "lng": -80.5720107
+    },
+    "COLDSTREAM DR": {
+      "lat": 43.4940741,
+      "lng": -80.5759064
+    },
+    "SOUTHAMPTON PL": {
+      "lat": 43.4447964,
+      "lng": -80.5480151
+    },
+    "FLEMING DR": {
+      "lat": 43.454408,
+      "lng": -80.5646868
+    },
+    "KANE DR": {
+      "lat": 43.4958423,
+      "lng": -80.5042507
+    },
+    "Temporary Parking Lot B": {
+      "lat": 43.46800870000001,
+      "lng": -80.5216453
+    },
+    "LOB A": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "CITY CENTRE PARKING LOT": {
+      "lat": 43.4641575,
+      "lng": -80.51924939999999
+    },
+    "BEECHDROPS DR": {
+      "lat": 43.4536076,
+      "lng": -80.5934017
+    },
+    "OLD STONE RD": {
+      "lat": 43.5020334,
+      "lng": -80.5111499
+    },
+    "HUNTINGDON CRES": {
+      "lat": 43.4929293,
+      "lng": -80.5558352
+    },
+    "CENTRAL ST": {
+      "lat": 43.4700905,
+      "lng": -80.5270515
+    },
+    "MIDDLEBURY DR": {
+      "lat": 43.4420127,
+      "lng": -80.5540365
+    },
+    "FRANK TOMPA DR": {
+      "lat": 43.4768725,
+      "lng": -80.549471
+    },
+    "MCCARRON PL": {
+      "lat": 43.4580771,
+      "lng": -80.5513876
+    },
+    "LOB B": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "COUNTRY SQUIRE LANE": {
+      "lat": 43.519542,
+      "lng": -80.509231
+    },
+    "KING ST W": {
+      "lat": 43.4581255,
+      "lng": -80.5147761
+    },
+    "CARDILL CRES": {
+      "lat": 43.4812535,
+      "lng": -80.5356797
+    },
+    "MONTPELLIER ST": {
+      "lat": 43.448694,
+      "lng": -80.5776656
+    },
+    "EBY ST": {
+      "lat": 43.4465361,
+      "lng": -80.4856847
+    },
+    "LEASIDE PL": {
+      "lat": 43.4764623,
+      "lng": -80.5045353
+    },
+    "MARLOWE DR": {
+      "lat": 43.4623513,
+      "lng": -80.5511726
+    },
+    "BUTTERCUP CRES": {
+      "lat": 43.4736284,
+      "lng": -80.5968062
+    },
+    "STEEPLECHASE WAY": {
+      "lat": 43.4983452,
+      "lng": -80.48531
+    },
+    "KINGSFORD PL": {
+      "lat": 43.4545272,
+      "lng": -80.5578232
+    },
+    "LOURDES ST": {
+      "lat": 43.4571892,
+      "lng": -80.5361269
+    },
+    "GEORGE ST": {
+      "lat": 43.4626906,
+      "lng": -80.5183364
+    },
+    "APPLEDALE CRES": {
+      "lat": 43.4467621,
+      "lng": -80.55443
+    },
+    "GLENRIDGE DR": {
+      "lat": 43.4840867,
+      "lng": -80.5110971
+    },
+    "NOECKER ST 30": {
+      "lat": 43.47172339999999,
+      "lng": -80.5220997
+    },
+    "VOGEL PL": {
+      "lat": 43.4576375,
+      "lng": -80.548545
+    },
+    "RIDEAU RIVER ST": {
+      "lat": 43.4910345,
+      "lng": -80.5892639
+    },
+    "WHITE PINE CRES": {
+      "lat": 43.4963883,
+      "lng": -80.5543423
+    },
+    "ALLEN ST E": {
+      "lat": 43.4658248,
+      "lng": -80.5130533
+    },
+    "HAZEL ST": {
+      "lat": 43.4803813,
+      "lng": -80.5320655
+    },
+    "MANOR RIDGE CRES": {
+      "lat": 43.5206569,
+      "lng": -80.4913704
+    },
+    "BARWICK CRES": {
+      "lat": 43.4976494,
+      "lng": -80.5212312
+    },
+    "CARENE CRT": {
+      "lat": 43.4918801,
+      "lng": -80.4924896
+    },
+    "PLEASANT BAY": {
+      "lat": 43.510744,
+      "lng": -80.5096323
+    },
+    "BUTTERCUP COURT": {
+      "lat": 43.4736284,
+      "lng": -80.5968062
+    },
+    "SPRUCE ST": {
+      "lat": 43.4793241,
+      "lng": -80.5269072
+    },
+    "STARBOARD CRES": {
+      "lat": 43.5108085,
+      "lng": -80.5058913
+    },
+    "YOUNG ST E": {
+      "lat": 43.4687299,
+      "lng": -80.5214265
+    },
+    "LIBRARY PARKING LOT": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "SPINNAKER CRES": {
+      "lat": 43.5100715,
+      "lng": -80.5167286
+    },
+    "SEAGRAM LOT": {
+      "lat": 43.4697083,
+      "lng": -80.5332566
+    },
+    "DUNBAR RD N": {
+      "lat": 43.4620172,
+      "lng": -80.5309926
+    },
+    "WASAGA  CRES": {
+      "lat": 43.4895333,
+      "lng": -80.5892562
+    },
+    "MARSHALL ST": {
+      "lat": 43.4749939,
+      "lng": -80.5172606
+    },
+    "ERBSVILLE RD": {
+      "lat": 43.468058,
+      "lng": -80.5893349
+    },
+    "CITY TEMPORARY LOT A": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "BRIDGEPORT RD W LOT": {
+      "lat": 43.4674901,
+      "lng": -80.5242352
+    },
+    "APPLEGATE CRT.": {
+      "lat": 43.442562,
+      "lng": -80.5647079
+    },
+    "MCCARRON CRES": {
+      "lat": 43.458497,
+      "lng": -80.5534352
+    },
+    "INNSBRUCK PL": {
+      "lat": 43.4588537,
+      "lng": -80.58382
+    },
+    "WILD RYE ST": {
+      "lat": 43.4593684,
+      "lng": -80.6003351
+    },
+    "CREEKRIDGE": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "511 CHESAPEAKE": {
+      "lat": 43.510723,
+      "lng": -80.51553919999999
+    },
+    "GINSENG": {
+      "lat": 43.4513536,
+      "lng": -80.5921981
+    },
+    "SHADOW WOOD CT": {
+      "lat": 43.4853826,
+      "lng": -80.4865163
+    },
+    "W": {
+      "lat": 43.4645109,
+      "lng": -80.5218137
+    },
+    "MILLCROFT PL": {
+      "lat": 43.4414263,
+      "lng": -80.5592043
+    },
+    "CARLAW CRES": {
+      "lat": 43.4850642,
+      "lng": -80.507842
+    },
+    "DUPONT ST E": {
+      "lat": 43.4662484,
+      "lng": -80.5208973
+    },
+    "ONTARIO ST N": {
+      "lat": 43.4513721,
+      "lng": -80.4896047
+    },
+    "LUKES HOUSE": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "KEATSWAY DR": {
+      "lat": 43.4572274,
+      "lng": -80.5595445
+    },
+    "BRENTCLIFFE CRES": {
+      "lat": 43.4687725,
+      "lng": -80.5765587
+    },
+    "KLOSTERS DRIVE": {
+      "lat": 43.4563742,
+      "lng": -80.5843067
+    },
+    "BAFFIN PL": {
+      "lat": 43.5067785,
+      "lng": -80.5298851
+    },
+    "PINELAND CT": {
+      "lat": 43.4712922,
+      "lng": -80.5783311
+    },
+    "CORNERBROOK PL": {
+      "lat": 43.4914901,
+      "lng": -80.5670083
+    },
+    "WYMAN RD": {
+      "lat": 43.5047274,
+      "lng": -80.5374833
+    },
+    "KING ST N #2": {
+      "lat": 43.4653843,
+      "lng": -80.5222035
+    },
+    "DIETZ AVE N": {
+      "lat": 43.4612197,
+      "lng": -80.5344546
+    },
+    "AUSTIN DR": {
+      "lat": 43.4821667,
+      "lng": -80.5308553
+    },
+    "PARK ROAD": {
+      "lat": 43.5180056,
+      "lng": -80.4983116
+    },
+    "SHAGBARK CRT": {
+      "lat": 43.507653,
+      "lng": -80.5194442
+    },
+    "SLEAFORD ST": {
+      "lat": 43.4907293,
+      "lng": -80.5214801
+    },
+    "4": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "VOILET": {
+      "lat": 43.4684208,
+      "lng": -80.5979934
+    },
+    "BRYNHURST BLVD": {
+      "lat": 43.4583734,
+      "lng": -80.5651923
+    },
+    "COUNTRY SQUIRE RD": {
+      "lat": 43.5273621,
+      "lng": -80.4917628
+    },
+    "UNION ST W": {
+      "lat": 43.4585001,
+      "lng": -80.5154608
+    },
+    "RIDEAU RIVER PL": {
+      "lat": 43.4913915,
+      "lng": -80.5915055
+    },
+    "KUNTZ LANE": {
+      "lat": 43.4617018,
+      "lng": -80.5208116
+    },
+    "ALEXANDRA PARKING LOT": {
+      "lat": 43.4612547,
+      "lng": -80.5229798
+    },
+    "BAUER PL": {
+      "lat": 43.4962312,
+      "lng": -80.5312683
+    },
+    "REGINA ST S": {
+      "lat": 43.4639852,
+      "lng": -80.5208049
+    },
+    "DOMINION LANE": {
+      "lat": 43.4654694,
+      "lng": -80.5229977
+    },
+    "YOUNG ST": {
+      "lat": 43.4681706,
+      "lng": -80.5255073
+    },
+    "FORESTLAWN RD": {
+      "lat": 43.5006175,
+      "lng": -80.4992144
+    },
+    "VOID": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "EARL ST": {
+      "lat": 43.452833,
+      "lng": -80.5195592
+    },
+    "SAUVE CRES": {
+      "lat": 43.4497725,
+      "lng": -80.576276
+    },
+    "YORK ST": {
+      "lat": 43.4573001,
+      "lng": -80.5198878
+    },
+    "DEER RUN DR": {
+      "lat": 43.5086909,
+      "lng": -80.5188091
+    },
+    "CAROLINE PARKING LOT N": {
+      "lat": 43.47465580000001,
+      "lng": -80.5452226
+    },
+    "BAYHAMPTON CRES": {
+      "lat": 43.5015873,
+      "lng": -80.525493
+    },
+    "HOLBEACH CRES": {
+      "lat": 43.4891289,
+      "lng": -80.5189719
+    },
+    "LAUREL ST": {
+      "lat": 43.4669264,
+      "lng": -80.5178492
+    },
+    "HAVENDALE CRES": {
+      "lat": 43.4704992,
+      "lng": -80.5806794
+    },
+    "CARDINAL CRES S": {
+      "lat": 43.4699439,
+      "lng": -80.4992039
+    },
+    "CARRINGTON PL": {
+      "lat": 43.4599767,
+      "lng": -80.5754921
+    },
+    "CONCORDIA CRES": {
+      "lat": 43.4942139,
+      "lng": -80.5032482
+    },
+    "LEE AVE": {
+      "lat": 43.4977771,
+      "lng": -80.5077565
+    },
+    "WESTPARK CRES": {
+      "lat": 43.4442048,
+      "lng": -80.5660515
+    },
+    "SWEET GALE ST.": {
+      "lat": 43.4515063,
+      "lng": -80.5907402
+    },
+    "LAUREL TRAIL": {
+      "lat": 43.4687186,
+      "lng": -80.5334731
+    },
+    "CLEARWATER CRES": {
+      "lat": 43.4924289,
+      "lng": -80.5627118
+    },
+    "TWIN LEAF ST": {
+      "lat": 43.454256,
+      "lng": -80.5952542
+    },
+    "ACADIA CRT": {
+      "lat": 43.5035389,
+      "lng": -80.5081427
+    },
+    "MACKAY CRES": {
+      "lat": 43.4736185,
+      "lng": -80.5134329
+    },
+    "ST. ARMAND DR": {
+      "lat": 43.4506198,
+      "lng": -80.5733473
+    },
+    "KEATSWOOD CRES": {
+      "lat": 43.4560019,
+      "lng": -80.5728619
+    },
+    "LUCAN AVE": {
+      "lat": 43.4620934,
+      "lng": -80.5114795
+    },
+    "FATHER DAVID BAUER DR": {
+      "lat": 43.4651504,
+      "lng": -80.5317594
+    },
+    "BIRCHMOUNT DR": {
+      "lat": 43.4746742,
+      "lng": -80.5908538
+    },
+    "OAKRIDGE PL": {
+      "lat": 43.4889578,
+      "lng": -80.5597258
+    },
+    "FRIEBURG DR": {
+      "lat": 43.4557871,
+      "lng": -80.580451
+    },
+    "WILLIS WAY": {
+      "lat": 43.4633984,
+      "lng": -80.5224426
+    },
+    "CABOT TRAIL": {
+      "lat": 43.5047586,
+      "lng": -80.5027848
+    },
+    "CALVINGTON PL": {
+      "lat": 43.463983,
+      "lng": -80.5662495
+    },
+    "COUNTRYSTONE DRIVE": {
+      "lat": 43.4376902,
+      "lng": -80.5582423
+    },
+    "REGENCY CRES": {
+      "lat": 43.4608414,
+      "lng": -80.5650191
+    },
+    "GREENBRIER DR": {
+      "lat": 43.4888606,
+      "lng": -80.5390623
+    },
+    "HILLSIDE ST": {
+      "lat": 43.5019824,
+      "lng": -80.5015194
+    },
+    "WESTHOLLOW CT": {
+      "lat": 43.4455938,
+      "lng": -80.5637763
+    },
+    "DARTMOOR CRES": {
+      "lat": 43.4866978,
+      "lng": -80.4868998
+    },
+    "SAND WOOD PL": {
+      "lat": 43.4726803,
+      "lng": -80.5723758
+    },
+    "MONARCH PL": {
+      "lat": 43.4994716,
+      "lng": -80.5603459
+    },
+    "WATERLOO TEMPORARY LOT B": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "PINEGROVE CRES": {
+      "lat": 43.4906674,
+      "lng": -80.5502171
+    },
+    "BALSAM ST": {
+      "lat": 43.4760051,
+      "lng": -80.5303739
+    },
+    "MUSTANG PL": {
+      "lat": 43.498631,
+      "lng": -80.4933612
+    },
+    "THORNHILL PL.": {
+      "lat": 43.4415708,
+      "lng": -80.5637279
+    },
+    "BARREL YARDS BLVD.": {
+      "lat": 43.4643107,
+      "lng": -80.5293881
+    },
+    "SUNDEW DRIVE": {
+      "lat": 43.4552634,
+      "lng": -80.5964963
+    },
+    "MACGREGOR CRES": {
+      "lat": 43.4815786,
+      "lng": -80.5131353
+    },
+    "STRAWBERRY CRES": {
+      "lat": 43.4912958,
+      "lng": -80.4940446
+    },
+    "PASTURE ROSE ST": {
+      "lat": 43.4616942,
+      "lng": -80.6020983
+    },
+    "NEWPORT PL": {
+      "lat": 43.4445074,
+      "lng": -80.5488464
+    },
+    "PINEROW CRES": {
+      "lat": 43.4489536,
+      "lng": -80.5708038
+    },
+    "RUSTIC DR": {
+      "lat": 43.5057407,
+      "lng": -80.51584
+    },
+    "YARMOUTH DR": {
+      "lat": 43.5101761,
+      "lng": -80.4983857
+    },
+    "6": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "LEXINGTON CRES": {
+      "lat": 43.5008061,
+      "lng": -80.4878458
+    },
+    "DOWNSVIEW PL": {
+      "lat": 43.4873453,
+      "lng": -80.4843659
+    },
+    "EDENBROOK PL": {
+      "lat": 43.4882596,
+      "lng": -80.5584797
+    },
+    "WESTHOLLOW CRT": {
+      "lat": 43.4455938,
+      "lng": -80.5637763
+    },
+    "BUTTERCUP CRT": {
+      "lat": 43.4736284,
+      "lng": -80.5968062
+    },
+    "GLENECHO CRT": {
+      "lat": 43.4945451,
+      "lng": -80.5151618
+    },
+    "BLUENOSE CRT": {
+      "lat": 43.5093299,
+      "lng": -80.5018953
+    },
+    "RED OSIER": {
+      "lat": 43.467575,
+      "lng": -80.5989128
+    },
+    "GARDEN TREE CRT": {
+      "lat": 43.4461803,
+      "lng": -80.5451152
+    },
+    "WILD RYE ST.": {
+      "lat": 43.4593684,
+      "lng": -80.6003351
+    },
+    "LOT A": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "SAUVE DR": {
+      "lat": 43.4497725,
+      "lng": -80.576276
+    },
+    "REIBER CRT": {
+      "lat": 43.4558388,
+      "lng": -80.5523878
+    },
+    "SANDOWNE DR": {
+      "lat": 43.4909381,
+      "lng": -80.5005836
+    },
+    "ROCK ELM ST": {
+      "lat": 43.4607012,
+      "lng": -80.6011992
+    },
+    "CHURCH ST": {
+      "lat": 43.3925558,
+      "lng": -80.3595413
+    },
+    "SHAKESPEARE PL": {
+      "lat": 43.4663598,
+      "lng": -80.5490663
+    },
+    "ROSE LEA CRES": {
+      "lat": 43.4770612,
+      "lng": -80.5022774
+    },
+    "SNOWBERRY CT": {
+      "lat": 43.4615162,
+      "lng": -80.6028974
+    },
+    "HALLMARK DR": {
+      "lat": 43.4998354,
+      "lng": -80.5216215
+    },
+    "TIDEWATER PL": {
+      "lat": 43.4897609,
+      "lng": -80.5847419
+    },
+    "SABLE CRT": {
+      "lat": 43.4908148,
+      "lng": -80.4910324
+    },
+    "RED OISEN RD": {
+      "lat": 43.467575,
+      "lng": -80.5989128
+    },
+    "CIDER MILL": {
+      "lat": 43.5250345,
+      "lng": -80.4953803
+    },
+    "EMERGENCY ACCESS RD": {
+      "lat": 43.3003757,
+      "lng": -80.485704
+    },
+    "COPPERCROFT CRT": {
+      "lat": 43.5033441,
+      "lng": -80.5239936
+    },
+    "AMOS AVE": {
+      "lat": 43.4588067,
+      "lng": -80.548734
+    },
+    "PELHAM ST": {
+      "lat": 43.4947816,
+      "lng": -80.4841862
+    },
+    "KILLBEAR CT": {
+      "lat": 43.4913168,
+      "lng": -80.5805142
+    },
+    "BUTTON BUSH ST": {
+      "lat": 43.4505656,
+      "lng": -80.5905335
+    },
+    "WERN CRT": {
+      "lat": 43.4721517,
+      "lng": -80.5439318
+    },
+    "LOT-A": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "BUTTERCUP CT": {
+      "lat": 43.4736284,
+      "lng": -80.5968062
+    },
+    "COMBERMERE CRES": {
+      "lat": 43.4640814,
+      "lng": -80.5555773
+    },
+    "S HAVEN DR": {
+      "lat": 43.5119151,
+      "lng": -80.5001269
+    },
+    "PINE ISLAND CRES": {
+      "lat": 43.4949111,
+      "lng": -80.5633329
+    },
+    "ROSEBRIAR CRT": {
+      "lat": 43.5055457,
+      "lng": -80.5189632
+    },
+    "DEERBERRY PL": {
+      "lat": 43.4929943,
+      "lng": -80.5619414
+    },
+    "THE BOARDWALK": {
+      "lat": 43.4390623,
+      "lng": -80.5643749
+    },
+    "NEW HAMPSHIRE ST": {
+      "lat": 43.5127703,
+      "lng": -80.503346
+    },
+    "BRIDLE PATH CRT": {
+      "lat": 43.4687076,
+      "lng": -80.5597704
+    },
+    "JEFFERSON CRT": {
+      "lat": 43.4957107,
+      "lng": -80.495638
+    },
+    "EZRA AVE": {
+      "lat": 43.4714835,
+      "lng": -80.5263842
+    },
+    "TEMP LOT A": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "MONTPELLIER DR": {
+      "lat": 43.448694,
+      "lng": -80.5776656
+    },
+    "HILLCREST AVE": {
+      "lat": 43.4572106,
+      "lng": -80.5292848
+    },
+    "BRICKER AVE": {
+      "lat": 43.4722624,
+      "lng": -80.5268803
+    },
+    "ERBSVILLE CT": {
+      "lat": 43.4506524,
+      "lng": -80.5686604
+    },
+    "REGINA ST N 30": {
+      "lat": 43.4669393,
+      "lng": -80.52140159999999
+    },
+    "GRASSLANDS CRT": {
+      "lat": 43.4920524,
+      "lng": -80.5775518
+    },
+    "RUNNING BROOK PL": {
+      "lat": 43.4993362,
+      "lng": -80.4989015
+    },
+    "MALLARD CRES": {
+      "lat": 43.4960248,
+      "lng": -80.55822
+    },
+    "BRAEMORE CIR": {
+      "lat": 43.4898231,
+      "lng": -80.4965929
+    },
+    "CHANCERY PL": {
+      "lat": 43.4652278,
+      "lng": -80.5804962
+    },
+    "BAKER ST": {
+      "lat": 43.4393457,
+      "lng": -80.559611
+    },
+    "CHABLIS DR": {
+      "lat": 43.4498774,
+      "lng": -80.574396
+    },
+    "THORNBUSH CRES": {
+      "lat": 43.4507714,
+      "lng": -80.55307
+    },
+    "UNIVERISTY AVE W": {
+      "lat": 43.45641,
+      "lng": -80.5394465
+    },
+    "AVONDALE AVE N": {
+      "lat": 43.4629976,
+      "lng": -80.5304172
+    },
+    "WEST PARK DR": {
+      "lat": 43.4442048,
+      "lng": -80.5660515
+    },
+    "COLT STREET": {
+      "lat": 43.4983072,
+      "lng": -80.4922163
+    },
+    "CARTER AVE": {
+      "lat": 43.4786594,
+      "lng": -80.5139847
+    },
+    "BRIDGEPORT RD E": {
+      "lat": 43.4714771,
+      "lng": -80.5084062
+    },
+    "SPRINGWATER PL": {
+      "lat": 43.4911453,
+      "lng": -80.584457
+    },
+    "WESTFIELD PL": {
+      "lat": 43.4433261,
+      "lng": -80.5637586
+    },
+    "CAMELOT CRT": {
+      "lat": 43.4917576,
+      "lng": -80.5083306
+    },
+    "THE LIONS GATE": {
+      "lat": 43.4678334,
+      "lng": -80.5508919
+    },
+    "CRIMSON CRES": {
+      "lat": 43.4938611,
+      "lng": -80.4964745
+    },
+    "LAUREL GATE DR": {
+      "lat": 43.4731445,
+      "lng": -80.5732469
+    },
+    "VERNI CRT": {
+      "lat": 43.4721517,
+      "lng": -80.5439318
+    },
+    "WATERLOO REC. COMPLEX": {
+      "lat": 43.46434620000001,
+      "lng": -80.532484
+    },
+    "CITADEL CT": {
+      "lat": 43.5063828,
+      "lng": -80.5037569
+    },
+    "MANORWOOD CRT": {
+      "lat": 43.5018463,
+      "lng": -80.5185914
+    },
+    "100 REGINA ST S": {
+      "lat": 43.46336429999999,
+      "lng": -80.5201999
+    },
+    "AVONDALE AVE S": {
+      "lat": 43.4587134,
+      "lng": -80.5263358
+    },
+    "ACADEMY CRES": {
+      "lat": 43.4675566,
+      "lng": -80.5549027
+    },
+    "LEXINGTON RD": {
+      "lat": 43.494982,
+      "lng": -80.5096572
+    },
+    "LANGSFELD LANE": {
+      "lat": 43.4725551,
+      "lng": -80.4984076
+    },
+    "WISMER ST": {
+      "lat": 43.4971251,
+      "lng": -80.4889103
+    },
+    "GILLEN ST": {
+      "lat": 43.4651294,
+      "lng": -80.5201731
+    },
+    "BROOKHAVEN CRES": {
+      "lat": 43.4873565,
+      "lng": -80.554014
+    },
+    "KIAWANIS PARK DRIVE": {
+      "lat": 43.5002069,
+      "lng": -80.4802406
+    },
+    "INGLIS FALLS PL": {
+      "lat": 43.4936533,
+      "lng": -80.5743574
+    },
+    "DUPONT PARKING LOT": {
+      "lat": 43.4656403,
+      "lng": -80.52524749999999
+    },
+    "ELGIN ST": {
+      "lat": 43.4703842,
+      "lng": -80.5218621
+    },
+    "BEECHWOOD PL": {
+      "lat": 43.4521755,
+      "lng": -80.5573909
+    },
+    "GOLDEN EAGLE RD": {
+      "lat": 43.4982935,
+      "lng": -80.5524739
+    },
+    "BARREL YARDS BLVD": {
+      "lat": 43.4643107,
+      "lng": -80.5293881
+    },
+    "SPRINGFIELD PL": {
+      "lat": 43.4405706,
+      "lng": -80.5568196
+    },
+    "CANEWOOD PL": {
+      "lat": 43.4844966,
+      "lng": -80.5556011
+    },
+    "LAURELWOOD DR": {
+      "lat": 43.47164,
+      "lng": -80.5827489
+    },
+    "SEAWIND TRAIL": {
+      "lat": 43.5111877,
+      "lng": -80.5114548
+    },
+    "TREMBLING ASPEN AVE": {
+      "lat": 43.4685719,
+      "lng": -80.5934239
+    },
+    "639-649 ALBERT ST": {
+      "lat": 43.4906424,
+      "lng": -80.540319
+    },
+    "225 THE BOARDWALK": {
+      "lat": 43.4348009,
+      "lng": -80.5624703
+    },
+    "BARREL YARDS BLVDS": {
+      "lat": 43.4643107,
+      "lng": -80.5293881
+    },
+    "VIOLET STREET": {
+      "lat": 43.4684208,
+      "lng": -80.5979934
+    },
+    "ERZA": {
+      "lat": 43.4714835,
+      "lng": -80.5263842
+    },
+    "BRONCO CRES": {
+      "lat": 43.4965457,
+      "lng": -80.4919573
+    },
+    "WERNI CRT": {
+      "lat": 43.474238,
+      "lng": -80.5955413
+    },
+    "MAYFLOWER ST": {
+      "lat": 43.505149,
+      "lng": -80.5071859
+    },
+    "RIDEAU RIVER": {
+      "lat": 43.4910345,
+      "lng": -80.5892639
+    },
+    "GRAHAM ST": {
+      "lat": 43.4611871,
+      "lng": -80.5072422
+    },
+    "MT ANNE DR": {
+      "lat": 43.4916353,
+      "lng": -80.5465729
+    },
+    "HERRON PL": {
+      "lat": 43.4422096,
+      "lng": -80.5475332
+    },
+    "WINTERBURG CRT": {
+      "lat": 43.4570568,
+      "lng": -80.5867713
+    },
+    "FOREST GATE CRES": {
+      "lat": 43.4762948,
+      "lng": -80.5976829
+    },
+    "BLUEVALE ST": {
+      "lat": 43.4707384,
+      "lng": -80.5000238
+    },
+    "PEGGY'S COVE LANE": {
+      "lat": 43.5106327,
+      "lng": -80.4999568
+    },
+    "TEALBY CRES": {
+      "lat": 43.489914,
+      "lng": -80.5223125
+    },
+    "MOSSOM PL": {
+      "lat": 43.494127,
+      "lng": -80.5057601
+    },
+    "CAVALLETTI CRT": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "HAGEN CT": {
+      "lat": 43.5031341,
+      "lng": -80.5021491
+    },
+    "BATAVIA PL": {
+      "lat": 43.4771098,
+      "lng": -80.5356255
+    },
+    "ST MORITZ AVE": {
+      "lat": 43.451705,
+      "lng": -80.5808988
+    },
+    "STANLEY DR": {
+      "lat": 43.4527775,
+      "lng": -80.5310857
+    },
+    "JAMES ST": {
+      "lat": 43.4721497,
+      "lng": -80.5234407
+    },
+    "CITY OF WATERLOO": {
+      "lat": 43.4819783,
+      "lng": -80.526122
+    },
+    "PINELAND PL": {
+      "lat": 43.4703912,
+      "lng": -80.5759803
+    },
+    "RIDEAU RIVER CRES": {
+      "lat": 43.4910345,
+      "lng": -80.5892639
+    },
+    "QUIET PL": {
+      "lat": 43.4864535,
+      "lng": -80.543313
+    },
+    "COLUMBIA FOREST BLVD": {
+      "lat": 43.4635593,
+      "lng": -80.5877428
+    },
+    "CKBE987": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "APPLEGATE CT.": {
+      "lat": 43.442562,
+      "lng": -80.5647079
+    },
+    "HAVENDALE PL": {
+      "lat": 43.4698147,
+      "lng": -80.581746
+    },
+    "ALTHEIM CRES": {
+      "lat": 43.4542624,
+      "lng": -80.5823296
+    },
+    "KINGSCOURT DR": {
+      "lat": 43.4962069,
+      "lng": -80.5237928
+    },
+    "20 MAYFIELD AVE": {
+      "lat": 43.4799585,
+      "lng": -80.49907999999999
+    },
+    "RIDEAU RIVER ST.": {
+      "lat": 43.4910345,
+      "lng": -80.5892639
+    },
+    "WATERLOO SQUARE": {
+      "lat": 43.46373029999999,
+      "lng": -80.5228332
+    },
+    "COLUMBIA ST W": {
+      "lat": 43.4693624,
+      "lng": -80.5611511
+    },
+    "PARKMOUNT PL": {
+      "lat": 43.484886,
+      "lng": -80.5570594
+    },
+    "608 NEW HAMPSHIRE ST": {
+      "lat": 43.5116289,
+      "lng": -80.5030158
+    },
+    "WATERSIDE AVE": {
+      "lat": 43.3732786,
+      "lng": -80.3204615
+    },
+    "LADYSLIPPER DR": {
+      "lat": 43.4538138,
+      "lng": -80.5907775
+    },
+    "WATERLOO TEMPORARY PARKING LOT A": {
+      "lat": 43.46746599999999,
+      "lng": -80.5220202
+    },
+    "WHITMORE DR": {
+      "lat": 43.497305,
+      "lng": -80.5084541
+    },
+    "SUNDROPS DR": {
+      "lat": 43.4618291,
+      "lng": -80.6039645
+    },
+    "PARK RD": {
+      "lat": 43.5180056,
+      "lng": -80.4983116
+    },
+    "CAVENDISH DR": {
+      "lat": 43.4643432,
+      "lng": -80.577716
+    },
+    "JOHN ST W": {
+      "lat": 43.4550354,
+      "lng": -80.5238588
+    },
+    "MARGARET AVE": {
+      "lat": 43.4746456,
+      "lng": -80.5053751
+    },
+    "BASSWOOD ST": {
+      "lat": 43.4653684,
+      "lng": -80.5856244
+    },
+    "DEW DROP": {
+      "lat": 43.4532018,
+      "lng": -80.5887589
+    },
+    "ALTHEIM PLACE": {
+      "lat": 43.4545824,
+      "lng": -80.5818493
+    },
+    "CLAIR CREEK BLVD": {
+      "lat": 43.4625255,
+      "lng": -80.5726802
+    },
+    "NEW FOREST CRT": {
+      "lat": 43.4920499,
+      "lng": -80.4881658
+    },
+    "HOLBEACH CRT": {
+      "lat": 43.4898834,
+      "lng": -80.518401
+    },
+    "BUTTON BUSH": {
+      "lat": 43.4505656,
+      "lng": -80.5905335
+    },
+    "CEDARGROVE PL": {
+      "lat": 43.4890404,
+      "lng": -80.5641557
+    },
+    "CULPEPPER PL": {
+      "lat": 43.4531237,
+      "lng": -80.5463314
+    },
+    "MONTPELLIER DR.": {
+      "lat": 43.448694,
+      "lng": -80.5776656
+    },
+    "CHESAPEAKE CRES": {
+      "lat": 43.5114158,
+      "lng": -80.514546
+    },
+    "CARLAW PL": {
+      "lat": 43.4850642,
+      "lng": -80.507842
+    },
+    "ROOSEVELT AVE": {
+      "lat": 43.451606,
+      "lng": -80.5463689
+    },
+    "AVENS": {
+      "lat": 43.4538069,
+      "lng": -80.5960497
+    },
+    "KIWANIS PARK DR": {
+      "lat": 43.5002069,
+      "lng": -80.4802406
+    },
+    "FOREST GATE CRS": {
+      "lat": 43.4762948,
+      "lng": -80.5976829
+    },
+    "SANDY RIDGE PL": {
+      "lat": 43.4551202,
+      "lng": -80.5640302
+    },
+    "BRIDLE TRAIL": {
+      "lat": 43.486477,
+      "lng": -80.4861401
+    },
+    "KAUFMAN FLATTS": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "HUGHES LANE": {
+      "lat": 43.4637164,
+      "lng": -80.5213473
+    },
+    "ROSLIN AVE S": {
+      "lat": 43.4578566,
+      "lng": -80.5285822
+    },
+    "CLIPPER DRIVE": {
+      "lat": 43.5086213,
+      "lng": -80.5099922
+    },
+    "FRANK TOMPA DRIVE": {
+      "lat": 43.4768725,
+      "lng": -80.549471
+    },
+    "PANCHARA PL": {
+      "lat": 43.505797,
+      "lng": -80.4992746
+    },
+    "FRANCIS ST S": {
+      "lat": 43.4513271,
+      "lng": -80.4969254
+    },
+    "LORINDALE ST": {
+      "lat": 43.501424,
+      "lng": -80.5051971
+    },
+    "TWEED ST": {
+      "lat": 43.4667489,
+      "lng": -80.5176544
+    },
+    "MEADOW SWEET AVE": {
+      "lat": 43.4702246,
+      "lng": -80.603891
+    },
+    "PHILLIP ST": {
+      "lat": 43.4779031,
+      "lng": -80.540535
+    },
+    "PARKMOUNT DR": {
+      "lat": 43.4852827,
+      "lng": -80.556642
+    },
+    "BAMBURG CRES": {
+      "lat": 43.452916,
+      "lng": -80.5805193
+    },
+    "CREEKSIDE DR": {
+      "lat": 43.473558,
+      "lng": -80.5958996
+    },
+    "CEDAR MILL DRIVE": {
+      "lat": 43.5250345,
+      "lng": -80.4953803
+    },
+    "29 WILLIAM ST E": {
+      "lat": 43.4642377,
+      "lng": -80.5176078
+    },
+    "MOORE AVE N": {
+      "lat": 43.4673889,
+      "lng": -80.5157091
+    },
+    "FRANCIS ST N": {
+      "lat": 43.4531866,
+      "lng": -80.4951739
+    },
+    "LKLG": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "BARRINGTON LANE": {
+      "lat": 43.4568519,
+      "lng": -80.5584404
+    },
+    "RIDEAU RIVER PLACE": {
+      "lat": 43.4913915,
+      "lng": -80.5915055
+    },
+    "FERN CRES": {
+      "lat": 43.4979716,
+      "lng": -80.5577809
+    },
+    "GOLDBECK LANE": {
+      "lat": 43.4725551,
+      "lng": -80.4984076
+    },
+    "SUNDEW DR.": {
+      "lat": 43.4552634,
+      "lng": -80.5964963
+    },
+    "VIRGINA CREEPER ST": {
+      "lat": 43.4722518,
+      "lng": -80.5997727
+    },
+    "CIDERMILL": {
+      "lat": 43.5250345,
+      "lng": -80.4953803
+    },
+    "GRAND BANKS DR": {
+      "lat": 43.512691,
+      "lng": -80.4994119
+    },
+    "WOOLWICH ST N": {
+      "lat": 43.5154399,
+      "lng": -80.4970661
+    },
+    "BECHTEL PARK": {
+      "lat": 43.4857022,
+      "lng": -80.4925724
+    },
+    "OSPREY DR": {
+      "lat": 43.4965415,
+      "lng": -80.5682842
+    },
+    "MARSLAND DR": {
+      "lat": 43.4819341,
+      "lng": -80.5173688
+    },
+    "WEST HOLLOW CT": {
+      "lat": 43.4455938,
+      "lng": -80.5637763
+    },
+    "SCOTT ST": {
+      "lat": 43.5122548,
+      "lng": -80.5449496
+    },
+    "ELLIS CRES N": {
+      "lat": 43.4724665,
+      "lng": -80.5076465
+    },
+    "SUNVIEW ST": {
+      "lat": 43.4737442,
+      "lng": -80.5331118
+    },
+    "80 FATHER DAVID BAUER DR": {
+      "lat": 43.46541,
+      "lng": -80.53255
+    },
+    "20 REGINA ST S": {
+      "lat": 43.4646546,
+      "lng": -80.5206458
+    },
+    "WISSLER RD": {
+      "lat": 43.507057,
+      "lng": -80.51825
+    },
+    "CAROLINE NORTH PARKING LOT": {
+      "lat": 43.4659778,
+      "lng": -80.5258571
+    },
+    "COLUMBIA ST E": {
+      "lat": 43.483255,
+      "lng": -80.5227091
+    },
+    "AVIGNON PL": {
+      "lat": 43.4515715,
+      "lng": -80.5757726
+    },
+    "PARKRIDGE CRT": {
+      "lat": 43.5051807,
+      "lng": -80.5174602
+    },
+    "ASCOT PL": {
+      "lat": 43.4812813,
+      "lng": -80.501701
+    },
+    "LOT-B": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "OAK PARK DRIVE": {
+      "lat": 43.5205364,
+      "lng": -80.4970917
+    },
+    "SHADOW WOOD CRT": {
+      "lat": 43.4853826,
+      "lng": -80.4865163
+    },
+    "TEMPORARY PARKING LOT A": {
+      "lat": 43.46746599999999,
+      "lng": -80.5220202
+    },
+    "ROGER ST": {
+      "lat": 43.4616501,
+      "lng": -80.5083815
+    },
+    "CITY OF WATERLOO LOT A": {
+      "lat": 43.4819783,
+      "lng": -80.526122
+    },
+    "CORNERBROOK CRES": {
+      "lat": 43.4920506,
+      "lng": -80.5660601
+    },
+    "WOODVILLE PL": {
+      "lat": 43.4907963,
+      "lng": -80.5471725
+    },
+    "BRAEMORE AVE": {
+      "lat": 43.4897041,
+      "lng": -80.497959
+    },
+    "DRAKE CIRCLE": {
+      "lat": 43.4554573,
+      "lng": -80.5573718
+    },
+    "STATE CRT": {
+      "lat": 43.4760717,
+      "lng": -80.5270518
+    },
+    "WOODBEND CRES": {
+      "lat": 43.4565683,
+      "lng": -80.5623047
+    },
+    "BLUE SPRINGS DR 30": {
+      "lat": 43.488097,
+      "lng": -80.5262017
+    },
+    "LEIGHLAND DR": {
+      "lat": 43.4595801,
+      "lng": -80.5716911
+    },
+    "PLEASANT BAY CRT": {
+      "lat": 43.510744,
+      "lng": -80.5096323
+    },
+    "WEST PARK CR": {
+      "lat": 43.4442048,
+      "lng": -80.5660515
+    },
+    "PENNY LANE": {
+      "lat": 43.4385779,
+      "lng": -80.5577076
+    },
+    "COOPERSHAWK ST": {
+      "lat": 43.496184,
+      "lng": -80.4744565
+    },
+    "PERIMETER LOT": {
+      "lat": 43.46521140000001,
+      "lng": -80.5267865
+    },
+    "MAYBERRY CRT": {
+      "lat": 43.4935718,
+      "lng": -80.517456
+    },
+    "DEACON WOOD PL": {
+      "lat": 43.4735252,
+      "lng": -80.5726322
+    },
+    "WATERLOO TEMPORARY LOT A": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "CHELFORD PL": {
+      "lat": 43.4799584,
+      "lng": -80.5054668
+    },
+    "TEMP LOT B": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "SUNSHINE AVE": {
+      "lat": 43.462125,
+      "lng": -80.5343437
+    },
+    "JOHN ST E": {
+      "lat": 43.4620279,
+      "lng": -80.5147154
+    },
+    "DAVID ST": {
+      "lat": 43.4459741,
+      "lng": -80.4953013
+    },
+    "DURSTIEN": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "DAWSON ST": {
+      "lat": 43.4597197,
+      "lng": -80.5323557
+    },
+    "MOUNT BATTEN AVE": {
+      "lat": 43.4571853,
+      "lng": -80.574145
+    },
+    "CRIMSON DR": {
+      "lat": 43.4934586,
+      "lng": -80.4960406
+    },
+    "415 THE BOARDWALK": {
+      "lat": 43.43887100000001,
+      "lng": -80.566673
+    },
+    "APPLEGATE CT": {
+      "lat": 43.442562,
+      "lng": -80.5647079
+    },
+    "BLACK CHERRY ST": {
+      "lat": 43.4633372,
+      "lng": -80.5908762
+    },
+    "CIDER MILL DRIVE": {
+      "lat": 43.5250345,
+      "lng": -80.4953803
+    },
+    "CONSERVATION DR": {
+      "lat": 43.4855566,
+      "lng": -80.594341
+    },
+    "CONESTOGA MALL": {
+      "lat": 43.49790230000001,
+      "lng": -80.5273387
+    },
+    "TENNYSON PL": {
+      "lat": 43.4657285,
+      "lng": -80.5469628
+    },
+    "MORNINGDALE CRES": {
+      "lat": 43.4940879,
+      "lng": -80.5588784
+    },
+    "CARRIAGE HOUSE CT": {
+      "lat": 43.4907736,
+      "lng": -80.4881393
+    },
+    "NORTHAMPTON CRES": {
+      "lat": 43.4431652,
+      "lng": -80.5543361
+    },
+    "OLD POST RD": {
+      "lat": 43.4676948,
+      "lng": -80.5537319
+    },
+    "SPECKLED ALDER ST": {
+      "lat": 43.4696374,
+      "lng": -80.593089
+    },
+    "WINDER HEIGHTS PL": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "CIDERMILL DR": {
+      "lat": 43.5250345,
+      "lng": -80.4953803
+    },
+    "EDENWOOD PL": {
+      "lat": 43.4681645,
+      "lng": -80.5770633
+    },
+    "MIDWOOD CRES": {
+      "lat": 43.4570833,
+      "lng": -80.5546188
+    },
+    "KING1": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "SCHAEFER ST": {
+      "lat": 43.4909307,
+      "lng": -80.5341108
+    },
+    "10 WILLIS WAY": {
+      "lat": 43.4638789,
+      "lng": -80.5207981
+    },
+    "KAWARTHA ST": {
+      "lat": 43.4885851,
+      "lng": -80.5894271
+    },
+    "SANDBROOKE CRT": {
+      "lat": 43.4579652,
+      "lng": -80.5693508
+    },
+    "SILVERMEADOW PL": {
+      "lat": 43.4427236,
+      "lng": -80.5605961
+    },
+    "ALLENBY CRT": {
+      "lat": 43.4918862,
+      "lng": -80.4949962
+    },
+    "VALHALLA CRES": {
+      "lat": 43.4529597,
+      "lng": -80.5695407
+    },
+    "WESTRIDGE PL": {
+      "lat": 43.451357,
+      "lng": -80.551315
+    },
+    "DEARBORN PL": {
+      "lat": 43.4872921,
+      "lng": -80.5157766
+    },
+    "CLAYBZVW933": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "FISCHER-HALLMAN RD": {
+      "lat": 43.4472695,
+      "lng": -80.5491739
+    },
+    "STEINBECK PL": {
+      "lat": 43.4507448,
+      "lng": -80.5668416
+    },
+    "ROSLIN AVE N": {
+      "lat": 43.461779,
+      "lng": -80.5321776
+    },
+    "MANOR RIDGE": {
+      "lat": 43.5206569,
+      "lng": -80.4913704
+    },
+    "430 THE BOARDWALK": {
+      "lat": 43.440173,
+      "lng": -80.56493739999999
+    },
+    "WOODLAWN PL": {
+      "lat": 43.4676235,
+      "lng": -80.583821
+    },
+    "BAMBERG CR": {
+      "lat": 43.452916,
+      "lng": -80.5805193
+    },
+    "COLBY CRT": {
+      "lat": 43.5074754,
+      "lng": -80.5437298
+    },
+    "GINSENG ST.": {
+      "lat": 43.4513536,
+      "lng": -80.5921981
+    },
+    "ROCK POINT CRES": {
+      "lat": 43.4939124,
+      "lng": -80.5773489
+    },
+    "LOT 3 OVERFLOW": {
+      "lat": 46.8585354,
+      "lng": -64.1154823
+    },
+    "GLENGROVE PL": {
+      "lat": 43.4923086,
+      "lng": -80.5509375
+    },
+    "SPRING GARDEN DR": {
+      "lat": 43.524234,
+      "lng": -80.4918735
+    },
+    "GRISTMILL ST": {
+      "lat": 43.5258802,
+      "lng": -80.4943131
+    },
+    "SANDBURY LANE": {
+      "lat": 43.4500278,
+      "lng": -80.5663327
+    },
+    "WHITE CAP AVE": {
+      "lat": 43.515081,
+      "lng": -80.503592
+    },
+    "PARKGREEN PL": {
+      "lat": 43.4665762,
+      "lng": -80.56047
+    },
+    "71 CAROLINE ST S": {
+      "lat": 43.4617099,
+      "lng": -80.52356
+    },
+    "WESTFIELD DR": {
+      "lat": 43.4435473,
+      "lng": -80.5632433
+    },
+    "ALBERT ST 630-649": {
+      "lat": 43.4901998,
+      "lng": -80.5399809
+    },
+    "MOUNT ANNE DR": {
+      "lat": 43.4916353,
+      "lng": -80.5465729
+    },
+    "WILD CALLA ST": {
+      "lat": 43.4530851,
+      "lng": -80.5952389
+    },
+    "BARRELYARD BLVD": {
+      "lat": 43.4643107,
+      "lng": -80.5293881
+    },
+    "KELSO DR": {
+      "lat": 43.4902528,
+      "lng": -80.5839634
+    },
+    "HAGEN CRT": {
+      "lat": 43.5031341,
+      "lng": -80.5021491
+    },
+    "BROWNING PL": {
+      "lat": 43.4640793,
+      "lng": -80.5529762
+    },
+    "GLENRIDGE PL": {
+      "lat": 43.4854237,
+      "lng": -80.51134
+    },
+    "TOWN SQUARE SOUTH LOT": {
+      "lat": 43.3805418,
+      "lng": -80.35615179999999
+    },
+    "ASPENWOOD PLACE": {
+      "lat": 43.4703171,
+      "lng": -80.5835649
+    },
+    "SETTLERSFIELD CRT": {
+      "lat": 43.4495094,
+      "lng": -80.5692335
+    },
+    "ANNAPOLIS CRT": {
+      "lat": 43.5054693,
+      "lng": -80.5095433
+    },
+    "ATLANTIC BLVD": {
+      "lat": 43.515081,
+      "lng": -80.503592
+    },
+    "WESTMOUNT RD N": {
+      "lat": 43.4786973,
+      "lng": -80.5620879
+    },
+    "GREEN MEADOW CRES": {
+      "lat": 43.4953916,
+      "lng": -80.5600816
+    },
+    "SPINAKER CRES": {
+      "lat": 43.5100715,
+      "lng": -80.5167286
+    },
+    "BELLEHAVEN DR": {
+      "lat": 43.4786038,
+      "lng": -80.5094502
+    },
+    "HAWTHORN ST/ HICKORY ST W": {
+      "lat": 43.4778618,
+      "lng": -80.52769239999999
+    },
+    "SNOWBERRY COURT": {
+      "lat": 43.4615162,
+      "lng": -80.6028974
+    },
+    "SMALLWOOD DR": {
+      "lat": 43.4831541,
+      "lng": -80.5335412
+    },
+    "WATERLOO LOT B": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "35 ALBERT ST": {
+      "lat": 43.4657207,
+      "lng": -80.524918
+    },
+    "MCCRAE PL": {
+      "lat": 43.4530103,
+      "lng": -80.5641384
+    },
+    "NORTHCREST PL": {
+      "lat": 43.4820511,
+      "lng": -80.5134153
+    },
+    "VIRGINIA CREEPER STREET": {
+      "lat": 43.4722518,
+      "lng": -80.5997727
+    },
+    "ERB ST W 20": {
+      "lat": 43.4653101,
+      "lng": -80.5238624
+    },
+    "BLACK FOREST PL": {
+      "lat": 43.5029368,
+      "lng": -80.5566951
+    },
+    "HEMINGWAY PL": {
+      "lat": 43.451727,
+      "lng": -80.5653222
+    },
+    "AHRENS ST W": {
+      "lat": 43.4589617,
+      "lng": -80.4939004
+    },
+    "BURNING BUSH RD": {
+      "lat": 43.4982183,
+      "lng": -80.5687754
+    },
+    "NORTHAMPTON PL": {
+      "lat": 43.4433886,
+      "lng": -80.5555654
+    },
+    "GINSENG ST": {
+      "lat": 43.4513536,
+      "lng": -80.5921981
+    },
+    "HARVARD RD": {
+      "lat": 43.4806304,
+      "lng": -80.5020827
+    },
+    "RED OSIER ROAD": {
+      "lat": 43.467575,
+      "lng": -80.5989128
+    },
+    "CAMILLE CRES": {
+      "lat": 43.4968961,
+      "lng": -80.4998669
+    },
+    "OAK PARK RD.": {
+      "lat": 43.5205364,
+      "lng": -80.4970917
+    },
+    "MCMURRAY RD": {
+      "lat": 43.5102092,
+      "lng": -80.5300467
+    },
+    "MOSES SPRINGER ARENA": {
+      "lat": 43.4739274,
+      "lng": -80.5114325
+    },
+    "WATERLOO PARK-LOT C": {
+      "lat": 43.4675796,
+      "lng": -80.5384941
+    },
+    "AMERICAN BEACH AVENUE": {
+      "lat": 43.4680783,
+      "lng": -80.5981156
+    },
+    "HICKORY ST W 30": {
+      "lat": 43.4780229,
+      "lng": -80.5279719
+    },
+    "NOECKER ST": {
+      "lat": 43.4719381,
+      "lng": -80.5193062
+    },
+    "BRIDGEWATER CRES": {
+      "lat": 43.442407,
+      "lng": -80.5572659
+    },
+    "STILLMEADOW CIR": {
+      "lat": 43.4672859,
+      "lng": -80.5626763
+    },
+    "DEVITT AVE S": {
+      "lat": 43.4662365,
+      "lng": -80.5126035
+    },
+    "GRAND MEADOW PL": {
+      "lat": 43.4977101,
+      "lng": -80.4973733
+    },
+    "MARGARET AVE N": {
+      "lat": 43.4746456,
+      "lng": -80.5053751
+    },
+    "MOUNTAIN MAPLE AVE": {
+      "lat": 43.4641186,
+      "lng": -80.590282
+    },
+    "WILLIAM PARKING LOT": {
+      "lat": 43.4627518,
+      "lng": -80.519502
+    },
+    "MEAFORD DR": {
+      "lat": 43.4798434,
+      "lng": -80.5041667
+    },
+    "LUCERNE AVE": {
+      "lat": 43.4547479,
+      "lng": -80.5809391
+    },
+    "RED RIVER DR": {
+      "lat": 43.4442416,
+      "lng": -80.5509054
+    },
+    "ELLESMERE CRT": {
+      "lat": 43.4973067,
+      "lng": -80.5731768
+    },
+    "WESTMOUNT RD S": {
+      "lat": 43.4568491,
+      "lng": -80.5312439
+    },
+    "KAREN WALK": {
+      "lat": 43.4579425,
+      "lng": -80.5452927
+    },
+    "OLD OAK DR": {
+      "lat": 43.4699276,
+      "lng": -80.585481
+    },
+    "SANDRINGHAM DR": {
+      "lat": 43.50404,
+      "lng": -80.523337
+    },
+    "KAREN ST": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "TATLOCK DR": {
+      "lat": 43.4628799,
+      "lng": -80.5581802
+    },
+    "410 THE BOARDWALK": {
+      "lat": 43.4394363,
+      "lng": -80.56326419999999
+    },
+    "STATION LOT": {
+      "lat": 43.4649005,
+      "lng": -80.5204146
+    },
+    "SHAKESPEARE DR": {
+      "lat": 43.4631579,
+      "lng": -80.5474262
+    },
+    "CINNAMON FERN": {
+      "lat": 43.4549576,
+      "lng": -80.5931774
+    },
+    "TIMLOCK PL": {
+      "lat": 43.4981806,
+      "lng": -80.5010165
+    },
+    "SWEET GALE ST": {
+      "lat": 43.4515063,
+      "lng": -80.5907402
+    },
+    "BEARINGER RD": {
+      "lat": 43.4828558,
+      "lng": -80.5556744
+    },
+    "X": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "HALDANE CRT": {
+      "lat": 43.4410055,
+      "lng": -80.5522133
+    },
+    "ST. ANTON CRT": {
+      "lat": 43.4597829,
+      "lng": -80.5839552
+    },
+    "BRIGANTINE DRIVE": {
+      "lat": 43.507854,
+      "lng": -80.5140952
+    },
+    "HILLIARD PL": {
+      "lat": 43.4534982,
+      "lng": -80.5322514
+    },
+    "SPRING TIDE CRT": {
+      "lat": 43.509261,
+      "lng": -80.5104837
+    },
+    "STAR FLOWER AVE": {
+      "lat": 43.4647538,
+      "lng": -80.5874715
+    },
+    "GOLDTHREAD ST": {
+      "lat": 43.4729795,
+      "lng": -80.6015638
+    },
+    "TEALBY PL": {
+      "lat": 43.4916009,
+      "lng": -80.5231968
+    },
+    "GRANGE CRES": {
+      "lat": 43.4387668,
+      "lng": -80.5594952
+    },
+    "LESTER ST": {
+      "lat": 43.4742437,
+      "lng": -80.5350177
+    },
+    "BOXBURY DR": {
+      "lat": 43.4920845,
+      "lng": -80.5030078
+    },
+    "SWEET CEDAR": {
+      "lat": 43.4751151,
+      "lng": -80.5899501
+    },
+    "SILVERBIRCH RD": {
+      "lat": 43.4944267,
+      "lng": -80.5511441
+    },
+    "BUTTERCUP CR": {
+      "lat": 43.4736284,
+      "lng": -80.5968062
+    },
+    "AMBLESIDE CRT": {
+      "lat": 43.493944,
+      "lng": -80.5199228
+    },
+    "DAVENPORT RD": {
+      "lat": 43.4985097,
+      "lng": -80.5243319
+    },
+    "CHARING CROSS": {
+      "lat": 43.526824,
+      "lng": -80.4834027
+    },
+    "KILBEAR CRT": {
+      "lat": 43.4913168,
+      "lng": -80.5805142
+    },
+    "AVENS ST.": {
+      "lat": 43.4538069,
+      "lng": -80.5960497
+    },
+    "THORNDALE DR": {
+      "lat": 43.4450761,
+      "lng": -80.5565383
+    },
+    "PERCHERON CRT": {
+      "lat": 43.4878817,
+      "lng": -80.4902139
+    },
+    "PRINCE EDWARD CRT": {
+      "lat": 43.5075507,
+      "lng": -80.4994994
+    },
+    "ERB PARKING LOT": {
+      "lat": 43.4692618,
+      "lng": -80.5088975
+    },
+    "MUSEUM PARKING LOT": {
+      "lat": 43.5058505,
+      "lng": -80.5344003
+    },
+    "RANKIN ST": {
+      "lat": 43.5108966,
+      "lng": -80.5355975
+    },
+    "PARKVIEW CEMETARY": {
+      "lat": 43.4874787,
+      "lng": -80.49584770000001
+    },
+    "ELMHURST CRT": {
+      "lat": 43.5017468,
+      "lng": -80.561999
+    },
+    "TAMARACK DR": {
+      "lat": 43.4841549,
+      "lng": -80.5339534
+    },
+    "LOBSTER LANE": {
+      "lat": 43.5106114,
+      "lng": -80.4992134
+    },
+    "HAGEY BLVD": {
+      "lat": 43.4789766,
+      "lng": -80.5493492
+    },
+    "PRINCESS ST W": {
+      "lat": 43.4666701,
+      "lng": -80.5240224
+    },
+    "BRANDENBURG CRT": {
+      "lat": 43.4539721,
+      "lng": -80.5767516
+    },
+    "FENNER LANE": {
+      "lat": 43.4558388,
+      "lng": -80.5523878
+    },
+    "LAUSANNE CRES": {
+      "lat": 43.4526034,
+      "lng": -80.5741243
+    },
+    "BRANDENBURG PL": {
+      "lat": 43.4537692,
+      "lng": -80.5774301
+    },
+    "WATERLOO REC. COMPLEX-S/W LOT": {
+      "lat": 43.46434620000001,
+      "lng": -80.532484
+    },
+    "ZERMATT DR": {
+      "lat": 43.4574059,
+      "lng": -80.5770212
+    },
+    "SHEDIAC ST": {
+      "lat": 43.5121752,
+      "lng": -80.5017916
+    },
+    "ASH TREE PL": {
+      "lat": 43.4641278,
+      "lng": -80.571972
+    },
+    "BLYTHWOOD RD": {
+      "lat": 43.4869142,
+      "lng": -80.5347338
+    },
+    "ALVIN ST": {
+      "lat": 43.4741975,
+      "lng": -80.5151078
+    },
+    "CONESTOGO RD": {
+      "lat": 43.4976243,
+      "lng": -80.5323872
+    },
+    "WESTVALE GATE": {
+      "lat": 43.4412575,
+      "lng": -80.5494448
+    },
+    "DEW DROP CRES": {
+      "lat": 43.4532018,
+      "lng": -80.5887589
+    },
+    "SHEDIAC CRES": {
+      "lat": 43.5121752,
+      "lng": -80.5017916
+    },
+    "HARBOUR VIEW CRES": {
+      "lat": 43.5073241,
+      "lng": -80.5100381
+    },
+    "GRANGEWOOD CRT": {
+      "lat": 43.4933311,
+      "lng": -80.5004158
+    },
+    "HERBERT ST": {
+      "lat": 43.4614586,
+      "lng": -80.5162346
+    },
+    "SPRING GARDEN": {
+      "lat": 43.524234,
+      "lng": -80.4918735
+    },
+    "CAREDALE": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "PARKLAWN PL": {
+      "lat": 43.4895776,
+      "lng": -80.5534581
+    },
+    "LYNNBROOK PL": {
+      "lat": 43.4919663,
+      "lng": -80.5475827
+    },
+    "DOTZERT CRT": {
+      "lat": 43.4952774,
+      "lng": -80.5313516
+    },
+    "CANEWOOD CRES": {
+      "lat": 43.4852842,
+      "lng": -80.5558616
+    },
+    "BRANSTONE DR": {
+      "lat": 43.4620717,
+      "lng": -80.5691645
+    },
+    "CHELTONWOOD CRES": {
+      "lat": 43.5013744,
+      "lng": -80.5634541
+    },
+    "ROXTON DR": {
+      "lat": 43.4615844,
+      "lng": -80.5641862
+    },
+    "RIDGEVIEW CRES": {
+      "lat": 43.4485051,
+      "lng": -80.548898
+    },
+    "BEECHWOOD DR": {
+      "lat": 43.4518797,
+      "lng": -80.5667695
+    },
+    "WESTCROFT DR": {
+      "lat": 43.4468575,
+      "lng": -80.5651772
+    },
+    "NEWHAMPSHIRE ST": {
+      "lat": 43.5127703,
+      "lng": -80.503346
+    },
+    "KING ST N 2": {
+      "lat": 43.4653843,
+      "lng": -80.5222035
+    },
+    "DIXIE CRES": {
+      "lat": 43.47723,
+      "lng": -80.5127127
+    },
+    "BLUE SPRINGS DR": {
+      "lat": 43.4875327,
+      "lng": -80.5248891
+    },
+    "MACDONALD PL": {
+      "lat": 43.4511855,
+      "lng": -80.533491
+    },
+    "TEMP PARKING LOT A": {
+      "lat": 43.46746599999999,
+      "lng": -80.5220202
+    },
+    "MOCCASIN DR": {
+      "lat": 43.4894266,
+      "lng": -80.540126
+    },
+    "CASSWELL CRT": {
+      "lat": 43.4888868,
+      "lng": -80.5203291
+    },
+    "SUNPOINT CRES": {
+      "lat": 43.4937433,
+      "lng": -80.5660728
+    },
+    "WHITE BIRTCH AVE": {
+      "lat": 43.4676517,
+      "lng": -80.59154
+    },
+    "DEWDROP CRES": {
+      "lat": 43.4532018,
+      "lng": -80.5887589
+    },
+    "AUTUMN WILLOW DR.": {
+      "lat": 43.4597721,
+      "lng": -80.6029805
+    },
+    "CADBURY CRT": {
+      "lat": 43.4923716,
+      "lng": -80.5098355
+    },
+    "ENNISMORE PL": {
+      "lat": 43.4592403,
+      "lng": -80.5665379
+    },
+    "PREAKNESS ST": {
+      "lat": 43.4948266,
+      "lng": -80.4834528
+    },
+    "COLONIAL DR": {
+      "lat": 43.5012731,
+      "lng": -80.5122248
+    },
+    "BEAVER CREEK RD": {
+      "lat": 43.4781377,
+      "lng": -80.5833557
+    },
+    "SHEDIAC CR": {
+      "lat": 43.5121752,
+      "lng": -80.5017916
+    },
+    "SHADOW WOOD CRES": {
+      "lat": 43.4859054,
+      "lng": -80.4855092
+    },
+    "TEMPOPARY LOT A": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "BECKWITH CRT": {
+      "lat": 43.4571734,
+      "lng": -80.5665806
+    },
+    "ELLIS CRES": {
+      "lat": 43.4724665,
+      "lng": -80.5076465
+    },
+    "ANNDALE CRT": {
+      "lat": 43.4989001,
+      "lng": -80.5152038
+    },
+    "OAKVALE DR": {
+      "lat": 43.4436777,
+      "lng": -80.5586706
+    },
+    "UNIVERSITY AVE W": {
+      "lat": 43.45641,
+      "lng": -80.5394465
+    },
+    "CEDARCLIFFE DR": {
+      "lat": 43.5001328,
+      "lng": -80.4838412
+    },
+    "NORTHLAKE PL": {
+      "lat": 43.495813,
+      "lng": -80.5518507
+    },
+    "WATERLOO TOWN SQ PARKING LOT": {
+      "lat": 43.4623763,
+      "lng": -80.52324860000002
+    },
+    "LABRADOR DR": {
+      "lat": 43.5141891,
+      "lng": -80.5156398
+    },
+    "LOT B": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "FAKE ST": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "HARPER PL": {
+      "lat": 43.5031344,
+      "lng": -80.525225
+    },
+    "MAPLE FOREST PL": {
+      "lat": 43.4508132,
+      "lng": -80.5638358
+    },
+    "CAVELLETTI CRT": {
+      "lat": 43.4891226,
+      "lng": -80.485311
+    },
+    "WHITE ROCK CRES": {
+      "lat": 43.5002698,
+      "lng": -80.5567281
+    },
+    "BUTTERNUT AVE": {
+      "lat": 43.4652821,
+      "lng": -80.5867431
+    },
+    "WHITE OAK PL": {
+      "lat": 43.4953067,
+      "lng": -80.5555183
+    },
+    "COGHILL PL": {
+      "lat": 43.4986948,
+      "lng": -80.5529806
+    },
+    "VERMONT ST": {
+      "lat": 43.4750032,
+      "lng": -80.5067947
+    },
+    "TWIN LEAF": {
+      "lat": 43.454256,
+      "lng": -80.5952542
+    },
+    "MAYAPPLE ST": {
+      "lat": 43.4589004,
+      "lng": -80.5995398
+    },
+    "LIGHTHOUSE PL": {
+      "lat": 43.5092826,
+      "lng": -80.5080095
+    },
+    "70 CAROLINE ST S": {
+      "lat": 43.46216,
+      "lng": -80.52269000000001
+    },
+    "300": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "SANDCLIFFE PL": {
+      "lat": 43.4496106,
+      "lng": -80.5586285
+    },
+    "SUNDROPS CT": {
+      "lat": 43.4618291,
+      "lng": -80.6039645
+    },
+    "INVERHURON CRESCENT": {
+      "lat": 43.4950147,
+      "lng": -80.5732285
+    },
+    "BORDEAUX AVE": {
+      "lat": 43.4481433,
+      "lng": -80.5757074
+    },
+    "ROYAL BEECH DR": {
+      "lat": 43.4513208,
+      "lng": -80.5695964
+    },
+    "HICKORY ST W": {
+      "lat": 43.4773991,
+      "lng": -80.5309382
+    },
+    "NORTHLAND RD": {
+      "lat": 43.5073315,
+      "lng": -80.5330721
+    },
+    "OLD MEADOW LANE": {
+      "lat": 43.4478311,
+      "lng": -80.5523644
+    },
+    "CONRAD PL": {
+      "lat": 43.5033228,
+      "lng": -80.5500337
+    },
+    "MILLSTREAM DRIVE": {
+      "lat": 43.5255652,
+      "lng": -80.4927385
+    },
+    "WILLOWDALE AVE": {
+      "lat": 43.4783175,
+      "lng": -80.5115165
+    },
+    "BELGREEN WAY": {
+      "lat": 43.445073,
+      "lng": -80.5464554
+    },
+    "CARRIAGE WAY NORTH": {
+      "lat": 43.4941245,
+      "lng": -80.4826358
+    },
+    "WARRINGTON DR": {
+      "lat": 43.4476888,
+      "lng": -80.5461286
+    },
+    "BRANDENBURG PLACE": {
+      "lat": 43.4537692,
+      "lng": -80.5774301
+    },
+    "30 REGINA ST S": {
+      "lat": 43.46429,
+      "lng": -80.52047
+    },
+    "CITY LOT A": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "WILDWOOD PL": {
+      "lat": 43.4865575,
+      "lng": -80.5381513
+    },
+    "KINGSMILL CRT": {
+      "lat": 43.4635967,
+      "lng": -80.5698639
+    },
+    "TEALBY PLACE": {
+      "lat": 43.4916009,
+      "lng": -80.5231968
+    },
+    "COLT ST": {
+      "lat": 43.4983072,
+      "lng": -80.4922163
+    },
+    "SANDBANKS CRES": {
+      "lat": 43.4962088,
+      "lng": -80.5782185
+    },
+    "RALSTON PL": {
+      "lat": 43.4550006,
+      "lng": -80.5629404
+    },
+    "TERRYSTONE WLK": {
+      "lat": 43.4713391,
+      "lng": -80.4978637
+    },
+    "SOMERSET CRES": {
+      "lat": 43.4536032,
+      "lng": -80.5373891
+    },
+    "CEDAR MILL DR": {
+      "lat": 43.5250345,
+      "lng": -80.4953803
+    },
+    "FOXHUNT PL": {
+      "lat": 43.4932384,
+      "lng": -80.5140908
+    },
+    "ALLEN ST W": {
+      "lat": 43.45738,
+      "lng": -80.5222752
+    },
+    "WOOLWICH PL": {
+      "lat": 43.5069379,
+      "lng": -80.4965207
+    },
+    "KUMPF DR": {
+      "lat": 43.5026482,
+      "lng": -80.5436677
+    },
+    "DUNBAR RD S": {
+      "lat": 43.4581594,
+      "lng": -80.5272806
+    },
+    "MUNICH CIRCLE": {
+      "lat": 43.4607009,
+      "lng": -80.5876691
+    },
+    "BOLINGBROOK PL": {
+      "lat": 43.4626619,
+      "lng": -80.5697633
+    },
+    "BOETTGER PL": {
+      "lat": 43.4963571,
+      "lng": -80.5030723
+    },
+    "SCOTCHMERE CRT": {
+      "lat": 43.4947441,
+      "lng": -80.5191785
+    },
+    "CLAYWOOD CRT": {
+      "lat": 43.4583069,
+      "lng": -80.5662104
+    },
+    "SUNDROPS CRT": {
+      "lat": 43.4618291,
+      "lng": -80.6039645
+    },
+    "BEECH ST": {
+      "lat": 43.4760998,
+      "lng": -80.5287565
+    },
+    "BARINGHAM PL": {
+      "lat": 43.4676386,
+      "lng": -80.5714273
+    },
+    "MAVERICK ST": {
+      "lat": 43.4994829,
+      "lng": -80.4906743
+    },
+    "STONEHEIGHT PL": {
+      "lat": 43.4965816,
+      "lng": -80.5708223
+    },
+    "GRAND RIVER DR": {
+      "lat": 43.5269544,
+      "lng": -80.4794762
+    },
+    "450 ERB ST W": {
+      "lat": 43.4531416,
+      "lng": -80.5558894
+    },
+    "CORNWALL ST": {
+      "lat": 43.4672627,
+      "lng": -80.5076822
+    },
+    "WILD GINGER AVE": {
+      "lat": 43.469327,
+      "lng": -80.5921358
+    },
+    "CHARLES ST E": {
+      "lat": 43.443499,
+      "lng": -80.4777034
+    },
+    "PASTERN TRAIL": {
+      "lat": 43.4922241,
+      "lng": -80.4905556
+    },
+    "59 KING ST N": {
+      "lat": 43.4669752,
+      "lng": -80.52313649999999
+    },
+    "HAWTHORN ST": {
+      "lat": 43.4782103,
+      "lng": -80.5278154
+    },
+    "WATER ST N": {
+      "lat": 43.366349,
+      "lng": -80.3158427
+    },
+    "HIGH ST": {
+      "lat": 43.4817511,
+      "lng": -80.5292623
+    },
+    "WATERTON DR": {
+      "lat": 43.4923825,
+      "lng": -80.5788544
+    },
+    "ALEXMUIR PL": {
+      "lat": 43.4626619,
+      "lng": -80.5697633
+    },
+    "ST. MORITZ AVE": {
+      "lat": 43.451705,
+      "lng": -80.5808988
+    },
+    "BRIDGEPORT PLAZA": {
+      "lat": 43.4699825,
+      "lng": -80.51531299999999
+    },
+    "LAGENFELD LANE": {
+      "lat": 43.4571309,
+      "lng": -80.5788388
+    },
+    "GOLDTHREAD COMMUNITY LOT": {
+      "lat": 43.4729795,
+      "lng": -80.6015638
+    },
+    "BRIARCLIFFE CRES": {
+      "lat": 43.4602852,
+      "lng": -80.5555139
+    },
+    "DUKE ST E": {
+      "lat": 43.448657,
+      "lng": -80.4829477
+    },
+    "FOREST GATE CRESCENT": {
+      "lat": 43.4762948,
+      "lng": -80.5976829
+    },
+    "QUEEN ST N": {
+      "lat": 43.350581,
+      "lng": -80.538012
+    },
+    "WATERLOO PARK": {
+      "lat": 43.4675513,
+      "lng": -80.52717299999999
+    },
+    "SCHOONER CRES": {
+      "lat": 43.5117362,
+      "lng": -80.5038103
+    },
+    "REGINA ST N": {
+      "lat": 43.4741174,
+      "lng": -80.5228368
+    },
+    "JEFFERSON COURT": {
+      "lat": 43.4957107,
+      "lng": -80.495638
+    },
+    "WATERCREST CRT": {
+      "lat": 43.4116152,
+      "lng": -80.517904
+    },
+    "ALGONQUIN DR": {
+      "lat": 43.4643277,
+      "lng": -80.5459847
+    },
+    "HERBERT PARKING LOT": {
+      "lat": 43.463094,
+      "lng": -80.5195533
+    },
+    "PINEBROOK PL": {
+      "lat": 43.4949367,
+      "lng": -80.5621091
+    },
+    "GRISTMILL": {
+      "lat": 43.5258802,
+      "lng": -80.4943131
+    },
+    "JAMES DOWNEY WAY": {
+      "lat": 43.4749356,
+      "lng": -80.5685596
+    },
+    "REGAL PL": {
+      "lat": 43.4774042,
+      "lng": -80.603357
+    },
+    "LOTA": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "HIAWATHA DR": {
+      "lat": 43.4619847,
+      "lng": -80.5499374
+    },
+    "CASTLEFIELD AVE": {
+      "lat": 43.4976901,
+      "lng": -80.512395
+    },
+    "CITY LOT B": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "MANOR RIDGE CR": {
+      "lat": 43.5206569,
+      "lng": -80.4913704
+    },
+    "HARTWOOD AVE": {
+      "lat": 43.4640646,
+      "lng": -80.5018307
+    },
+    "STANWOOD CRES": {
+      "lat": 43.4984574,
+      "lng": -80.5212692
+    },
+    "GATESTONE BLVD": {
+      "lat": 43.4683161,
+      "lng": -80.5712674
+    },
+    "LOT 2 REGINA ST N": {
+      "lat": 43.4786831,
+      "lng": -80.5233985
+    },
+    "NORTHFIELD DR W": {
+      "lat": 43.4958004,
+      "lng": -80.5498261
+    },
+    "CHESAPEAKE DRIVE": {
+      "lat": 43.5103491,
+      "lng": -80.5143119
+    },
+    "YOUNG ST W": {
+      "lat": 43.4681706,
+      "lng": -80.5255073
+    },
+    "UNIVERSITY AVE E": {
+      "lat": 43.5017433,
+      "lng": -80.4947698
+    },
+    "WINTERBURG WALK": {
+      "lat": 43.4591207,
+      "lng": -80.5835571
+    },
+    "DANSBURY DR": {
+      "lat": 43.4968831,
+      "lng": -80.5007425
+    },
+    "WOODROW PL": {
+      "lat": 43.4689434,
+      "lng": -80.5833559
+    },
+    "COLERIDGE DR": {
+      "lat": 43.4614155,
+      "lng": -80.5486953
+    },
+    "KNOX LOT": {
+      "lat": 43.4648378,
+      "lng": -80.5251098
+    },
+    "TEAKWOOD DR": {
+      "lat": 43.4849673,
+      "lng": -80.5540984
+    },
+    "LEXINGTON CRT": {
+      "lat": 43.489189,
+      "lng": -80.5154019
+    },
+    "TEMPORARY CITY LOT B": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "AUTUMN WILLOW DR": {
+      "lat": 43.4597721,
+      "lng": -80.6029805
+    },
+    "KEATS WALK": {
+      "lat": 43.46014,
+      "lng": -80.5481084
+    },
+    "BLUE BEECH BLVD NEAR LAURELWOOD DR": {
+      "lat": 43.4686253,
+      "lng": -80.5941218
+    },
+    "WEST PARK": {
+      "lat": 43.4442048,
+      "lng": -80.5660515
+    },
+    "RHINE FALL DR": {
+      "lat": 43.4562232,
+      "lng": -80.5854177
+    },
+    "PERIMETER INSTITUTE": {
+      "lat": 43.465386,
+      "lng": -80.52754200000001
+    },
+    "SOMERDALE PL": {
+      "lat": 43.4416947,
+      "lng": -80.5547288
+    },
+    "WILLIAM ST E": {
+      "lat": 43.4631184,
+      "lng": -80.519809
+    },
+    "LOT A TEMPORARY": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "ELM RIDGE PL": {
+      "lat": 43.4911111,
+      "lng": -80.5586202
+    },
+    "DRUMMERHILL CRES": {
+      "lat": 43.4460081,
+      "lng": -80.5509168
+    },
+    "CRANBERRY ST": {
+      "lat": 43.4898173,
+      "lng": -80.5875492
+    },
+    "SKYLARK RD": {
+      "lat": 43.4939428,
+      "lng": -80.5567538
+    },
+    "WHITE BIRCH AVE": {
+      "lat": 43.4676517,
+      "lng": -80.59154
+    },
+    "TEALBY CT": {
+      "lat": 43.489914,
+      "lng": -80.5223125
+    },
+    "WINFIELD AVE": {
+      "lat": 43.4792944,
+      "lng": -80.5111682
+    },
+    "RUMMELHARDT DR": {
+      "lat": 43.4501044,
+      "lng": -80.5701815
+    },
+    "DOUGLAS ST": {
+      "lat": 43.4558635,
+      "lng": -80.5309611
+    },
+    "KAREN PL": {
+      "lat": 43.4586114,
+      "lng": -80.5442729
+    },
+    "WATER ST S": {
+      "lat": 43.4497041,
+      "lng": -80.4956608
+    },
+    "WOOLWICH NORTH": {
+      "lat": 43.5154399,
+      "lng": -80.4970661
+    },
+    "VIRGINIA CREEPER AVENUE": {
+      "lat": 43.4722518,
+      "lng": -80.5997727
+    },
+    "KING ST N": {
+      "lat": 43.4883236,
+      "lng": -80.5276363
+    },
+    "REDWOOD PL": {
+      "lat": 43.4508666,
+      "lng": -80.5448137
+    },
+    "HIGHPOINT AVE": {
+      "lat": 43.4891562,
+      "lng": -80.5630955
+    },
+    "AMBERWOOD DR": {
+      "lat": 43.4605225,
+      "lng": -80.5675885
+    },
+    "TEMP PARKING LOT B": {
+      "lat": 43.46746599999999,
+      "lng": -80.5220202
+    },
+    "PARKVIEW CEMETERY": {
+      "lat": 43.4874787,
+      "lng": -80.49584770000001
+    },
+    "BBJM570": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "41 CAROLINE ST S": {
+      "lat": 43.4623829,
+      "lng": -80.5240012
+    },
+    "PARTRIDGE PL": {
+      "lat": 43.4957326,
+      "lng": -80.5613811
+    },
+    "INDIAN GRASS ST": {
+      "lat": 43.4599292,
+      "lng": -80.600918
+    },
+    "TEAKWOOD PL": {
+      "lat": 43.4849946,
+      "lng": -80.5532881
+    },
+    "ST. MORITZ BLVD": {
+      "lat": 43.451705,
+      "lng": -80.5808988
+    },
+    "NORTHGATE AVE": {
+      "lat": 43.493623,
+      "lng": -80.5527774
+    },
+    "ANGLER WAY": {
+      "lat": 43.5141316,
+      "lng": -80.5018044
+    },
+    "HARVARD PL": {
+      "lat": 43.4833499,
+      "lng": -80.5040887
+    },
+    "WINTERGREEN DR": {
+      "lat": 43.4919584,
+      "lng": -80.5623918
+    },
+    "WATERLOO PARK -WEST": {
+      "lat": 43.46610099999999,
+      "lng": -80.53520999999999
+    },
+    "CRAIGLEITH DR": {
+      "lat": 43.4644526,
+      "lng": -80.5582113
+    },
+    "COLBY DR": {
+      "lat": 43.5042253,
+      "lng": -80.5382625
+    },
+    "DUNVEGAN DR": {
+      "lat": 43.4929221,
+      "lng": -80.5057696
+    },
+    "EUCLID AVE": {
+      "lat": 43.4614206,
+      "lng": -80.5261626
+    },
+    "DEERFOOT DR": {
+      "lat": 43.5218631,
+      "lng": -80.4939109
+    },
+    "WALKING FERN CRT": {
+      "lat": 43.4584444,
+      "lng": -80.5963771
+    },
+    "ROSETTE DR": {
+      "lat": 43.4907464,
+      "lng": -80.4895739
+    },
+    "LINCOLN RD": {
+      "lat": 43.47708,
+      "lng": -80.5089355
+    },
+    "CANDLEWOOD CRES": {
+      "lat": 43.4603467,
+      "lng": -80.5541128
+    },
+    "OLD ORCHARD PL": {
+      "lat": 43.4459624,
+      "lng": -80.5552765
+    },
+    "BAUER PARKING LOT": {
+      "lat": 43.4651427,
+      "lng": -80.53247019999999
+    },
+    "SHALLMAR CRT": {
+      "lat": 43.4936981,
+      "lng": -80.5059077
+    },
+    "BARREL YARDS": {
+      "lat": 43.46469949999999,
+      "lng": -80.52959609999999
+    },
+    "RENAUD DR": {
+      "lat": 43.479018,
+      "lng": -80.5055694
+    },
+    "AVENS ST": {
+      "lat": 43.4538069,
+      "lng": -80.5960497
+    },
+    "PARK ST": {
+      "lat": 43.4582367,
+      "lng": -80.5196048
+    },
+    "RIM PARK 2190 UNIVERSITY AVE. E.": {
+      "lat": 43.5176623,
+      "lng": -80.5058102
+    },
+    "BARRIE PL": {
+      "lat": 43.4856163,
+      "lng": -80.5315523
+    },
+    "GATE VIEW DR": {
+      "lat": 43.4503601,
+      "lng": -80.5580995
+    },
+    "HILLCROFT PL": {
+      "lat": 43.4466083,
+      "lng": -80.5656568
+    },
+    "82 ERB ST": {
+      "lat": 43.4640581,
+      "lng": -80.526586
+    },
+    "WESTPARK": {
+      "lat": 43.4442048,
+      "lng": -80.5660515
+    },
+    "WASAGA CR": {
+      "lat": 43.4895333,
+      "lng": -80.5892562
+    },
+    "BRIDGE ST": {
+      "lat": 43.503025,
+      "lng": -80.508826
+    },
+    "DORCHESTER PL": {
+      "lat": 43.440383,
+      "lng": -80.5529833
+    },
+    "CAROLINE PARKING LOT-SOUTH": {
+      "lat": 43.4607404,
+      "lng": -80.5219257
+    },
+    "SKYVIEW PL": {
+      "lat": 43.4990523,
+      "lng": -80.5579226
+    },
+    "BENJAMIN RD": {
+      "lat": 43.5006906,
+      "lng": -80.567243
+    },
+    "ERB ST W": {
+      "lat": 43.4527742,
+      "lng": -80.5527051
+    },
+    "CANTERBURY DR": {
+      "lat": 43.4966568,
+      "lng": -80.4983697
+    },
+    "MENNO ST": {
+      "lat": 43.4617007,
+      "lng": -80.5277991
+    },
+    "MOORE AVE S": {
+      "lat": 43.4632504,
+      "lng": -80.5110744
+    },
+    "CEDAR BEND DR": {
+      "lat": 43.4751151,
+      "lng": -80.5899501
+    },
+    "SNOWBERRY CRT": {
+      "lat": 43.4615162,
+      "lng": -80.6028974
+    },
+    "BRIARCLIFFE PL": {
+      "lat": 43.4600325,
+      "lng": -80.555941
+    },
+    "137": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "BEVERLEY ST": {
+      "lat": 43.4604565,
+      "lng": -80.5323911
+    },
+    "OLD POST CROSSING": {
+      "lat": 43.4663848,
+      "lng": -80.5557996
+    },
+    "BRAESIDE AVE": {
+      "lat": 43.468378,
+      "lng": -80.503724
+    },
+    "VIOLET ST": {
+      "lat": 43.4684208,
+      "lng": -80.5979934
+    },
+    "OLD OAK PL": {
+      "lat": 43.4701475,
+      "lng": -80.5865102
+    },
+    "WILD IRIS AVE": {
+      "lat": 43.4728035,
+      "lng": -80.6003643
+    },
+    "ORIOLE ST": {
+      "lat": 43.4646057,
+      "lng": -80.502484
+    },
+    "THORNVIEW PL": {
+      "lat": 43.4671252,
+      "lng": -80.5844466
+    },
+    "TEST": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "MEERSBURG LANE": {
+      "lat": 43.4584463,
+      "lng": -80.5774083
+    },
+    "SMALLWOOD CRT": {
+      "lat": 43.4831541,
+      "lng": -80.5335412
+    },
+    "MILL STREAM DRIVE": {
+      "lat": 43.5255652,
+      "lng": -80.4927385
+    },
+    "KING ST N @2": {
+      "lat": 43.4653843,
+      "lng": -80.5222035
+    },
+    "2 KING ST N": {
+      "lat": 43.4653843,
+      "lng": -80.5222035
+    },
+    "TEABLY CR": {
+      "lat": 43.489914,
+      "lng": -80.5223125
+    },
+    "CENTRAL LOT": {
+      "lat": 43.4700905,
+      "lng": -80.5270515
+    },
+    "HOLLY ST": {
+      "lat": 43.4817511,
+      "lng": -80.5292623
+    },
+    "LEE CIRCLE": {
+      "lat": 43.4969112,
+      "lng": -80.504107
+    },
+    "224": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "CLAYFIELD AVE": {
+      "lat": 43.4717578,
+      "lng": -80.5266182
+    },
+    "WATERLOO ARENA": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "OAK PARK DR.": {
+      "lat": 43.5205364,
+      "lng": -80.4970917
+    },
+    "WATERLOO LOT A": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "DEWDROP": {
+      "lat": 43.4532018,
+      "lng": -80.5887589
+    },
+    "TEMPORARY LOT B": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "YORKSHIRE DR": {
+      "lat": 43.4570441,
+      "lng": -80.5724081
+    },
+    "STRATHMERE CRT": {
+      "lat": 43.4587616,
+      "lng": -80.5731539
+    },
+    "SUGARBUSH DR": {
+      "lat": 43.502309,
+      "lng": -80.5158819
+    },
+    "STONEBURY CRES": {
+      "lat": 43.5044504,
+      "lng": -80.5209184
+    },
+    "ASHCROFT PL": {
+      "lat": 43.4774987,
+      "lng": -80.5111467
+    },
+    "FALCON RIDGE": {
+      "lat": 43.5222603,
+      "lng": -80.4970975
+    },
+    "BUCKINGHAM BLVD": {
+      "lat": 43.457951,
+      "lng": -80.572904
+    },
+    "HELENE CRES": {
+      "lat": 43.4578375,
+      "lng": -80.546411
+    },
+    "EASTBRIDGE BLVD": {
+      "lat": 43.505687,
+      "lng": -80.5031636
+    },
+    "BARRELYARDS": {
+      "lat": 43.463154,
+      "lng": -80.5294765
+    },
+    "TWINFLOWER CRES": {
+      "lat": 43.4985183,
+      "lng": -80.5619754
+    },
+    "ALLISON CRT": {
+      "lat": 43.4919919,
+      "lng": -80.4993268
+    },
+    "TEMPORARY LOT A": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "IRA NEEDLES BLVD": {
+      "lat": 43.4419103,
+      "lng": -80.5654917
+    },
+    "RED OAK PL": {
+      "lat": 43.4965977,
+      "lng": -80.5566126
+    },
+    "QUICKFALL DR": {
+      "lat": 43.480912,
+      "lng": -80.5079722
+    },
+    "LIONS GATE": {
+      "lat": 43.4678334,
+      "lng": -80.5508919
+    },
+    "BRENTCLIFFE DR": {
+      "lat": 43.4687725,
+      "lng": -80.5765587
+    },
+    "FOX COVE PLACE": {
+      "lat": 43.5092657,
+      "lng": -80.5138796
+    },
+    "LONGWOOD DR": {
+      "lat": 43.4903062,
+      "lng": -80.5379119
+    },
+    "SANDFORD FLEMING DR": {
+      "lat": 43.454408,
+      "lng": -80.5646868
+    },
+    "CANSO PLACE": {
+      "lat": 43.5076057,
+      "lng": -80.5018439
+    },
+    "SPICE BUSH ST": {
+      "lat": 43.4674458,
+      "lng": -80.5975627
+    },
+    "MONTPELLIER  DR": {
+      "lat": 43.448694,
+      "lng": -80.5776656
+    },
+    "NORWOOD CRES": {
+      "lat": 43.4500431,
+      "lng": -80.5466321
+    },
+    "CIDER MILL DR": {
+      "lat": 43.5250345,
+      "lng": -80.4953803
+    },
+    "WILLIAM ST W": {
+      "lat": 43.4584999,
+      "lng": -80.5248575
+    },
+    "THORNBIRD PL": {
+      "lat": 43.4405896,
+      "lng": -80.5584008
+    },
+    "THORNLEA CRT": {
+      "lat": 43.4566587,
+      "lng": -80.5687992
+    },
+    "BREEZEWOOD CRES": {
+      "lat": 43.4541564,
+      "lng": -80.5440902
+    },
+    "WILTSHIRE PL": {
+      "lat": 43.4636021,
+      "lng": -80.5642252
+    },
+    "BERTHA ST": {
+      "lat": 43.5021321,
+      "lng": -80.5013065
+    },
+    "ELGIN CRES": {
+      "lat": 43.4731175,
+      "lng": -80.5199411
+    },
+    "ROYAL BEECH CRT": {
+      "lat": 43.4524342,
+      "lng": -80.5662371
+    },
+    "BRAEBURN PL": {
+      "lat": 43.4654335,
+      "lng": -80.5546416
+    },
+    "SHORT ST": {
+      "lat": 43.4613777,
+      "lng": -80.524246
+    },
+    "JACK PINE PL": {
+      "lat": 43.4946684,
+      "lng": -80.5639299
+    },
+    "THORNBERRY LANE": {
+      "lat": 43.4461463,
+      "lng": -80.5627785
+    },
+    "BEAVER CREEK CRES": {
+      "lat": 43.4725453,
+      "lng": -80.5811743
+    },
+    "RANDALL ST": {
+      "lat": 43.4476478,
+      "lng": -79.6688107
+    },
+    "MASSEY AVE": {
+      "lat": 43.4281799,
+      "lng": -80.4618989
+    },
+    "WERNI CT": {
+      "lat": 43.474238,
+      "lng": -80.5955413
+    },
+    "GREEN ACRES DR": {
+      "lat": 43.5016694,
+      "lng": -80.5098419
+    },
+    "MEADOWVALE PL": {
+      "lat": 43.4974151,
+      "lng": -80.4978753
+    },
+    "RG": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "GLENELM CRES": {
+      "lat": 43.4903877,
+      "lng": -80.5434376
+    },
+    "PALAMINO PL": {
+      "lat": 43.4973688,
+      "lng": -80.4949968
+    },
+    "CLARIDGE PL": {
+      "lat": 43.4649083,
+      "lng": -80.5764249
+    },
+    "HAMSTEAD CRT": {
+      "lat": 43.490075,
+      "lng": -80.5025513
+    },
+    "HILLCROFT CT": {
+      "lat": 43.4466083,
+      "lng": -80.5656568
+    },
+    "MARY ST": {
+      "lat": 43.4596712,
+      "lng": -80.5160344
+    },
+    "WATERLOO TOWN SQ PARKING LOT SOUTH": {
+      "lat": 43.4623763,
+      "lng": -80.52324860000002
+    },
+    "21 WILLOW ST": {
+      "lat": 43.46467,
+      "lng": -80.51786
+    },
+    "YARMOUTH CRES": {
+      "lat": 43.5101761,
+      "lng": -80.4983857
+    },
+    "MILLSTREAM DR": {
+      "lat": 43.5255652,
+      "lng": -80.4927385
+    },
+    "OXBOW RD": {
+      "lat": 43.4996858,
+      "lng": -80.5140391
+    },
+    "HONEYWOOD PL": {
+      "lat": 43.4664455,
+      "lng": -80.5820666
+    },
+    "STONEHAVEN DR": {
+      "lat": 43.4448318,
+      "lng": -80.5444076
+    },
+    "OLD ALBERT ST": {
+      "lat": 43.489321,
+      "lng": -80.5439817
+    },
+    "MAGNOLIA PL": {
+      "lat": 43.4976343,
+      "lng": -80.5652019
+    },
+    "DOGWOOD LANE": {
+      "lat": 43.4870149,
+      "lng": -80.5612622
+    },
+    "WESTVALE DR": {
+      "lat": 43.4479061,
+      "lng": -80.5510052
+    },
+    "ANITA CRT": {
+      "lat": 43.4981531,
+      "lng": -80.5143868
+    },
+    "MCDOUGALL RD": {
+      "lat": 43.4602406,
+      "lng": -80.5438044
+    },
+    "SORREL PL": {
+      "lat": 43.483206,
+      "lng": -80.5319102
+    },
+    "NAEO": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "MARINER DR": {
+      "lat": 43.5054723,
+      "lng": -80.508031
+    },
+    "THORNDALE PL": {
+      "lat": 43.4509733,
+      "lng": -80.549304
+    },
+    "TEMPORARY LOT B ON REGINA ST": {
+      "lat": 43.4639852,
+      "lng": -80.5208049
+    },
+    "BEZE099": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "WATERLOO TOWN SQ S PARKING LOT": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "GREY SQUIRREL PL": {
+      "lat": 43.508316,
+      "lng": -80.5201272
+    },
+    "ADULT REC. CENTRE PARKING LOT": {
+      "lat": 43.4602424,
+      "lng": -80.5197731
+    },
+    "PLEASANT BAY CT": {
+      "lat": 43.510744,
+      "lng": -80.5096323
+    },
+    "REGINA PARKING LOT": {
+      "lat": 43.4646219,
+      "lng": -80.5206911
+    },
+    "RIVER OAK DR": {
+      "lat": 43.5017816,
+      "lng": -80.4817532
+    },
+    "CORNRIDGE PL": {
+      "lat": 43.4597563,
+      "lng": -80.5776889
+    },
+    "TATLOCK CRT": {
+      "lat": 43.463559,
+      "lng": -80.5582507
+    },
+    "THORNHILL PLACE": {
+      "lat": 43.4415708,
+      "lng": -80.5637279
+    },
+    "WESTRIDGE DR": {
+      "lat": 43.451635,
+      "lng": -80.5502802
+    },
+    "KEATS WAY PL": {
+      "lat": 43.4612442,
+      "lng": -80.54675
+    },
+    "KING ST N- WATERLOO INN LOT": {
+      "lat": 43.4901185,
+      "lng": -80.5296379
+    },
+    "CULPEPPER DR": {
+      "lat": 43.4530682,
+      "lng": -80.544793
+    },
+    "397-433 KEATS WAY": {
+      "lat": 43.4583701,
+      "lng": -80.5564053
+    },
+    "LONELM CRT": {
+      "lat": 43.4911841,
+      "lng": -80.5443494
+    },
+    "UNION ST E": {
+      "lat": 43.4641328,
+      "lng": -80.5086172
+    },
+    "MAYFIELD CRT": {
+      "lat": 43.4787265,
+      "lng": -80.5014644
+    },
+    "DUKE ST W": {
+      "lat": 43.4550431,
+      "lng": -80.4963464
+    },
+    "CASTLEGATE CRES": {
+      "lat": 43.460439,
+      "lng": -80.5586181
+    },
+    "OLD ABBEY RD 1": {
+      "lat": 43.4999495,
+      "lng": -80.52527239999999
+    },
+    "GLENBURN DR": {
+      "lat": 43.4588236,
+      "lng": -80.5501571
+    },
+    "SUNDEW": {
+      "lat": 43.4552634,
+      "lng": -80.5964963
+    },
+    "2 KING S N": {
+      "lat": 43.46511719999999,
+      "lng": -80.52200959999999
+    },
+    "BAMBERG CRES.": {
+      "lat": 43.452916,
+      "lng": -80.5805193
+    },
+    "AMERICAN BEECH AVE": {
+      "lat": 43.4680783,
+      "lng": -80.5981156
+    },
+    "WILLOW STREET PARKING LOT": {
+      "lat": 43.4631498,
+      "lng": -80.5159558
+    },
+    "WHITE ELM BLVD": {
+      "lat": 43.4658756,
+      "lng": -80.5871549
+    },
+    "LYNNBROOK CRES": {
+      "lat": 43.4916215,
+      "lng": -80.547501
+    },
+    "CAMBRIA PL": {
+      "lat": 43.4520875,
+      "lng": -80.5458637
+    },
+    "CENTRAL STREET LOT": {
+      "lat": 43.4700905,
+      "lng": -80.5270515
+    },
+    "JOSEPH ST": {
+      "lat": 43.4500474,
+      "lng": -80.4967534
+    },
+    "CEDAR BEND PL": {
+      "lat": 43.476145,
+      "lng": -80.5934643
+    },
+    "WILD BIRCH AVE": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "ISEBELLA ST": {
+      "lat": 43.4030784,
+      "lng": -80.5054509
+    },
+    "SPRUCEHILL AVE": {
+      "lat": 43.4914307,
+      "lng": -80.5495474
+    },
+    "LONGFELLOW DR": {
+      "lat": 43.465089,
+      "lng": -80.547922
+    },
+    "ARDEN PL": {
+      "lat": 43.4514463,
+      "lng": -80.5472422
+    },
+    "CHELFORD CRES": {
+      "lat": 43.4799745,
+      "lng": -80.5054673
+    },
+    "BELMONT AVE": {
+      "lat": 43.4571001,
+      "lng": -80.5225866
+    },
+    "FARADAY CRT": {
+      "lat": 43.4645683,
+      "lng": -80.5598812
+    },
+    "EXMOOR ST": {
+      "lat": 43.4883969,
+      "lng": -80.4846615
+    },
+    "MARTINDALE CRES": {
+      "lat": 43.4859553,
+      "lng": -80.5605986
+    },
+    "OAK  PARK DRIVE": {
+      "lat": 43.5205364,
+      "lng": -80.4970917
+    },
+    "ANNDALE RD": {
+      "lat": 43.4963607,
+      "lng": -80.5143688
+    },
+    "FREEMONT ST": {
+      "lat": 43.4596278,
+      "lng": -80.5210281
+    },
+    "ABBOTSWOOD CRT": {
+      "lat": 43.4962361,
+      "lng": -80.5172185
+    },
+    "THISTLEGLEN PL": {
+      "lat": 43.4440643,
+      "lng": -80.557636
+    },
+    "FROBISHER DR": {
+      "lat": 43.5081773,
+      "lng": -80.5260136
+    },
+    "DODDS LANE": {
+      "lat": 43.4597273,
+      "lng": -80.5171715
+    },
+    "BUSHWOOD CRT": {
+      "lat": 43.4621712,
+      "lng": -80.5742498
+    },
+    "OLD PARK DRIVE": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "MULBERRY LANE": {
+      "lat": 43.4549788,
+      "lng": -80.5424145
+    },
+    "PARKSIDE DR": {
+      "lat": 43.4921436,
+      "lng": -80.5447708
+    },
+    "SPRING ST W": {
+      "lat": 43.4689841,
+      "lng": -80.5258408
+    },
+    "ROYAL FERN ST": {
+      "lat": 43.4647518,
+      "lng": -80.5896276
+    },
+    "SUNNYDALE PL": {
+      "lat": 43.4864729,
+      "lng": -80.549084
+    },
+    "SALZBURG DR": {
+      "lat": 43.4615549,
+      "lng": -80.5872684
+    },
+    "BAMBERG CRES": {
+      "lat": 43.452916,
+      "lng": -80.5805193
+    },
+    "TREMBLING ASTER AVE": {
+      "lat": 43.1781986,
+      "lng": -79.8162209
+    },
+    "TESTT": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "CRAIGSTON PL": {
+      "lat": 43.4440665,
+      "lng": -80.5428879
+    },
+    "BEECHDROPS": {
+      "lat": 43.4536076,
+      "lng": -80.5934017
+    },
+    "Temporary Lot A": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "31 CAROLINE ST N": {
+      "lat": 43.4654094,
+      "lng": -80.52780589999999
+    },
+    "550": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "IROQUOIS PL": {
+      "lat": 43.4649615,
+      "lng": -80.5453009
+    },
+    "TWINLEAF ST": {
+      "lat": 43.454256,
+      "lng": -80.5952542
+    },
+    "BUTTONBUSH ST.": {
+      "lat": 43.4505656,
+      "lng": -80.5905335
+    },
+    "EMPIRE ST": {
+      "lat": 43.4544162,
+      "lng": -80.5322045
+    },
+    "DEWDROP CRES.": {
+      "lat": 43.4532018,
+      "lng": -80.5887589
+    },
+    "DUTTON DR": {
+      "lat": 43.4932012,
+      "lng": -80.5385299
+    },
+    "CLAIRBROOK CRES": {
+      "lat": 43.4657482,
+      "lng": -80.5617739
+    },
+    "LOT A PARKING LOT": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "OAK PARK": {
+      "lat": 43.5205364,
+      "lng": -80.4970917
+    },
+    "AMERICAN BEACH": {
+      "lat": 43.4680783,
+      "lng": -80.5981156
+    },
+    "ALBERT MCCORMICK ARENA": {
+      "lat": 43.4888358,
+      "lng": -80.5451204
+    },
+    "BREAKWATER CRES": {
+      "lat": 43.512593,
+      "lng": -80.513038
+    },
+    "PITTSFORD CLOSE": {
+      "lat": 43.4895565,
+      "lng": -80.5001228
+    },
+    "OAK PARK DR": {
+      "lat": 43.5205364,
+      "lng": -80.4970917
+    },
+    "20 SPRING ST. E.": {
+      "lat": 43.4695536,
+      "lng": -80.5226804
+    },
+    "SPRINGFIELD CRES": {
+      "lat": 43.4398526,
+      "lng": -80.555499
+    },
+    "DALECROFT PL": {
+      "lat": 43.4705315,
+      "lng": -80.5795436
+    },
+    "BARRELYARDS BLVD": {
+      "lat": 43.4643107,
+      "lng": -80.5293881
+    },
+    "CLAY & GLASS MUSEUM LOT": {
+      "lat": 43.4649381,
+      "lng": -80.5262637
+    },
+    "DICK ST": {
+      "lat": 43.4565107,
+      "lng": -80.535181
+    },
+    "PARKWOOD CRT": {
+      "lat": 43.4880767,
+      "lng": -80.5342705
+    },
+    "SEAGRAM DR": {
+      "lat": 43.4696414,
+      "lng": -80.5339996
+    },
+    "BUTERCUP CR": {
+      "lat": 43.4736284,
+      "lng": -80.5968062
+    },
+    "LOTB": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "LADY SLIPPER": {
+      "lat": 43.4538138,
+      "lng": -80.5907775
+    },
+    "BEECHDROP": {
+      "lat": 43.4536076,
+      "lng": -80.5934017
+    },
+    "ARLENE PL": {
+      "lat": 43.4717273,
+      "lng": -80.4970733
+    },
+    "BEECHLAWN DR": {
+      "lat": 43.4668544,
+      "lng": -80.5604995
+    },
+    "CAVALIER PL": {
+      "lat": 43.453326,
+      "lng": -80.543307
+    },
+    "ROY SCHMIDT RD": {
+      "lat": 43.4885399,
+      "lng": -80.5915089
+    },
+    "ZURICH DR": {
+      "lat": 43.4572328,
+      "lng": -80.583926
+    },
+    "CHURCHILL CRT": {
+      "lat": 43.454487,
+      "lng": -80.5508778
+    },
+    "DALESIDE PL": {
+      "lat": 43.485957,
+      "lng": -80.5637565
+    },
+    "WINCHESTER DR": {
+      "lat": 43.4548476,
+      "lng": -80.556964
+    },
+    "DENHOLM ST": {
+      "lat": 43.5019659,
+      "lng": -80.503708
+    },
+    "ABERDEEN DR": {
+      "lat": 43.4523916,
+      "lng": -80.5296246
+    },
+    "DANSBURY PL": {
+      "lat": 43.4991871,
+      "lng": -80.4957772
+    },
+    "GREY SILO RD": {
+      "lat": 43.5231944,
+      "lng": -80.4948172
+    },
+    "AVENS DR.": {
+      "lat": 43.4538069,
+      "lng": -80.5960497
+    },
+    "KNIGHTSBRIDGE CRT": {
+      "lat": 43.4593407,
+      "lng": -80.5641194
+    },
+    "LADYSLIPPER": {
+      "lat": 43.4538138,
+      "lng": -80.5907775
+    },
+    "MURDOCK AVE": {
+      "lat": 43.4738401,
+      "lng": -80.5057118
+    },
+    "SWEETGALE ST": {
+      "lat": 43.4515063,
+      "lng": -80.5907402
+    },
+    "RINK IN THE PARK": {
+      "lat": 43.47033829999999,
+      "lng": -80.53243619999999
+    },
+    "BLACK OAK CRES": {
+      "lat": 43.4959534,
+      "lng": -80.5552583
+    },
+    "DONNENWERTH DR": {
+      "lat": 43.4022489,
+      "lng": -80.5092764
+    },
+    "GUILDWOOD PL": {
+      "lat": 43.501995,
+      "lng": -80.522475
+    },
+    "LAKEVIEW DR": {
+      "lat": 43.4892985,
+      "lng": -80.5659203
+    },
+    "BLUEVALE ST S": {
+      "lat": 43.4707384,
+      "lng": -80.5000238
+    },
+    "WESTPARK CR": {
+      "lat": 43.4442048,
+      "lng": -80.5660515
+    },
+    "FIR ST": {
+      "lat": 43.4772558,
+      "lng": -80.5264469
+    },
+    "MARENGO CRT": {
+      "lat": 43.4894847,
+      "lng": -80.487634
+    },
+    "LITTLE DOVER CRES": {
+      "lat": 43.5076302,
+      "lng": -80.5123527
+    },
+    "CARDIFF ST": {
+      "lat": 43.4408419,
+      "lng": -80.5600406
+    },
+    "BRIDGE ST W": {
+      "lat": 43.503025,
+      "lng": -80.508826
+    },
+    "CEDARBRAE AVE": {
+      "lat": 43.4878171,
+      "lng": -80.5502016
+    },
+    "TWIN LEAF STREET": {
+      "lat": 43.454256,
+      "lng": -80.5952542
+    },
+    "RED PINE DR": {
+      "lat": 43.5009201,
+      "lng": -80.5573749
+    },
+    "INTERLAKEN DR": {
+      "lat": 43.4549127,
+      "lng": -80.5832154
+    },
+    "CHESTNUT RIDGE": {
+      "lat": 43.5191958,
+      "lng": -80.4938448
+    },
+    "EASTGATE WALK": {
+      "lat": 43.5043074,
+      "lng": -80.5189447
+    },
+    "CAROLINE PARKING LOT-NORTH": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "KARLSFELD RD": {
+      "lat": 43.4567713,
+      "lng": -80.5777579
+    },
+    "TIMBERCROFT CRES": {
+      "lat": 43.4705432,
+      "lng": -80.5699393
+    },
+    "BRANDENBURG BLVD": {
+      "lat": 43.4548992,
+      "lng": -80.5774239
+    },
+    "WESTPARK ST": {
+      "lat": 43.4442048,
+      "lng": -80.5660515
+    },
+    "WATERLOO TOWN SQ N PARKING LOT": {
+      "lat": 43.47465580000001,
+      "lng": -80.5452226
+    },
+    "MAYFIELD AVE": {
+      "lat": 43.478686,
+      "lng": -80.5066981
+    },
+    "FOXHILL PL": {
+      "lat": 43.4481746,
+      "lng": -80.5608578
+    },
+    "FERN RD": {
+      "lat": 43.4980755,
+      "lng": -80.5588682
+    },
+    "ALEXANDRA AVE": {
+      "lat": 43.4573672,
+      "lng": -80.5301995
+    },
+    "87 CAROLINE ST S": {
+      "lat": 43.4613781,
+      "lng": -80.5229643
+    },
+    "WEBER ST N": {
+      "lat": 43.4866628,
+      "lng": -80.5310846
+    },
+    "THORNHILL PL": {
+      "lat": 43.4415708,
+      "lng": -80.5637279
+    },
+    "WASAGA CRES": {
+      "lat": 43.4895333,
+      "lng": -80.5892562
+    },
+    "THORNCREST DR": {
+      "lat": 43.4834515,
+      "lng": -80.5551653
+    },
+    "BIRCHLEAF WALK": {
+      "lat": 43.4470188,
+      "lng": -80.5633235
+    },
+    "LOT A REGINA ST": {
+      "lat": 43.4639852,
+      "lng": -80.5208049
+    },
+    "DUPONT ST W": {
+      "lat": 43.4657207,
+      "lng": -80.5242667
+    },
+    "WESTHOLLOW PL": {
+      "lat": 43.4455938,
+      "lng": -80.5637763
+    },
+    "BROOKMILL PL": {
+      "lat": 43.4747286,
+      "lng": -80.5841211
+    },
+    "SPRINGWATER DR": {
+      "lat": 43.4920548,
+      "lng": -80.5839617
+    },
+    "FORSYTH DR": {
+      "lat": 43.4523916,
+      "lng": -80.5296246
+    },
+    "VIRGINIA CREEPER ST": {
+      "lat": 43.4722518,
+      "lng": -80.5997727
+    },
+    "LARCH ST": {
+      "lat": 43.4766794,
+      "lng": -80.53086
+    },
+    "BEAVERWOOD ST": {
+      "lat": 43.4726253,
+      "lng": -80.5844973
+    },
+    "WILD CALLA": {
+      "lat": 43.4530851,
+      "lng": -80.5952389
+    },
+    "OAK PAPK DRIVE": {
+      "lat": 43.5205364,
+      "lng": -80.4970917
+    },
+    "WOOLGRASS AVENUE": {
+      "lat": 43.4720241,
+      "lng": -80.6025432
+    },
+    "HUNTERS PL": {
+      "lat": 43.506521,
+      "lng": -80.520724
+    },
+    "PARKING LOT A": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "BARTA PL": {
+      "lat": 43.4974967,
+      "lng": -80.5416192
+    },
+    "WILLOW ST": {
+      "lat": 43.4631498,
+      "lng": -80.5159558
+    },
+    "TEABLY CRES": {
+      "lat": 43.489914,
+      "lng": -80.5223125
+    },
+    "COPPER RIDGE DR": {
+      "lat": 43.5209386,
+      "lng": -80.4938211
+    },
+    "BONN AVE": {
+      "lat": 43.4569144,
+      "lng": -80.577908
+    },
+    "DEER FOOT TRAIL": {
+      "lat": 43.5218631,
+      "lng": -80.4939109
+    },
+    "MAPLE CRT": {
+      "lat": 43.4764978,
+      "lng": -80.5261867
+    },
+    "BAMBERG": {
+      "lat": 43.452916,
+      "lng": -80.5805193
+    },
+    "BUTTONBUSH ST": {
+      "lat": 43.4505656,
+      "lng": -80.5905335
+    },
+    "CONDOR ST": {
+      "lat": 43.4961111,
+      "lng": -80.4794177
+    },
+    "35 WILLIAM ST E": {
+      "lat": 43.4631134,
+      "lng": -80.51930779999999
+    },
+    "SANDY COVE CRES": {
+      "lat": 43.5087016,
+      "lng": -80.5069061
+    },
+    "BEVERLEY ST NORTH": {
+      "lat": 43.4604565,
+      "lng": -80.5323911
+    },
+    "LUNENBURG LANE": {
+      "lat": 43.5100405,
+      "lng": -80.4999816
+    },
+    "BEVERLEY ST N": {
+      "lat": 43.4604565,
+      "lng": -80.5323911
+    },
+    "PUBLIC SQUARE - KING ST S": {
+      "lat": 43.4639429,
+      "lng": -80.5223647
+    },
+    "DOVER ST": {
+      "lat": 43.4661598,
+      "lng": -80.5108275
+    },
+    "GLEN FORREST BLVD": {
+      "lat": 43.486729,
+      "lng": -80.5547178
+    },
+    "WATERTON CRT": {
+      "lat": 43.4924119,
+      "lng": -80.5800255
+    },
+    "FARIS": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "PITFIELD PL": {
+      "lat": 43.4394493,
+      "lng": -80.5612224
+    },
+    "GLACIER ST": {
+      "lat": 43.4951056,
+      "lng": -80.578258
+    },
+    "ST. MORITZ  AVE": {
+      "lat": 43.451705,
+      "lng": -80.5808988
+    },
+    "FULLERTON ST": {
+      "lat": 43.4603678,
+      "lng": -80.522069
+    },
+    "OLD ABBEY RD": {
+      "lat": 43.502727,
+      "lng": -80.521803
+    },
+    "KRAUS DR": {
+      "lat": 43.5012386,
+      "lng": -80.5303942
+    },
+    "WINTERBERRY AVE": {
+      "lat": 43.4730319,
+      "lng": -80.5999813
+    },
+    "BONAVISTA DRIVE": {
+      "lat": 43.506525,
+      "lng": -80.4996423
+    },
+    "WILLOW WOOD PL": {
+      "lat": 43.4662005,
+      "lng": -80.5840556
+    },
+    "VALLEY RIDGE CRES": {
+      "lat": 43.4494959,
+      "lng": -80.5569468
+    },
+    "AMERICAN BEECH AVENUE": {
+      "lat": 43.4680783,
+      "lng": -80.5981156
+    },
+    "WESTCOURT PL": {
+      "lat": 43.4619979,
+      "lng": -80.5397051
+    },
+    "NEILSON AVE": {
+      "lat": 43.4731516,
+      "lng": -80.504425
+    },
+    "BARREL YARDS BLD": {
+      "lat": 43.4643107,
+      "lng": -80.5293881
+    },
+    "PORTSMOUTH GATE": {
+      "lat": 43.4399421,
+      "lng": -80.5539435
+    },
+    "ZURICH DRIVE": {
+      "lat": 43.4572328,
+      "lng": -80.583926
+    },
+    "AUBURN DR": {
+      "lat": 43.4916398,
+      "lng": -80.493122
+    },
+    "ROLLING HILLS DR": {
+      "lat": 43.4887415,
+      "lng": -80.5614991
+    },
+    "UNIVERSITY AVE E -CONESTOGA COLLEGE": {
+      "lat": 43.4794047,
+      "lng": -80.5180089
+    },
+    "BUTTON BUSH ST.": {
+      "lat": 43.4505656,
+      "lng": -80.5905335
+    },
+    "WHITE CEDAR ST": {
+      "lat": 43.4696177,
+      "lng": -80.6011097
+    },
+    "BAIRSTOW CRES": {
+      "lat": 43.4930522,
+      "lng": -80.5093937
+    },
+    "BORDEAUX PL": {
+      "lat": 43.4481433,
+      "lng": -80.5757074
+    },
+    "KING ST E": {
+      "lat": 43.4282948,
+      "lng": -80.4316097
+    },
+    "DALHOUSIE LANE": {
+      "lat": 43.5115102,
+      "lng": -80.4995708
+    },
+    "DEARBORN BLVD": {
+      "lat": 43.4900726,
+      "lng": -80.5198021
+    },
+    "MELBOURNE CRES": {
+      "lat": 43.4556911,
+      "lng": -80.5365768
+    },
+    "ERBSVILLE CRT": {
+      "lat": 43.4506524,
+      "lng": -80.5686604
+    },
+    "BLUEVALE ST N": {
+      "lat": 43.4754974,
+      "lng": -80.5008164
+    },
+    "CHRISTOPHER DR": {
+      "lat": 43.4768978,
+      "lng": -80.5007797
+    },
+    "SILVERCREST DR": {
+      "lat": 43.4445226,
+      "lng": -80.5416784
+    },
+    "CLOVERVALLEY CRT": {
+      "lat": 43.4474562,
+      "lng": -80.5581957
+    },
+    "WEST PARK CRES": {
+      "lat": 43.4442048,
+      "lng": -80.5660515
+    },
+    "DEERFOOT TRAIL": {
+      "lat": 43.5218631,
+      "lng": -80.4939109
+    },
+    "YOUSUCK": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "ROY ST": {
+      "lat": 43.4536465,
+      "lng": -80.4892262
+    },
+    "MUNICH CROSSING": {
+      "lat": 43.4613542,
+      "lng": -80.5840024
+    },
+    "BLYTHWOOD PL": {
+      "lat": 43.4872819,
+      "lng": -80.5326372
+    },
+    "AEMZ 892": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "45 ERB ST W": {
+      "lat": 43.4646429,
+      "lng": -80.52412749999999
+    },
+    "PREAKNESS STREET": {
+      "lat": 43.4948266,
+      "lng": -80.4834528
+    },
+    "HEMLOCK ST": {
+      "lat": 43.4761297,
+      "lng": -80.5320724
+    },
+    "DALEVIEW PL": {
+      "lat": 43.4864366,
+      "lng": -80.5654168
+    },
+    "HEATHCLIFF PL": {
+      "lat": 43.4626619,
+      "lng": -80.5697633
+    },
+    "AUTUMN PL": {
+      "lat": 43.492479,
+      "lng": -80.4961435
+    },
+    "SANFORD FLEMING DR": {
+      "lat": 43.454408,
+      "lng": -80.5646868
+    },
+    "RUSTIC CRT": {
+      "lat": 43.5059439,
+      "lng": -80.5130107
+    },
+    "WEBER ST S": {
+      "lat": 43.4658756,
+      "lng": -80.5063804
+    },
+    "REFF": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "LANGFORD PL": {
+      "lat": 43.4809563,
+      "lng": -80.5092637
+    },
+    "BRISTOL ST": {
+      "lat": 43.4665252,
+      "lng": -80.507082
+    },
+    "POMMEL GATE CRES": {
+      "lat": 43.4683606,
+      "lng": -80.5572734
+    },
+    "220 KING STREET NORTH": {
+      "lat": 43.475238,
+      "lng": -80.524389
+    },
+    "FREDERICK BANTING PL": {
+      "lat": 43.4558976,
+      "lng": -80.566799
+    },
+    "MALABAR DR": {
+      "lat": 43.5045315,
+      "lng": -80.4987662
+    },
+    "PRINCESS ST E": {
+      "lat": 43.4671072,
+      "lng": -80.5209643
+    },
+    "CARDINAL CRES N": {
+      "lat": 43.471366,
+      "lng": -80.50227
+    },
+    "20 BARREL YARDS BLVD": {
+      "lat": 43.4644399,
+      "lng": -80.52998
+    },
+    "WEST HALLOW CRT": {
+      "lat": 43.4721517,
+      "lng": -80.5439318
+    },
+    "SEVERN ST": {
+      "lat": 43.4561101,
+      "lng": -80.5223494
+    },
+    "WESTHAVEN CRT": {
+      "lat": 43.4466275,
+      "lng": -80.5670281
+    },
+    "MILLA CRT": {
+      "lat": 43.4676241,
+      "lng": -80.5591489
+    },
+    "HILLSIDE PARK": {
+      "lat": 43.4840696,
+      "lng": -80.5177976
+    },
+    "CAROLINE PARKING LOT": {
+      "lat": 43.4607404,
+      "lng": -80.5219257
+    },
+    "BRIGHTON ST": {
+      "lat": 43.4719381,
+      "lng": -80.5193062
+    },
+    "WALKING FERN CR": {
+      "lat": 43.4584444,
+      "lng": -80.5963771
+    },
+    "ASHBY CRT": {
+      "lat": 43.4435752,
+      "lng": -80.5474513
+    },
+    "WOOLWICH ST": {
+      "lat": 43.4934705,
+      "lng": -80.4810979
+    },
+    "RODNEY ST": {
+      "lat": 43.4663552,
+      "lng": -80.5050484
+    },
+    "MAYVIEW CRT": {
+      "lat": 43.4994099,
+      "lng": -80.5535169
+    },
+    "BDTR172": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "BRIDGEPORT RD W": {
+      "lat": 43.4674901,
+      "lng": -80.5242352
+    },
+    "HAVELOCK DR": {
+      "lat": 43.4899716,
+      "lng": -80.5603115
+    },
+    "WESTHAVEN ST": {
+      "lat": 43.4466275,
+      "lng": -80.5670281
+    },
+    "KAUFMAN FLATS": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "FOXHUNT RD": {
+      "lat": 43.4933804,
+      "lng": -80.5157236
+    },
+    "HALLS LANE": {
+      "lat": 43.4500964,
+      "lng": -80.4914315
+    },
+    "MARSLAND CENTRE PARKING LOT": {
+      "lat": 43.4657342,
+      "lng": -80.523958
+    },
+    "AMERICAN BEECH": {
+      "lat": 43.4680783,
+      "lng": -80.5981156
+    },
+    "PINERY TRAIL": {
+      "lat": 43.4912365,
+      "lng": -80.5865974
+    },
+    "HAWKSWOOD DR": {
+      "lat": 43.4954766,
+      "lng": -80.4782209
+    },
+    "REB OSIER RD": {
+      "lat": 43.467575,
+      "lng": -80.5989128
+    },
+    "WILLOW WOOD DR": {
+      "lat": 43.4674966,
+      "lng": -80.5827863
+    },
+    "4-19": {
+      "lat": 42.8113722,
+      "lng": -80.73470739999999
+    },
+    "QUEENSDALE CRT": {
+      "lat": 43.4626825,
+      "lng": -80.5667499
+    },
+    "ELLIS CRT N": {
+      "lat": 43.49717589999999,
+      "lng": -80.5470284
+    },
+    "MONTCLAIR PL": {
+      "lat": 43.4795638,
+      "lng": -80.5092012
+    },
+    "EIWO CRT": {
+      "lat": 43.495021,
+      "lng": -80.5015157
+    },
+    "CORRIE CRES": {
+      "lat": 43.483995,
+      "lng": -80.549267
+    },
+    "COLLEGE ST": {
+      "lat": 43.4536151,
+      "lng": -80.491933
+    },
+    "WHITE CEDAR AVE": {
+      "lat": 43.4696177,
+      "lng": -80.6011097
+    },
+    "CHURCHILL ST": {
+      "lat": 43.4556925,
+      "lng": -80.5504848
+    },
+    "MILFORD AVE": {
+      "lat": 43.4858822,
+      "lng": -80.5330009
+    },
+    "FERNDALE PL": {
+      "lat": 43.4836705,
+      "lng": -80.5129281
+    },
+    "TOLL GATE BLVD": {
+      "lat": 43.4863039,
+      "lng": -80.5589033
+    },
+    "DEVITT AVE N": {
+      "lat": 43.4680547,
+      "lng": -80.5146279
+    },
+    "HILLCROFT CRT": {
+      "lat": 43.4466083,
+      "lng": -80.5656568
+    },
+    "CREIGHTON CRT": {
+      "lat": 43.4913502,
+      "lng": -80.5032453
+    },
+    "341": {
+      "lat": 43.4642578,
+      "lng": -80.5204096
+    },
+    "PILGRIM CIR": {
+      "lat": 43.4996627,
+      "lng": -80.5119486
+    },
+    "GASPE DR": {
+      "lat": 43.5102203,
+      "lng": -80.4999781
+    },
+    "CROYDEN PL": {
+      "lat": 43.4889342,
+      "lng": -80.4971992
+    },
+    "HICKORY ST E": {
+      "lat": 43.4790825,
+      "lng": -80.5229735
+    },
+    "BLUESTREAM RD": {
+      "lat": 43.4942719,
+      "lng": -80.5163628
+    },
+    "ELLIS CRES S": {
+      "lat": 43.4675638,
+      "lng": -80.5043359
+    },
+    "WOOLGRASS AVE": {
+      "lat": 43.4720241,
+      "lng": -80.6025432
+    },
+    "CEDARVALE CRES": {
+      "lat": 43.4889237,
+      "lng": -80.5476767
+    },
+    "BERNAY DR": {
+      "lat": 43.4506863,
+      "lng": -80.576025
+    },
+    "WIDEMAN RD": {
+      "lat": 43.4731971,
+      "lng": -80.6071013
+    },
+    "DORSET ST": {
+      "lat": 43.4680738,
+      "lng": -80.5243933
+    },
+    "THE BARREL YARDS BLVD": {
+      "lat": 43.4643107,
+      "lng": -80.5293881
+    },
+    "SPRING ST E": {
+      "lat": 43.4693638,
+      "lng": -80.522967
+    },
+    "GRANT CRES": {
+      "lat": 43.5028368,
+      "lng": -80.5141816
+    },
+    "SHAUGHNESSY PL": {
+      "lat": 43.4544392,
+      "lng": -80.5664667
+    },
+    "WHITE CEDAR AVE.": {
+      "lat": 43.4696177,
+      "lng": -80.6011097
+    },
+    "WATERLOO CITY CENTRE": {
+      "lat": 43.4819783,
+      "lng": -80.526122
+    },
+    "PARADISE CRES": {
+      "lat": 43.4540964,
+      "lng": -80.5677837
+    },
+    "550 KING ST N": {
+      "lat": 43.4963638,
+      "lng": -80.5257465
+    },
+    "OAKFIELD CRT": {
+      "lat": 43.4473414,
+      "lng": -80.5595268
+    },
+    "GREY SILO ROAD": {
+      "lat": 43.5231944,
+      "lng": -80.4948172
+    },
+    "PINELAND CRES": {
+      "lat": 43.4712922,
+      "lng": -80.5783311
+    },
+    "FOREST GATE CR": {
+      "lat": 43.4762948,
+      "lng": -80.5976829
+    },
+    "GLENDENE CRES": {
+      "lat": 43.4917524,
+      "lng": -80.5590615
+    },
+    "RANDALL DR": {
+      "lat": 43.5024574,
+      "lng": -80.5485006
+    },
+    "EDGEBROOK PL": {
+      "lat": 43.4875766,
+      "lng": -80.5624696
+    },
+    "ASHTON CRES": {
+      "lat": 43.4553916,
+      "lng": -80.5382959
+    },
+    "ROCK ELM ST.": {
+      "lat": 43.4607012,
+      "lng": -80.6011992
+    },
+    "RHEINLAND PL": {
+      "lat": 43.4602707,
+      "lng": -80.5818185
+    },
+    "SUNDEW DR": {
+      "lat": 43.4552634,
+      "lng": -80.5964963
+    },
+    "BRENDAWOOD CRES": {
+      "lat": 43.47763,
+      "lng": -80.4992374
+    },
+    "MOHAWK AVE": {
+      "lat": 43.4645703,
+      "lng": -80.5500344
+    },
+    "BUSHVIEW CRES": {
+      "lat": 43.4953399,
+      "lng": -80.5689129
+    },
+    "DALE CRES": {
+      "lat": 43.4841625,
+      "lng": -80.5081985
+    },
+    "ROSEMEADOW CRES": {
+      "lat": 43.4442192,
+      "lng": -80.5557301
+    },
+    "BLUE BEECH BLVD": {
+      "lat": 43.4686253,
+      "lng": -80.5941218
+    },
+    "WASHINGTON AVE": {
+      "lat": 43.475544,
+      "lng": -80.5076011
+    },
+    "CAROLINE ST": {
+      "lat": 43.4607404,
+      "lng": -80.5219257
+    },
+    "WESTON PL": {
+      "lat": 43.4802379,
+      "lng": -80.5030992
+    },
+    "HILLIARD AVE": {
+      "lat": 43.4540574,
+      "lng": -80.5306922
+    }
+  },
+  "total_addresses": 1304,
+  "cache_version": "1.0"
+}

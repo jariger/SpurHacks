@@ -4,10 +4,12 @@ from data_processor import DataProcessor
 from filter_service import FilterService
 from maps_converter import MapsConverter
 from geocoding_service import GeocodingService
-from safety_predictor import SafetyPredictor
+from enhanced_safety_predictor import EnhancedSafetyPredictor
 import os
 from dotenv import load_dotenv
 import sys
+import pandas as pd
+from cache_manager import CacheManager
 
 # Load environment variables
 load_dotenv()
@@ -40,6 +42,8 @@ if GOOGLE_MAPS_API_KEY:
 else:
     gmaps = None
 
+# Initialize cache manager
+cache_manager = CacheManager()
 
 @app.route('/')
 def home():
@@ -586,6 +590,164 @@ def get_safety_thresholds():
             'risky': 'Less than 75% infraction rate - High chance of ticket',
             'dangerous': '75%+ infraction rate - Avoid parking here'
         }
+    })
+
+@app.route('/api/safety-markers', methods=['GET'])
+def get_safety_markers():
+    """Get all parking locations with safety analysis for map display"""
+    try:
+        print("🗺️ Fetching safety markers for map...")
+        
+        # Define data files for cache validation
+        data_files = {
+            'bylaw_infractions': 'sample_data/City_of_Waterloo_Bylaw_Parking_Infractions_-239008864429410164.csv',
+            'parking_on_street': 'sample_data/Parking_On_Street_-3246370995636778304.csv',
+            'parking_lots': 'sample_data/ParkingLots_3219243981443247613.csv'
+        }
+        
+        # Try to load from cache first
+        cached_analysis = cache_manager.load_safety_analysis(data_files, max_age_hours=24)
+        
+        if cached_analysis:
+            print("⚡ Using cached safety analysis")
+            safety_analysis = cached_analysis
+        else:
+            print("🔄 Generating new safety analysis...")
+            
+            # Initialize services
+            data_processor = DataProcessor()
+            enhanced_predictor = EnhancedSafetyPredictor()
+            
+            # Load data
+            print("📊 Loading data...")
+            bylaw_infractions = pd.DataFrame()
+            parking_on_street = pd.DataFrame()
+            parking_lots = pd.DataFrame()
+            
+            try:
+                if os.path.exists(data_files['bylaw_infractions']):
+                    bylaw_infractions = pd.read_csv(data_files['bylaw_infractions'])
+                    print(f"✅ Loaded {len(bylaw_infractions)} bylaw infraction records")
+            except Exception as e:
+                print(f"⚠️ Error loading bylaw infractions: {e}")
+            
+            try:
+                if os.path.exists(data_files['parking_on_street']):
+                    parking_on_street = pd.read_csv(data_files['parking_on_street'])
+                    print(f"✅ Loaded {len(parking_on_street)} parking on street records")
+            except Exception as e:
+                print(f"⚠️ Error loading parking on street: {e}")
+            
+            try:
+                if os.path.exists(data_files['parking_lots']):
+                    parking_lots = pd.read_csv(data_files['parking_lots'])
+                    print(f"✅ Loaded {len(parking_lots)} parking lot records")
+            except Exception as e:
+                print(f"⚠️ Error loading parking lots: {e}")
+            
+            # Analyze safety for all locations
+            print("🛡️ Analyzing safety...")
+            safety_analysis = enhanced_predictor.analyze_comprehensive_parking_safety(
+                bylaw_infractions,
+                parking_on_street, 
+                parking_lots
+            )
+            
+            # Save to cache
+            cache_manager.save_safety_analysis(safety_analysis, data_files)
+        
+        # Get geocoded addresses (also try cache first)
+        print("🌍 Loading geocoded addresses...")
+        geocoded_addresses = cache_manager.load_geocoded_addresses(max_age_days=30)
+        
+        if not geocoded_addresses:
+            # Fall back to loading from data processor
+            data_processor = DataProcessor()
+            geocoded_addresses = data_processor._load_geocode_cache()
+            
+            if geocoded_addresses:
+                # Save to cache for next time
+                cache_manager.save_geocoded_addresses(geocoded_addresses)
+        
+        if not geocoded_addresses:
+            return jsonify({
+                'error': 'No geocoded data available. Please run geocoding first.',
+                'markers': [],
+                'help': 'Run: python backend/run_geocoding.py'
+            }), 404
+        
+        # Create markers for map
+        markers = []
+        for location, analysis in safety_analysis.items():
+            if location in geocoded_addresses:
+                coords = geocoded_addresses[location]
+                
+                # Determine marker color based on safety level
+                safety_score = analysis['safety_score']
+                if safety_score >= 0.8:
+                    icon = 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                elif safety_score >= 0.6:
+                    icon = 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+                elif safety_score >= 0.4:
+                    icon = 'https://maps.google.com/mapfiles/ms/icons/orange-dot.png'
+                else:
+                    icon = 'https://maps.google.com/mapfiles/ms/icons/red-dot.png'
+                
+                # Create marker data
+                marker = {
+                    'position': {
+                        'lat': coords['lat'],
+                        'lng': coords['lng']
+                    },
+                    'title': f"{location} - Safety: {analysis['safety_level']} ({safety_score:.2f})",
+                    'icon': icon,
+                    'location': location,
+                    'safety_score': safety_score,
+                    'safety_level': analysis['safety_level'],
+                    'recommendations': analysis.get('recommendations', []),
+                    'infraction_count': analysis.get('infraction_analysis', {}).get('total_count', 0),
+                    'details': {
+                        'reasoning': analysis.get('score_details', {}).get('reasoning', []),
+                        'has_street_parking': analysis.get('street_parking_analysis', {}).get('has_street_parking', False),
+                        'nearby_lots': analysis.get('parking_lots_analysis', {}).get('nearby_lot_count', 0)
+                    }
+                }
+                markers.append(marker)
+        
+        print(f"🗺️ Created {len(markers)} markers for map")
+        
+        return jsonify({
+            'markers': markers,
+            'total_locations': len(markers),
+            'center': {
+                'lat': 43.4723, 
+                'lng': -80.5449  # Waterloo, ON center
+            },
+            'cache_info': {
+                'used_cache': cached_analysis is not None,
+                'cache_timestamp': datetime.now().isoformat()
+            }
+        })
+        
+    except Exception as e:
+        print(f"❌ Error creating safety markers: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': str(e), 'markers': []}), 500
+
+@app.route('/api/cache/status', methods=['GET'])
+def get_cache_status():
+    """Get cache status"""
+    return jsonify(cache_manager.get_cache_status())
+
+@app.route('/api/cache/clear', methods=['POST'])
+def clear_cache():
+    """Clear cache"""
+    cache_type = request.json.get('type', 'all') if request.json else 'all'
+    cleared = cache_manager.clear_cache(cache_type)
+    return jsonify({
+        'message': f'Cleared caches: {", ".join(cleared)}',
+        'cleared': cleared
     })
 
 if __name__ == '__main__':

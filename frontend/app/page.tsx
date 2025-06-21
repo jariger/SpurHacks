@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { X } from "lucide-react"
 import GoogleMap from "../components/GoogleMap"
+import SafetyMap from '@/components/SafetyMap'
 
 interface MapConfig {
   api_key: string | null
@@ -21,6 +22,9 @@ export default function HomePage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null)
+
+  // You'll need to set your Google Maps API key here
+  const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''
 
   useEffect(() => {
     // Get user's current location
@@ -97,6 +101,7 @@ export default function HomePage() {
     document.body.style.overflow = "unset"
   }
 
+<<<<<<< Updated upstream
   const scrollToMap = () => {
     const mapSection = document.getElementById("map-section")
     if (mapSection) {
@@ -107,6 +112,8 @@ export default function HomePage() {
     }
   }
 
+=======
+>>>>>>> Stashed changes
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Navigation Bar */}
@@ -309,6 +316,8 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+
+        <SafetyMap apiKey={GOOGLE_MAPS_API_KEY} />
       </main>
 
       {/* Footer */}

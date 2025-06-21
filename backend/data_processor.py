@@ -150,16 +150,11 @@ class DataProcessor:
         Returns:
             Dictionary mapping addresses to coordinates
         """
-        if not self.geocoding_service.is_available():
-            print("❌ Google Maps API not available. Cannot geocode addresses.")
-            return {}
-        
-        # Load data
+        # Load data and extract addresses
         data = self.load_csv_data()
         addresses = self.extract_addresses_from_data(data)
         
-        print(f"\n📍 Geocoding Analysis:")
-        print("-" * 50)
+        print(f"📍 Geocoding Analysis:")
         print(f"Total addresses to process: {len(addresses)}")
         print(f"Already cached: {len(self.geocode_cache)}")
         
@@ -175,27 +170,13 @@ class DataProcessor:
             uncached_addresses = addresses
             print(f"Force re-geocoding all {len(addresses)} addresses")
         
-        # Show sample of addresses to be geocoded
-        if uncached_addresses:
-            print(f"\n📋 Sample addresses to geocode:")
-            for i, addr in enumerate(uncached_addresses[:10]):
-                print(f"   {i+1:2d}. {addr}")
-            if len(uncached_addresses) > 10:
-                print(f"   ... and {len(uncached_addresses) - 10} more addresses")
-        
-        # Geocode new addresses
+        # Only geocode new addresses
         if uncached_addresses:
             new_coordinates = self.geocoding_service.geocode_addresses_batch(uncached_addresses)
             
             # Add to cache
             self.geocode_cache.update(new_coordinates)
             self._save_geocode_cache()
-            
-            print(f"\n📊 Geocoding Summary:")
-            print(f"   📍 Total addresses in dataset: {len(addresses)}")
-            print(f"   ✅ Successfully geocoded: {len(new_coordinates)}")
-            print(f"   💾 Total cached addresses: {len(self.geocode_cache)}")
-            print(f"   📈 Overall coverage: {(len(self.geocode_cache)/len(addresses)*100):.1f}%")
         
         return self.geocode_cache
     
@@ -345,4 +326,45 @@ class DataProcessor:
         print("=" * 60)
         print("✅ EXCEL EXPORT COMPLETED!")
         
-        return main_file 
+        return main_file
+
+    def load_all_data(self) -> Dict[str, pd.DataFrame]:
+        """Load all CSV data files"""
+        try:
+            print("📊 Loading all CSV data files...")
+            
+            data = {}
+            
+            # Load bylaw infractions
+            if os.path.exists(self.files['bylaw_infractions']):
+                data['bylaw_infractions'] = pd.read_csv(self.files['bylaw_infractions'])
+                print(f"✅ Loaded {len(data['bylaw_infractions'])} bylaw infraction records")
+            else:
+                print(f"⚠️ Bylaw infractions file not found: {self.files['bylaw_infractions']}")
+                data['bylaw_infractions'] = pd.DataFrame()
+            
+            # Load parking on street
+            if os.path.exists(self.files['parking_on_street']):
+                data['parking_on_street'] = pd.read_csv(self.files['parking_on_street'])
+                print(f"✅ Loaded {len(data['parking_on_street'])} parking on street records")
+            else:
+                print(f"⚠️ Parking on street file not found: {self.files['parking_on_street']}")
+                data['parking_on_street'] = pd.DataFrame()
+            
+            # Load parking lots
+            if os.path.exists(self.files['parking_lots']):
+                data['parking_lots'] = pd.read_csv(self.files['parking_lots'])
+                print(f"✅ Loaded {len(data['parking_lots'])} parking lot records")
+            else:
+                print(f"⚠️ Parking lots file not found: {self.files['parking_lots']}")
+                data['parking_lots'] = pd.DataFrame()
+            
+            return data
+            
+        except Exception as e:
+            print(f"❌ Error loading data: {str(e)}")
+            return {
+                'bylaw_infractions': pd.DataFrame(),
+                'parking_on_street': pd.DataFrame(),
+                'parking_lots': pd.DataFrame()
+            } 
