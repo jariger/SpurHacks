@@ -97,6 +97,8 @@ export default function HomePage() {
     document.body.style.overflow = "unset"
   }
 
+  
+
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Navigation Bar */}
