@@ -30,21 +30,21 @@ export default function HomePage() {
           (position) => {
             const { latitude, longitude } = position.coords
             setUserLocation({ lat: latitude, lng: longitude })
-            console.log('User location obtained:', { lat: latitude, lng: longitude })
+            console.log("User location obtained:", { lat: latitude, lng: longitude })
           },
           (error) => {
-            console.warn('Geolocation error:', error)
+            console.warn("Geolocation error:", error)
             // Use default location if geolocation fails
             setUserLocation({ lat: 40.7589, lng: -73.9851 })
           },
           {
             enableHighAccuracy: true,
             timeout: 10000,
-            maximumAge: 300000 // 5 minutes
-          }
+            maximumAge: 300000, // 5 minutes
+          },
         )
       } else {
-        console.warn('Geolocation not supported')
+        console.warn("Geolocation not supported")
         setUserLocation({ lat: 40.7589, lng: -73.9851 })
       }
     }
@@ -56,29 +56,29 @@ export default function HomePage() {
     // Fetch map configuration from backend
     const fetchMapConfig = async () => {
       try {
-        console.log('Fetching map configuration from backend...')
-        const response = await fetch('http://localhost:5000/api/maps/config', {
-          method: 'GET',
+        console.log("Fetching map configuration from backend...")
+        const response = await fetch("http://localhost:5000/api/maps/config", {
+          method: "GET",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
         })
-        
-        console.log('Response status:', response.status)
-        console.log('Response headers:', response.headers)
-        
+
+        console.log("Response status:", response.status)
+        console.log("Response headers:", response.headers)
+
         if (response.ok) {
           const config = await response.json()
-          console.log('Map config received:', config)
+          console.log("Map config received:", config)
           setMapConfig(config)
         } else {
           const errorText = await response.text()
-          console.error('Backend error:', response.status, errorText)
+          console.error("Backend error:", response.status, errorText)
           setError(`Failed to load map configuration: ${response.status}`)
         }
       } catch (err) {
-        console.error('Network error:', err)
-        setError('Backend connection failed - check if backend is running on port 5000')
+        console.error("Network error:", err)
+        setError("Backend connection failed - check if backend is running on port 5000")
       } finally {
         setLoading(false)
       }
@@ -97,7 +97,15 @@ export default function HomePage() {
     document.body.style.overflow = "unset"
   }
 
-  
+  const scrollToMap = () => {
+    const mapSection = document.getElementById("map-section")
+    if (mapSection) {
+      mapSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+    }
+  }
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -107,7 +115,7 @@ export default function HomePage() {
           <div className="flex justify-between items-center h-16">
             {/* Logo/Brand */}
             <div className="flex-shrink-0">
-              <span className="text-xl font-bold text-white cursor-pointer">MapSite</span>
+              <span className="text-xl font-bold text-white cursor-pointer">TrapMap</span>
             </div>
 
             {/* Navigation Links */}
@@ -134,13 +142,16 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
-              Your complete platform for location services
+              Smart mapping for smarter driving
             </h1>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-8">
-              Find your way with precision. Built with modern technology and designed for the future.
+              Visualize traffic ticket hotspots on the map. Plan ahead and stay informed with cutting-edge location tracking.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-black px-6 py-3 rounded-md font-medium hover:bg-gray-200 transition-colors">
+              <button
+                onClick={scrollToMap}
+                className="bg-white text-black px-6 py-3 rounded-md font-medium hover:bg-gray-200 transition-colors"
+              >
                 Get Started
               </button>
               <button className="border border-gray-600 text-white px-6 py-3 rounded-md font-medium hover:bg-gray-800 transition-colors">
@@ -157,7 +168,10 @@ export default function HomePage() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Map Section */}
-        <div className="bg-gray-900/50 rounded-xl border border-gray-800 overflow-hidden backdrop-blur-sm">
+        <div
+          id="map-section"
+          className="bg-gray-900/50 rounded-xl border border-gray-800 overflow-hidden backdrop-blur-sm scroll-mt-20"
+        >
           <div className="p-8 border-b border-gray-800">
             <h2 className="text-3xl font-bold text-white mb-4">Explore Your Location</h2>
             <p className="text-gray-400 text-lg">
@@ -171,7 +185,7 @@ export default function HomePage() {
                 <div className="text-center">
                   <div className="animate-spin rounded-full h-12 w-12 border-2 border-gray-600 border-t-white mx-auto mb-4"></div>
                   <p className="text-gray-400">
-                    {userLocation ? 'Loading map configuration...' : 'Getting your location...'}
+                    {userLocation ? "Loading map configuration..." : "Getting your location..."}
                   </p>
                 </div>
               </div>
@@ -180,7 +194,12 @@ export default function HomePage() {
                 <div className="text-center">
                   <div className="text-red-400 mb-4">
                     <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"
+                      />
                     </svg>
                   </div>
                   <h3 className="text-lg font-semibold text-white mb-2">Map Error</h3>
@@ -197,8 +216,8 @@ export default function HomePage() {
                 markers={[
                   {
                     position: userLocation || mapConfig.default_center,
-                    title: userLocation ? "Your Location" : "MapSite Headquarters"
-                  }
+                    title: userLocation ? "Your Location" : "MapSite Headquarters",
+                  },
                 ]}
               />
             ) : (
@@ -206,11 +225,18 @@ export default function HomePage() {
                 <div className="text-center">
                   <div className="text-yellow-400 mb-4">
                     <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"
+                      />
                     </svg>
                   </div>
                   <h3 className="text-lg font-semibold text-white mb-2">Google Maps API Key Required</h3>
-                  <p className="text-gray-400">Please add your Google Maps API key to the backend environment variables.</p>
+                  <p className="text-gray-400">
+                    Please add your Google Maps API key to the backend environment variables.
+                  </p>
                 </div>
               </div>
             )}
@@ -253,7 +279,10 @@ export default function HomePage() {
             <p className="text-gray-400 mb-4">
               Intelligent routing and real-time directions to help you reach your destination efficiently.
             </p>
-            <button className="bg-white text-black px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-200 transition-colors">
+            <button
+              onClick={scrollToMap}
+              className="bg-white text-black px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-200 transition-colors"
+            >
               Get Directions
             </button>
           </div>
@@ -286,7 +315,7 @@ export default function HomePage() {
       <footer className="border-t border-gray-800 mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center text-gray-400">
-            <p>&copy; 2024 MapSite. All rights reserved.</p>
+            <p>&copy; 2025 TrapMap. All rights reserved.</p>
           </div>
         </div>
       </footer>
@@ -303,7 +332,7 @@ export default function HomePage() {
               {/* Modal Header */}
               <div className="flex items-center justify-between p-6 border-b border-gray-800">
                 <h2 className="text-2xl font-bold bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
-                  About MapSite
+                  About TrapMap
                 </h2>
                 <button
                   onClick={closeModal}
@@ -317,10 +346,10 @@ export default function HomePage() {
               <div className="p-6">
                 <div className="prose prose-invert max-w-none">
                   <p className="text-gray-300 mb-6">
-                    MapSite is a cutting-edge location services platform that combines the power of Google Maps API 
-                    with modern web technologies to deliver an exceptional user experience.
+                    MapSite is a cutting-edge location services platform that combines the power of Google Maps API with
+                    modern web technologies to deliver an exceptional user experience.
                   </p>
-                  
+
                   <h3 className="text-xl font-semibold text-white mb-4">Features</h3>
                   <ul className="text-gray-300 space-y-2 mb-6">
                     <li>• Vector-based map rendering for crisp, scalable graphics</li>
@@ -385,7 +414,7 @@ export default function HomePage() {
                       </div>
                       <div>
                         <p className="text-white font-medium">Email</p>
-                        <p className="text-gray-400">contact@mapsite.com</p>
+                        <p className="text-gray-400">contact@TrapMap.com</p>
                       </div>
                     </div>
 
