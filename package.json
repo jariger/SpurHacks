@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "postinstall": "npm install --prefix frontend && npm run build --prefix frontend && npm run export --prefix frontend"
-  },
+    "postinstall": "npm install --prefix frontend && npm run build --prefix frontend"  },
   "engines": {
     "node": "18.x"
   }
