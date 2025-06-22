@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { X } from "lucide-react"
-import SafetyMap from "@/components/SafetyMap"
+import SafetyMap from "../components/SafetyMap"
 
 export default function HomePage() {
   const [activeModal, setActiveModal] = useState<"about" | "contact" | null>(null)
