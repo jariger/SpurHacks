@@ -712,10 +712,6 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
         <div className="flex flex-wrap gap-6 text-sm">
           <span className="flex items-center gap-2 text-gray-300">
             <div className="w-4 h-4 bg-green-500 rounded-full shadow-lg"></div>
-            <span className="font-medium">Very Safe</span>
-          </span>
-          <span className="flex items-center gap-2 text-gray-300">
-            <div className="w-4 h-4 bg-yellow-500 rounded-full shadow-lg"></div>
             <span className="font-medium">Safe</span>
           </span>
           <span className="flex items-center gap-2 text-gray-300">
@@ -724,7 +720,11 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
           </span>
           <span className="flex items-center gap-2 text-gray-300">
             <div className="w-4 h-4 bg-red-500 rounded-full shadow-lg"></div>
-            <span className="font-medium">High Risk</span>
+            <span className="font-medium">Risky</span>
+          </span>
+          <span className="flex items-center gap-2 text-gray-300">
+            <div className="w-4 h-4 bg-gray-500 rounded-full shadow-lg"></div>
+            <span className="font-medium">Unknown</span>
           </span>
         </div>
       </div>
