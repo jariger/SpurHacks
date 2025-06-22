@@ -1,0 +1,11 @@
+{
+  "name": "monorepo-fullstack",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "npm install --prefix frontend && npm run build --prefix frontend && npm run export --prefix frontend"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
