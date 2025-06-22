@@ -33,7 +33,7 @@ except Exception as e:
     print("The server will run with limited functionality")
     # You can still run the server, just without geocoding
 # Configure CORS to allow requests from the frontend
-CORS(app, origins=["http://localhost:3000", "http://127.0.0.1:3000"], supports_credentials=True)
+CORS(app, origins="*")
 
 # Google Maps API Configuration
 GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY')
@@ -757,3 +757,6 @@ if __name__ == '__main__':
     
     print(f"🚀 Starting server on {host}:{port}")
     app.run(debug=debug, host=host, port=port)
+
+# Export the Flask app for WSGI servers and other deployment methods
+# This allows the app to be imported by: from server import app
