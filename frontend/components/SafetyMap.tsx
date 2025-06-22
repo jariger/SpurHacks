@@ -194,29 +194,63 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
   const showInfoWindow = (mapInstance: google.maps.Map, markerData: SafetyMarker, position: google.maps.LatLng | google.maps.LatLngLiteral) => {
     const infoWindow = new google.maps.InfoWindow({
       content: `
-        <div style="max-width: 300px; font-family: Arial, sans-serif;">
-          <h3 style="margin: 0 0 10px 0; color: #333;">${markerData.location}</h3>
-          <div style="margin-bottom: 10px;">
-            <strong>Safety Level:</strong> 
-            <span style="color: ${getSafetyColor(markerData.safety_level)}; font-weight: bold;">
-              ${markerData.safety_level.toUpperCase()}
-            </span>
-            (${markerData.safety_score.toFixed(2)})
+        <div style="
+          max-width: 320px; 
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          color: #e5e7eb;
+          background: #111827;
+          border-radius: 12px;
+          padding: 16px;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        ">
+          <h3 style="
+            margin: 0 0 12px 0; 
+            color: #ffffff; 
+            font-size: 18px; 
+            font-weight: 600;
+            line-height: 1.4;
+          ">${markerData.location}</h3>
+          
+          <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+            <span style="color: #9ca3af; font-weight: 500;">Safety Level:</span>
+            <span style="
+              color: ${getSafetyColor(markerData.safety_level)}; 
+              font-weight: 600;
+              font-size: 14px;
+            ">${markerData.safety_level.replace('_', ' ').toUpperCase()}</span>
+            <span style="color: #6b7280; font-size: 13px;">(${markerData.safety_score.toFixed(2)})</span>
           </div>
-          <div style="margin-bottom: 10px;">
-            <strong>Infractions:</strong> ${markerData.infraction_count}
+          
+          <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+            <span style="color: #9ca3af; font-weight: 500;">Infractions:</span>
+            <span style="color: #e5e7eb; font-weight: 600;">${markerData.infraction_count}</span>
           </div>
+          
           ${markerData.details.has_street_parking ? 
-            '<div style="margin-bottom: 5px;">🅿️ Street parking available</div>' : ''
+            `<div style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px; color: #e5e7eb;">
+              <span style="font-size: 16px;">🅿️</span>
+              <span>Street parking available</span>
+            </div>` : ''
           }
+          
           ${markerData.details.nearby_lots > 0 ? 
-            `<div style="margin-bottom: 5px;">🏢 ${markerData.details.nearby_lots} nearby lot(s)</div>` : ''
+            `<div style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px; color: #e5e7eb;">
+              <span style="font-size: 16px;">🏢</span>
+              <span>${markerData.details.nearby_lots} nearby lot${markerData.details.nearby_lots > 1 ? 's' : ''}</span>
+            </div>` : ''
           }
-          <div style="margin-top: 10px;">
-            <strong>Key Points:</strong>
-            <ul style="margin: 5px 0; padding-left: 20px;">
+          
+          <div style="margin-top: 16px;">
+            <div style="color: #9ca3af; font-weight: 500; margin-bottom: 8px;">Key Points:</div>
+            <ul style="
+              margin: 0; 
+              padding-left: 20px; 
+              color: #e5e7eb;
+              font-size: 13px;
+              line-height: 1.5;
+            ">
               ${markerData.details.reasoning.slice(0, 3).map(reason => 
-                `<li style="margin: 2px 0; font-size: 12px;">${reason}</li>`
+                `<li style="margin: 4px 0;">${reason}</li>`
               ).join('')}
             </ul>
           </div>
@@ -226,6 +260,117 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
     })
     
     infoWindow.open(mapInstance)
+    
+    // Add click listener to close info window when clicking outside
+    const clickListener = mapInstance.addListener('click', () => {
+      infoWindow.close()
+      google.maps.event.removeListener(clickListener)
+    })
+    
+    // Add custom CSS to override Google Maps info window styling
+    const style = document.createElement('style')
+    style.textContent = `
+      .gm-style .gm-style-iw-c {
+        background: #111827 !important;
+        border: 1px solid #374151 !important;
+        border-radius: 12px !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+        padding: 0 !important;
+      }
+      .gm-style .gm-style-iw-d {
+        background: #111827 !important;
+        border-radius: 12px !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        border: none !important;
+        border-top: none !important;
+      }
+      .gm-style .gm-style-iw-t::after {
+        background: #111827 !important;
+        border: 1px solid #374151 !important;
+      }
+      .gm-style .gm-style-iw-tc::after {
+        background: #111827 !important;
+        border: 1px solid #374151 !important;
+        content: "" !important;
+        position: absolute !important;
+        top: -8px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 0 !important;
+        height: 0 !important;
+        border-left: 8px solid transparent !important;
+        border-right: 8px solid transparent !important;
+        border-top: 8px solid #111827 !important;
+        border-bottom: none !important;
+      }
+      .gm-style .gm-style-iw-tc {
+        background: transparent !important;
+        position: relative !important;
+        height: 8px !important;
+        width: 100% !important;
+      }
+      .gm-style .gm-style-iw-c button {
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+        padding: 0 !important;
+        border-radius: 4px !important;
+        transition: all 0.2s !important;
+        position: absolute !important;
+        top: 4.5px !important;
+        right: 4.5px !important;
+        z-index: 1000 !important;
+        width: 18px !important;
+        height: 18px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        opacity: 1 !important;
+      }
+      .gm-style .gm-style-iw-ch {
+        display: none !important;
+      }
+      .gm-style .gm-style-iw-c button:hover {
+        background: rgba(255, 255, 255, 0.1) !important;
+      }
+      .gm-style .gm-style-iw-c button img {
+        display: none !important;
+      }
+      .gm-style .gm-style-iw-c button::before {
+        content: "✕" !important;
+        color: #9ca3af !important;
+        font-size: 15px !important;
+        font-weight: bold !important;
+        line-height: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        height: 100% !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+      }
+      .gm-style .gm-style-iw-c button:hover::before {
+        color: #e5e7eb !important;
+      }
+      .gm-style .gm-style-iw-c::-webkit-scrollbar {
+        display: none !important;
+      }
+      .gm-style .gm-style-iw-d::-webkit-scrollbar {
+        display: none !important;
+      }
+      .gm-style .gm-style-iw-c {
+        -ms-overflow-style: none !important;
+        scrollbar-width: none !important;
+      }
+      .gm-style .gm-style-iw-d {
+        -ms-overflow-style: none !important;
+        scrollbar-width: none !important;
+      }
+    `
+    document.head.appendChild(style)
   }
 
   const getSafetyColor = (level: string): string => {
@@ -233,7 +378,7 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
       case 'very_safe': return '#22c55e'
       case 'safe': return '#eab308'
       case 'moderate': return '#f97316'
-      case 'high_risk': return '#ef4444'
+      case 'risky': return '#ef4444'
       default: return '#6b7280'
     }
   }
@@ -283,19 +428,19 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
         </p>
         <div className="flex flex-wrap gap-6 text-sm">
           <span className="flex items-center gap-2 text-gray-300">
-            <div className="w-4 h-4 bg-green-500 rounded-full border-2 border-white shadow-lg"></div>
+            <div className="w-4 h-4 bg-green-500 rounded-full shadow-lg"></div>
             <span className="font-medium">Very Safe</span>
           </span>
           <span className="flex items-center gap-2 text-gray-300">
-            <div className="w-4 h-4 bg-yellow-500 rounded-full border-2 border-white shadow-lg"></div>
+            <div className="w-4 h-4 bg-yellow-500 rounded-full shadow-lg"></div>
             <span className="font-medium">Safe</span>
           </span>
           <span className="flex items-center gap-2 text-gray-300">
-            <div className="w-4 h-4 bg-orange-500 rounded-full border-2 border-white shadow-lg"></div>
+            <div className="w-4 h-4 bg-orange-500 rounded-full shadow-lg"></div>
             <span className="font-medium">Moderate</span>
           </span>
           <span className="flex items-center gap-2 text-gray-300">
-            <div className="w-4 h-4 bg-red-500 rounded-full border-2 border-white shadow-lg"></div>
+            <div className="w-4 h-4 bg-red-500 rounded-full shadow-lg"></div>
             <span className="font-medium">High Risk</span>
           </span>
         </div>
