@@ -12,9 +12,35 @@ interface SafetyMarker {
   recommendations: string[]
   infraction_count: number
   details: {
-    reasoning: string[]
+    reasoning: string
     has_street_parking: boolean
     nearby_lots: number
+    time_restrictions: string[]
+    peak_infraction_times: string[]
+    best_parking_times: string[]
+    free_parking_hours: boolean
+    available_street_parking: number
+    score_details: {
+      score_breakdown: any
+      reasoning: string[]
+    }
+    street_parking_analysis: {
+      parking_cost_info: string
+      hours: string
+      payment_methods: string[]
+      free_parking_details: string[]
+    }
+    parking_lots_analysis: {
+      available_lots: number
+      free_options: string[]
+      accessibility: string[]
+    }
+    infraction_analysis: {
+      most_common_violation: string
+      recent_count: number
+      severity_score: number
+      average_fine: number
+    }
   }
 }
 
@@ -316,65 +342,165 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
     const infoWindow = new google.maps.InfoWindow({
       content: `
         <div style="
-          max-width: 320px; 
+          max-width: 420px; 
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
           color: #e5e7eb;
           background: #111827;
           border-radius: 12px;
-          padding: 16px;
+          padding: 20px;
           box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+          max-height: 600px;
+          overflow-y: auto;
         ">
           <h3 style="
-            margin: 0 0 12px 0; 
+            margin: 0 0 16px 0; 
             color: #ffffff; 
-            font-size: 18px; 
+            font-size: 20px; 
             font-weight: 600;
             line-height: 1.4;
+            border-bottom: 2px solid #374151;
+            padding-bottom: 8px;
           ">${markerData.location}</h3>
           
-          <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+          <!-- Safety Level -->
+          <div style="margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
             <span style="color: #9ca3af; font-weight: 500;">Safety Level:</span>
             <span style="
               color: ${getSafetyColor(markerData.safety_level)}; 
               font-weight: 600;
-              font-size: 14px;
+              font-size: 16px;
             ">${markerData.safety_level.replace('_', ' ').toUpperCase()}</span>
-            <span style="color: #6b7280; font-size: 13px;">(${markerData.safety_score.toFixed(2)})</span>
+            <span style="color: #6b7280; font-size: 14px;">(${(markerData.safety_score * 100).toFixed(0)}%)</span>
           </div>
           
-          <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-            <span style="color: #9ca3af; font-weight: 500;">Infractions:</span>
-            <span style="color: #e5e7eb; font-weight: 600;">${markerData.infraction_count}</span>
-          </div>
+          <!-- Parking Cost Info -->
+          ${markerData.details.street_parking_analysis?.parking_cost_info && markerData.details.street_parking_analysis.parking_cost_info !== 'Unknown' ? 
+            `<div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 16px;">💰</span>
+              <span style="color: #e5e7eb;">${markerData.details.street_parking_analysis.parking_cost_info}</span>
+            </div>` : ''
+          }
           
+          <!-- Hours Info -->
+          ${markerData.details.street_parking_analysis?.hours && markerData.details.street_parking_analysis.hours !== 'Unknown' ? 
+            `<div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 16px;">🕐</span>
+              <span style="color: #e5e7eb;">${markerData.details.street_parking_analysis.hours}</span>
+            </div>` : ''
+          }
+          
+          <!-- Street Parking -->
           ${markerData.details.has_street_parking ? 
-            `<div style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px; color: #e5e7eb;">
+            `<div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
               <span style="font-size: 16px;">🅿️</span>
-              <span>Street parking available</span>
+              <span style="color: #e5e7eb;">Street parking available${markerData.details.available_street_parking > 0 ? ` (${markerData.details.available_street_parking} spaces)` : ''}</span>
             </div>` : ''
           }
           
+          <!-- Nearby Lots -->
           ${markerData.details.nearby_lots > 0 ? 
-            `<div style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px; color: #e5e7eb;">
+            `<div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
               <span style="font-size: 16px;">🏢</span>
-              <span>${markerData.details.nearby_lots} nearby lot${markerData.details.nearby_lots > 1 ? 's' : ''}</span>
+              <span style="color: #e5e7eb;">${markerData.details.nearby_lots} nearby parking lot${markerData.details.nearby_lots > 1 ? 's' : ''}</span>
             </div>` : ''
           }
           
-          <div style="margin-top: 16px;">
-            <div style="color: #9ca3af; font-weight: 500; margin-bottom: 8px;">Key Points:</div>
-            <ul style="
-              margin: 0; 
-              padding-left: 20px; 
-              color: #e5e7eb;
-              font-size: 13px;
-              line-height: 1.5;
-            ">
-              ${markerData.details.reasoning.slice(0, 3).map(reason => 
-                `<li style="margin: 4px 0;">${reason}</li>`
-              ).join('')}
-            </ul>
-          </div>
+          <!-- Free Parking Options -->
+          ${markerData.details.parking_lots_analysis?.free_options?.length > 0 ? 
+            `<div style="margin-bottom: 16px;">
+              <div style="color: #10b981; font-weight: 500; margin-bottom: 6px; font-size: 14px;">🆓 Free Parking Options:</div>
+              <ul style="margin: 0; padding-left: 20px; color: #e5e7eb; font-size: 13px; line-height: 1.4;">
+                ${markerData.details.parking_lots_analysis.free_options.map(option => 
+                  `<li style="margin: 4px 0;">${option}</li>`
+                ).join('')}
+              </ul>
+            </div>` : ''
+          }
+          
+          <!-- Time Restrictions -->
+          ${markerData.details.time_restrictions?.length > 0 ? 
+            `<div style="margin-bottom: 16px;">
+              <div style="color: #f59e0b; font-weight: 500; margin-bottom: 6px; font-size: 14px;">⏰ Time Restrictions:</div>
+              <ul style="margin: 0; padding-left: 20px; color: #e5e7eb; font-size: 13px; line-height: 1.4;">
+                ${markerData.details.time_restrictions.map(restriction => 
+                  `<li style="margin: 4px 0;">${restriction}</li>`
+                ).join('')}
+              </ul>
+            </div>` : ''
+          }
+          
+          <!-- Best Parking Times -->
+          ${markerData.details.best_parking_times?.length > 0 ? 
+            `<div style="margin-bottom: 16px;">
+              <div style="color: #10b981; font-weight: 500; margin-bottom: 6px; font-size: 14px;">⭐ Best Times to Park:</div>
+              <ul style="margin: 0; padding-left: 20px; color: #e5e7eb; font-size: 13px; line-height: 1.4;">
+                ${markerData.details.best_parking_times.map(time => 
+                  `<li style="margin: 4px 0;">${time}</li>`
+                ).join('')}
+              </ul>
+            </div>` : ''
+          }
+          
+          <!-- Peak Infraction Times -->
+          ${markerData.details.peak_infraction_times?.length > 0 ? 
+            `<div style="margin-bottom: 16px;">
+              <div style="color: #ef4444; font-weight: 500; margin-bottom: 6px; font-size: 14px;">⚠️ High Risk Times:</div>
+              <ul style="margin: 0; padding-left: 20px; color: #e5e7eb; font-size: 13px; line-height: 1.4;">
+                ${markerData.details.peak_infraction_times.map(time => 
+                  `<li style="margin: 4px 0;">${time}</li>`
+                ).join('')}
+              </ul>
+            </div>` : ''
+          }
+          
+          <!-- All Recommendations -->
+          ${markerData.recommendations && markerData.recommendations.length > 0 ? 
+            `<div style="margin-top: 20px; border-top: 1px solid #374151; padding-top: 16px;">
+              <div style="color: #60a5fa; font-weight: 600; margin-bottom: 10px; font-size: 15px;">📋 Recommendations:</div>
+              <ul style="
+                margin: 0; 
+                padding-left: 20px; 
+                color: #e5e7eb;
+                font-size: 13px;
+                line-height: 1.5;
+              ">
+                ${markerData.recommendations
+                  .filter(rec => {
+                    // Filter out common violation warnings for moderate/risky locations
+                    if ((markerData.safety_level === 'moderate' || markerData.safety_level === 'risky') && 
+                        rec.includes('Common violation:')) {
+                      return false;
+                    }
+                    return true;
+                  })
+                  .map(rec => 
+                    `<li style="margin: 6px 0;">${rec}</li>`
+                  ).join('')}
+              </ul>
+            </div>` : ''
+          }
+          
+          <!-- Payment Methods -->
+          ${markerData.details.street_parking_analysis?.payment_methods?.length > 0 ? 
+            `<div style="margin-top: 16px;">
+              <div style="color: #9ca3af; font-weight: 500; margin-bottom: 6px; font-size: 14px;">💳 Payment Methods:</div>
+              <div style="color: #e5e7eb; font-size: 13px;">
+                ${markerData.details.street_parking_analysis.payment_methods.join(', ')}
+              </div>
+            </div>` : ''
+          }
+          
+          <!-- Accessibility -->
+          ${markerData.details.parking_lots_analysis?.accessibility?.length > 0 ? 
+            `<div style="margin-top: 16px;">
+              <div style="color: #10b981; font-weight: 500; margin-bottom: 6px; font-size: 14px;">♿ Accessible Parking:</div>
+              <ul style="margin: 0; padding-left: 20px; color: #e5e7eb; font-size: 13px; line-height: 1.4;">
+                ${markerData.details.parking_lots_analysis.accessibility.map(lot => 
+                  `<li style="margin: 4px 0;">${lot}</li>`
+                ).join('')}
+              </ul>
+            </div>` : ''
+          }
         </div>
       `,
       position: position
