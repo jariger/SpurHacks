@@ -27,6 +27,7 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [map, setMap] = useState<google.maps.Map | null>(null)
+  const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null)
   const mapRef = useRef<HTMLDivElement>(null)
   
   // 🚩 FLAG to ensure map initializes exactly once
@@ -34,14 +35,15 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
 
   useEffect(() => {
     fetchSafetyData()
+    getUserLocation()
   }, [])
 
   // Initialize map when we have both API key and markers
   useEffect(() => {
-    if (apiKey && markers.length > 0 && !mapInitializedRef.current) {
+    if (apiKey && markers.length > 0 && userLocation && !mapInitializedRef.current) {
       initMap()
     }
-  }, [apiKey, markers])
+  }, [apiKey, markers, userLocation])
 
   const fetchSafetyData = async () => {
     try {
@@ -72,6 +74,31 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
     }
   }
 
+  const getUserLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords
+          setUserLocation({ lat: latitude, lng: longitude })
+          console.log(`📍 User location: ${latitude}, ${longitude}`)
+        },
+        (error) => {
+          console.warn('⚠️ Could not get user location:', error.message)
+          // Fallback to Waterloo center if geolocation fails
+          setUserLocation({ lat: 43.4723, lng: -80.5449 })
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 300000 // 5 minutes
+        }
+      )
+    } else {
+      console.warn('⚠️ Geolocation not supported, using Waterloo center')
+      setUserLocation({ lat: 43.4723, lng: -80.5449 })
+    }
+  }
+
   const initMap = async (): Promise<void> => {
     // 🚩 CHECK FLAG - only run once
     if (mapInitializedRef.current) {
@@ -98,15 +125,37 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
       const { Map } = await google.maps.importLibrary("maps") as google.maps.MapsLibrary
       const { AdvancedMarkerElement } = await google.maps.importLibrary("marker") as google.maps.MarkerLibrary
 
-      // Create the map, centered on Waterloo
+      // Use user location or fallback to Waterloo
+      const centerLocation = userLocation || { lat: 43.4723, lng: -80.5449 }
+
+      // Create the map, centered on user location
       const mapInstance = new Map(mapRef.current, {
-        zoom: 13,
-        center: { lat: 43.4723, lng: -80.5449 }, // Waterloo, ON
+        zoom: 15, // Closer zoom for user location
+        center: centerLocation,
         mapId: 'WATERLOO_PARKING_MAP', // You'll need to create this in Google Cloud Console
       })
 
       setMap(mapInstance)
       console.log('✅ Map initialized successfully')
+
+      // Add user location marker if available
+      if (userLocation) {
+        console.log('📍 Adding user location marker...')
+        const userMarkerElement = createUserLocationMarkerElement()
+        
+        const userMarker = new AdvancedMarkerElement({
+          map: mapInstance,
+          position: userLocation,
+          title: 'Your Location',
+          content: userMarkerElement,
+          zIndex: 1000
+        })
+
+        // Add click listener for user location info
+        userMarker.addListener('click', () => {
+          showUserLocationInfo(mapInstance, userLocation)
+        })
+      }
 
       // Add safety markers
       console.log(`📍 Adding ${markers.length} safety markers...`)
@@ -186,6 +235,78 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
       ">
         🅿️
       </div>
+    `
+    
+    return element
+  }
+
+  const createUserLocationMarkerElement = (): HTMLElement => {
+    const element = document.createElement('div')
+    element.className = 'user-location-marker'
+    
+    element.innerHTML = `
+      <div style="
+        position: relative;
+        width: 30px;
+        height: 30px;
+      ">
+        <!-- Pulsing ring -->
+        <div style="
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 45px;
+          height: 45px;
+          background-color: #4285f4;
+          border-radius: 50%;
+          opacity: 0.3;
+          animation: pulse 2s infinite;
+        "></div>
+        
+        <!-- Inner blue dot -->
+        <div style="
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 16px;
+          height: 16px;
+          background-color: #4285f4;
+          border: 2px solid white;
+          border-radius: 50%;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        "></div>
+        
+        <!-- Center white dot -->
+        <div style="
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 4px;
+          height: 4px;
+          background-color: white;
+          border-radius: 50%;
+        "></div>
+      </div>
+      
+      <style>
+        @keyframes pulse {
+          0% {
+            transform: translate(-50%, -50%) scale(0.5);
+            opacity: 0.3;
+          }
+          50% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 0.1;
+          }
+          100% {
+            transform: translate(-50%, -50%) scale(0.5);
+            opacity: 0.3;
+          }
+        }
+      </style>
     `
     
     return element
@@ -371,6 +492,43 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
       }
     `
     document.head.appendChild(style)
+  }
+
+  const showUserLocationInfo = (mapInstance: google.maps.Map, position: google.maps.LatLngLiteral) => {
+    const infoWindow = new google.maps.InfoWindow({
+      content: `
+        <div style="
+          max-width: 320px; 
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          color: #e5e7eb;
+          background: #111827;
+          border-radius: 12px;
+          padding: 16px;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        ">
+          <h3 style="
+            margin: 0 0 12px 0; 
+            color: #ffffff; 
+            font-size: 18px; 
+            font-weight: 600;
+            line-height: 1.4;
+          ">Your Location</h3>
+          
+          <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+            <span style="color: #9ca3af; font-weight: 500;">Latitude:</span>
+            <span style="color: #e5e7eb; font-weight: 600;">${position.lat.toFixed(6)}</span>
+          </div>
+          
+          <div style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+            <span style="color: #9ca3af; font-weight: 500;">Longitude:</span>
+            <span style="color: #e5e7eb; font-weight: 600;">${position.lng.toFixed(6)}</span>
+          </div>
+        </div>
+      `,
+      position: position
+    })
+    
+    infoWindow.open(mapInstance)
   }
 
   const getSafetyColor = (level: string): string => {
