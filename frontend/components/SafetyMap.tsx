@@ -1,7 +1,6 @@
 "use client"
 
-import { useEffect, useState } from 'react'
-import GoogleMap from './GoogleMap'
+import { useEffect, useState, useRef } from 'react'
 
 interface SafetyMarker {
   position: { lat: number; lng: number }
@@ -27,14 +26,22 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
   const [markers, setMarkers] = useState<SafetyMarker[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [selectedMarker, setSelectedMarker] = useState<SafetyMarker | null>(null)
   const [map, setMap] = useState<google.maps.Map | null>(null)
-  const [infoWindow, setInfoWindow] = useState<google.maps.InfoWindow | null>(null)
+  const mapRef = useRef<HTMLDivElement>(null)
+  
+  // 🚩 FLAG to ensure map initializes exactly once
+  const mapInitializedRef = useRef(false)
 
   useEffect(() => {
-    console.log('🔄 Fetching safety data from backend...')
     fetchSafetyData()
   }, [])
+
+  // Initialize map when we have both API key and markers
+  useEffect(() => {
+    if (apiKey && markers.length > 0 && !mapInitializedRef.current) {
+      initMap()
+    }
+  }, [apiKey, markers])
 
   const fetchSafetyData = async () => {
     try {
@@ -51,8 +58,11 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
         throw new Error(data.error)
       }
       
-      console.log(`✅ Loaded ${data.markers.length} safety markers`)
-      setMarkers(data.markers)
+      // Extract markers and explicitly type cast to SafetyMarker[] interface
+      const safetyMarker: SafetyMarker[] = data.markers as SafetyMarker[] || []
+      console.log(`✅ Loaded ${safetyMarker.length} safety markers`)
+      
+      setMarkers(safetyMarker)
       setLoading(false)
       
     } catch (err) {
@@ -62,27 +72,160 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
     }
   }
 
-  const handleMapLoad = (mapInstance: google.maps.Map) => {
-    setMap(mapInstance)
-    
-    // Create info window
-    const infoWindowInstance = new google.maps.InfoWindow()
-    setInfoWindow(infoWindowInstance)
-    
-    // 🗺️ THIS IS WHERE MARKERS GET PLOTTED ON THE MAP
-    markers.forEach((markerData) => {
-        const marker = new google.maps.Marker({
-            position: markerData.position,  // lat, lng coordinates
-            map: mapInstance,               // Google Maps instance
-            title: markerData.title,        // Hover text
-            icon: markerData.icon          // Marker color/icon
+  const initMap = async (): Promise<void> => {
+    // 🚩 CHECK FLAG - only run once
+    if (mapInitializedRef.current) {
+      console.log('⚠️ Map already initialized, skipping...')
+      return
+    }
+
+    if (!mapRef.current) {
+      console.error('❌ Map container not found')
+      return
+    }
+
+    try {
+      console.log('🗺️ Initializing Google Maps...')
+      mapInitializedRef.current = true
+
+      // Load Google Maps script dynamically
+      if (!window.google) {
+        await loadGoogleMapsScript()
+      }
+
+      // Request needed libraries
+      //@ts-ignore
+      const { Map } = await google.maps.importLibrary("maps") as google.maps.MapsLibrary
+      const { AdvancedMarkerElement } = await google.maps.importLibrary("marker") as google.maps.MarkerLibrary
+
+      // Create the map, centered on Waterloo
+      const mapInstance = new Map(mapRef.current, {
+        zoom: 13,
+        center: { lat: 43.4723, lng: -80.5449 }, // Waterloo, ON
+        mapId: 'WATERLOO_PARKING_MAP', // You'll need to create this in Google Cloud Console
+      })
+
+      setMap(mapInstance)
+      console.log('✅ Map initialized successfully')
+
+      // Add safety markers
+      console.log(`📍 Adding ${markers.length} safety markers...`)
+      
+      for (let i = 0; i < markers.length; i++) {
+        const markerData = markers[i]
+        
+        console.log(`📍 Adding marker ${i + 1}: ${markerData.location} at (${markerData.position.lat}, ${markerData.position.lng})`)
+        
+        // Create custom marker element with color based on safety
+        const markerElement = createSafetyMarkerElement(markerData)
+        
+        // Create advanced marker
+        const advancedMarker = new AdvancedMarkerElement({
+          map: mapInstance,
+          position: markerData.position,
+          title: markerData.title,
+          content: markerElement
         })
 
-        // Add click listener for info popup
-        marker.addListener('click', () => {
-            // Show info window when clicked
+        // Add click listener for info window
+        advancedMarker.addListener('click', () => {
+          showInfoWindow(mapInstance, markerData, advancedMarker.position!)
         })
+      }
+
+      console.log('✅ All markers added successfully')
+
+    } catch (error) {
+      console.error('❌ Error initializing map:', error)
+      setError('Failed to initialize map')
+      mapInitializedRef.current = false // Reset flag on error
+    }
+  }
+
+  const loadGoogleMapsScript = (): Promise<void> => {
+    return new Promise((resolve, reject) => {
+      if (window.google) {
+        resolve()
+        return
+      }
+
+      const script = document.createElement('script')
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=marker`
+      script.async = true
+      script.defer = true
+      
+      script.onload = () => resolve()
+      script.onerror = () => reject(new Error('Failed to load Google Maps script'))
+      
+      document.head.appendChild(script)
     })
+  }
+
+  const createSafetyMarkerElement = (markerData: SafetyMarker): HTMLElement => {
+    const element = document.createElement('div')
+    element.className = 'safety-marker'
+    
+    // Get color based on safety level
+    const color = getSafetyColor(markerData.safety_level)
+    
+    element.innerHTML = `
+      <div style="
+        width: 20px;
+        height: 20px;
+        background-color: ${color};
+        border: 2px solid white;
+        border-radius: 50%;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: bold;
+        color: white;
+      ">
+        🅿️
+      </div>
+    `
+    
+    return element
+  }
+
+  const showInfoWindow = (mapInstance: google.maps.Map, markerData: SafetyMarker, position: google.maps.LatLng | google.maps.LatLngLiteral) => {
+    const infoWindow = new google.maps.InfoWindow({
+      content: `
+        <div style="max-width: 300px; font-family: Arial, sans-serif;">
+          <h3 style="margin: 0 0 10px 0; color: #333;">${markerData.location}</h3>
+          <div style="margin-bottom: 10px;">
+            <strong>Safety Level:</strong> 
+            <span style="color: ${getSafetyColor(markerData.safety_level)}; font-weight: bold;">
+              ${markerData.safety_level.toUpperCase()}
+            </span>
+            (${markerData.safety_score.toFixed(2)})
+          </div>
+          <div style="margin-bottom: 10px;">
+            <strong>Infractions:</strong> ${markerData.infraction_count}
+          </div>
+          ${markerData.details.has_street_parking ? 
+            '<div style="margin-bottom: 5px;">🅿️ Street parking available</div>' : ''
+          }
+          ${markerData.details.nearby_lots > 0 ? 
+            `<div style="margin-bottom: 5px;">🏢 ${markerData.details.nearby_lots} nearby lot(s)</div>` : ''
+          }
+          <div style="margin-top: 10px;">
+            <strong>Key Points:</strong>
+            <ul style="margin: 5px 0; padding-left: 20px;">
+              ${markerData.details.reasoning.slice(0, 3).map(reason => 
+                `<li style="margin: 2px 0; font-size: 12px;">${reason}</li>`
+              ).join('')}
+            </ul>
+          </div>
+        </div>
+      `,
+      position: position
+    })
+    
+    infoWindow.open(mapInstance)
   }
 
   const getSafetyColor = (level: string): string => {
@@ -117,7 +260,10 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
         <h3 className="text-lg font-semibold text-white mb-2">Error Loading Safety Data</h3>
         <p className="text-gray-400 mb-4">{error}</p>
         <button 
-          onClick={fetchSafetyData}
+          onClick={() => {
+            mapInitializedRef.current = false
+            fetchSafetyData()
+          }}
           className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
         >
           Retry
@@ -153,13 +299,11 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
         </div>
       </div>
       
-      <GoogleMap
-        apiKey={apiKey}
-        center={{ lat: 43.4723, lng: -80.5449 }}
-        zoom={13}
-        height="600px"
-        onMapLoad={handleMapLoad}
-        markers={[]} // We handle markers manually in handleMapLoad
+      {/* Map container */}
+      <div 
+        ref={mapRef}
+        className="w-full h-[600px] rounded-lg overflow-hidden"
+        id="map"
       />
     </div>
   )
