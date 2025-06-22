@@ -1,0 +1,6 @@
+build:
+  apt:
+    packages:
+      - build-essential
+      - python3-dev
+      - libpq-dev
