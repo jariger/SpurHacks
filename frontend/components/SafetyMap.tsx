@@ -274,27 +274,29 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
 
   return (
     <div className="w-full">
-      <div className="mb-4 p-4 bg-gray-800 rounded-lg">
-        <h2 className="text-xl font-bold text-white mb-2">Waterloo Parking Safety Map</h2>
-        <p className="text-gray-300 text-sm">
+      <div className="mb-6 p-6 bg-gray-900/50 border border-gray-800 rounded-xl backdrop-blur-sm">
+        <h2 className="text-2xl font-bold bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent mb-3">
+          Waterloo Parking Safety Map
+        </h2>
+        <p className="text-gray-400 text-base mb-4">
           Showing {markers.length} parking locations with safety analysis
         </p>
-        <div className="flex gap-4 mt-2 text-sm">
-          <span className="flex items-center gap-1">
-            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-            Very Safe
+        <div className="flex flex-wrap gap-6 text-sm">
+          <span className="flex items-center gap-2 text-gray-300">
+            <div className="w-4 h-4 bg-green-500 rounded-full border-2 border-white shadow-lg"></div>
+            <span className="font-medium">Very Safe</span>
           </span>
-          <span className="flex items-center gap-1">
-            <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-            Safe
+          <span className="flex items-center gap-2 text-gray-300">
+            <div className="w-4 h-4 bg-yellow-500 rounded-full border-2 border-white shadow-lg"></div>
+            <span className="font-medium">Safe</span>
           </span>
-          <span className="flex items-center gap-1">
-            <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
-            Moderate
+          <span className="flex items-center gap-2 text-gray-300">
+            <div className="w-4 h-4 bg-orange-500 rounded-full border-2 border-white shadow-lg"></div>
+            <span className="font-medium">Moderate</span>
           </span>
-          <span className="flex items-center gap-1">
-            <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-            High Risk
+          <span className="flex items-center gap-2 text-gray-300">
+            <div className="w-4 h-4 bg-red-500 rounded-full border-2 border-white shadow-lg"></div>
+            <span className="font-medium">High Risk</span>
           </span>
         </div>
       </div>
@@ -302,7 +304,7 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
       {/* Map container */}
       <div 
         ref={mapRef}
-        className="w-full h-[600px] rounded-lg overflow-hidden"
+        className="w-full h-[600px] rounded-xl overflow-hidden border border-gray-800"
         id="map"
       />
     </div>

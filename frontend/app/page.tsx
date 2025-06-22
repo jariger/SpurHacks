@@ -2,26 +2,10 @@
 
 import { useState, useEffect } from "react"
 import { X } from "lucide-react"
-import GoogleMap from "../components/GoogleMap"
 import SafetyMap from "@/components/SafetyMap"
-
-interface MapConfig {
-  api_key: string | null
-  enabled: boolean
-  vector_support: boolean
-  default_center: {
-    lat: number
-    lng: number
-  }
-  default_zoom: number
-}
 
 export default function HomePage() {
   const [activeModal, setActiveModal] = useState<"about" | "contact" | null>(null)
-  const [mapConfig, setMapConfig] = useState<MapConfig | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-  const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null)
   const [showIntro, setShowIntro] = useState(true)
   const [introStep, setIntroStep] = useState(0)
 
@@ -52,71 +36,6 @@ export default function HomePage() {
     }
 
     animationSequence()
-  }, [])
-
-  useEffect(() => {
-    // Get user's current location
-    const getUserLocation = () => {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            const { latitude, longitude } = position.coords
-            setUserLocation({ lat: latitude, lng: longitude })
-            console.log("User location obtained:", { lat: latitude, lng: longitude })
-          },
-          (error) => {
-            console.warn("Geolocation error:", error)
-            // Use default location if geolocation fails
-            setUserLocation({ lat: 40.7589, lng: -73.9851 })
-          },
-          {
-            enableHighAccuracy: true,
-            timeout: 10000,
-            maximumAge: 300000, // 5 minutes
-          },
-        )
-      } else {
-        console.warn("Geolocation not supported")
-        setUserLocation({ lat: 40.7589, lng: -73.9851 })
-      }
-    }
-
-    getUserLocation()
-  }, [])
-
-  useEffect(() => {
-    // Fetch map configuration from backend
-    const fetchMapConfig = async () => {
-      try {
-        console.log("Fetching map configuration from backend...")
-        const response = await fetch("http://localhost:5000/api/maps/config", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-
-        console.log("Response status:", response.status)
-        console.log("Response headers:", response.headers)
-
-        if (response.ok) {
-          const config = await response.json()
-          console.log("Map config received:", config)
-          setMapConfig(config)
-        } else {
-          const errorText = await response.text()
-          console.error("Backend error:", response.status, errorText)
-          setError(`Failed to load map configuration: ${response.status}`)
-        }
-      } catch (err) {
-        console.error("Network error:", err)
-        setError("Backend connection failed - check if backend is running on port 5000")
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchMapConfig()
   }, [])
 
   const openModal = (modal: "about" | "contact") => {
@@ -313,80 +232,14 @@ export default function HomePage() {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Map Section */}
+        {/* Safety Map Section */}
         <div
           id="map-section"
           className="bg-gray-900/50 rounded-xl border border-gray-800 overflow-hidden backdrop-blur-sm scroll-mt-20 animate-fadeInUp"
           style={{ animationDelay: "0.6s" }}
         >
-          <div className="p-8 border-b border-gray-800">
-            <h2 className="text-3xl font-bold text-white mb-4">Explore Your Location</h2>
-            <p className="text-gray-400 text-lg">
-              Interactive vector mapping powered by Google Maps. Find your current location with precision and ease.
-            </p>
-          </div>
-
-          <div className="relative">
-            {loading ? (
-              <div className="h-[600px] bg-gray-900 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="animate-spin rounded-full h-12 w-12 border-2 border-gray-600 border-t-white mx-auto mb-4"></div>
-                  <p className="text-gray-400">
-                    {userLocation ? "Loading map configuration..." : "Getting your location..."}
-                  </p>
-                </div>
-              </div>
-            ) : error ? (
-              <div className="h-[600px] bg-gray-900 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-red-400 mb-4">
-                    <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Map Error</h3>
-                  <p className="text-gray-400">{error}</p>
-                  <p className="text-gray-500 text-sm mt-2">Make sure your backend is running on port 5000</p>
-                </div>
-              </div>
-            ) : mapConfig && mapConfig.api_key ? (
-              <GoogleMap
-                apiKey={mapConfig.api_key}
-                center={userLocation || mapConfig.default_center}
-                zoom={mapConfig.default_zoom}
-                height="600px"
-                markers={[
-                  {
-                    position: userLocation || mapConfig.default_center,
-                    title: userLocation ? "Your Location" : "MapSite Headquarters",
-                  },
-                ]}
-              />
-            ) : (
-              <div className="h-[600px] bg-gray-900 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-yellow-400 mb-4">
-                    <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">Google Maps API Key Required</h3>
-                  <p className="text-gray-400">
-                    Please add your Google Maps API key to the backend environment variables.
-                  </p>
-                </div>
-              </div>
-            )}
+          <div className="animate-fadeInUp" style={{ animationDelay: "1.6s" }}>
+            <SafetyMap apiKey={GOOGLE_MAPS_API_KEY} />
           </div>
         </div>
 
@@ -461,10 +314,6 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="animate-fadeInUp" style={{ animationDelay: "1.6s" }}>
-          <SafetyMap apiKey={GOOGLE_MAPS_API_KEY} />
         </div>
       </main>
 
