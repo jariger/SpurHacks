@@ -375,8 +375,7 @@ export default function SafetyMap({ apiKey }: SafetyMapProps) {
 
   const getSafetyColor = (level: string): string => {
     switch (level.toLowerCase()) {
-      case 'very_safe': return '#22c55e'
-      case 'safe': return '#eab308'
+      case 'safe': return '#22c55e'
       case 'moderate': return '#f97316'
       case 'risky': return '#ef4444'
       default: return '#6b7280'
